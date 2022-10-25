@@ -13,7 +13,7 @@ Since D-Acts is an extension of IAO, it would benefit those who rely on CCO onto
 
 ## Resources
 - The original Document Acts Ontology (D-Acts) https://github.com/d-acts/d-acts
-  - Matthias Brochausen, et al.
+  - Mathias Brochhausen, et al.
 - Common Core Ontologies (CCO) https://github.com/CommonCoreOntology/CommonCoreOntologies
   - CUBRC et al.
 
