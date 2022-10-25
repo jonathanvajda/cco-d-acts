@@ -18,4 +18,4 @@ Since D-Acts is an extension of IAO, it would benefit those who rely on CCO onto
   - CUBRC et al.
 
 ## Licensing
-https://creativecommons.org/licenses/by/3.0/
+https://creativecommons.org/licenses/by/4.0/
