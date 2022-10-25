@@ -3,19 +3,19 @@ CCO-D-Acts fills a gap in representation of social, legal, normative, and deonti
 
 The Common Core Ontologies (CCO) are a suite of mid-level ontologies conformant with BFO, that provide representation of generic domains such as agents, artifacts, events, information, etc. The Information Entity Ontology (IEO) is one of those mid-level ontologies of the CCO suite, with a high overlap in domain as IAO. However, IAO and IEO have conflicting models.
 
-Since D-Acts is an extension of IAO, it would benefit those who rely on CCO ontologies to have a D-Acts counterpart conformant with IEO. This project proposes that counterpart: CCO-D-Acts.
+Since D-Acts is an extension of IAO, it would benefit those who rely on CCO ontologies to have a D-Acts counterpart conformant with IEO. This project proposes that counterpart: **CCO-D-Acts**.
 
 ### Project Parts
-* OWL file
-* TTL file
-* Documentation on how to import
-* Documentation on alignment decisions
+- OWL file
+- TTL file
+- Documentation on how to import
+- Documentation on alignment decisions
 
 ## Resources
-* The original Document Acts Ontology (D-Acts) https://github.com/d-acts/d-acts
-* * Mattias Brochausen, et al.
-* Common Core Ontologies (CCO) https://github.com/CommonCoreOntology/CommonCoreOntologies
-* * CUBRC et al.
+- The original Document Acts Ontology (D-Acts) https://github.com/d-acts/d-acts
+  - Matthias Brochausen, et al.
+- Common Core Ontologies (CCO) https://github.com/CommonCoreOntology/CommonCoreOntologies
+  - CUBRC et al.
 
 ## Licensing
 https://creativecommons.org/licenses/by/3.0/
