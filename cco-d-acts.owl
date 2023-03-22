@@ -172,30 +172,61 @@
 		<rdfs:label xml:lang="en">Deontic Role</rdfs:label>
     </owl:Class>
 
-    <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
-
+<!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/SocialAct"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SocialAct"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="hhttps://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017"/>
+                                <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <cco:definition xml:lang="en">a Social Act that creates, revokes, or modifies a Deontic Role.</cco:definition>
-        <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021009 . Their class is a defined class, equivalent to some Social Act that either &apos;legally revokes&apos; some &apos;deontic role&apos; OR &apos;has_specified_output&apos; some &apos;deontic role&apos;</cco:definition_source>
+        <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021009 . Equivalent to some Social Act that either &apos;legally revokes&apos; some &apos;deontic role&apos; OR &apos;has_specified_output&apos; some &apos;deontic role&apos;</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <cco:example_of_usage xml:lang="en">Pronouncement of knighthood</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Permission for a surgeon to perform a hysterectomy</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Oath to speak the truth on the witness stand in a court of law</cco:example_of_usage>
         <rdfs:label xml:lang="en">Deontic Declaration</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000006 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000006">
-        <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005"/>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+						<owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+						<owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>	
         <cco:definition xml:lang="en">a Deontic Declaration that creates, revokes, or modifies a Deontic Role by legitimately manipulating (signing, stamping, publishing) a Document</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021001 .Their class is a defined class, equivalent to some Deontic Declaration that &apos;has_specified_input&apos; some &apos;document act input document&apos; AND &apos;has_specified_output&apos; some &apos;document&apos;</cco:definition_source>
         <cco:example_of_usage xml:lang="en">my filling in an immigration form, a judge&apos;s signing and stamping a court order (Mathias Brochhausen)</cco:example_of_usage>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <cco:example_of_usage xml:lang="en">Issuance of a citation that an individual has violated a legal regulation</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Attestation of degree conferral by means of a diploma</cco:example_of_usage>
         <rdfs:label xml:lang="en">Deontic Document Act</rdfs:label>
     </owl:Class>
-    
-
 
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007 -->
 
