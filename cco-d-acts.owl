@@ -19,8 +19,8 @@
 	<!-- 
     //////////////////////////////////////////////////////////////////////////////
     //																			//
-    //	Assertions from other Ontologies                                		//
-	//																			//
+    //	Assertions from other Ontologies          	                     		//
+    //																			//
     //////////////////////////////////////////////////////////////////////////////
      -->
 
@@ -98,13 +98,13 @@
 
 	<!-- 
 	//////////////////////////////////////////////////////////////////////////////////
-	//										//
-	//	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)	//
-	//										//
-	//	ObjectProperty Assertions						//
-	//										//
+	//																				//
+	//	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)			//
+	//																				//
+	//	ObjectProperty Assertions													//
+	//																				//
 	//////////////////////////////////////////////////////////////////////////////////
-     	-->
+    -->
 
     <!-- ObjectProperty legally_revokes -->
     <owl:ObjectProperty rdf:about="hhttps://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017">
@@ -126,11 +126,11 @@
 
     <!-- 
     //////////////////////////////////////////////////////////////////////////////
-    //										//
-    //	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)	//
-    //										//
-    //	CLASS ASSERTIONS							//
-    //										//
+    //																			//
+    //	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)		//
+    //																			//
+    //	CLASS ASSERTIONS														//
+    //																			//
     //////////////////////////////////////////////////////////////////////////////
      -->
  
@@ -147,33 +147,30 @@
         <rdfs:label xml:lang="en">Document Act Input Document</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000003 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000003">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/SocialAct"/>
-        <obo:IAO_0000118 xml:lang="en">enactment</obo:IAO_0000118>
+        <cco:alternative_label xml:lang="en">enactment</cco:alternative_label>
         <cco:definition xml:lang="en">A social act that postulates a socio-legal fact for a specified group of people or organizations.</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021102</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Standing Declaration</rdfs:label>
+		<cco:example_of_usage xml:lang="en">A verbal utterance to obligate oneself to take care of a neighbor&apos;s pet animal.</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">A written document to permit some person to reside in exchange for a fee.</cco:example_of_usage>
+		<rdfs:label xml:lang="en">Standing Declaration</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <obo:IAO_0000116 xml:lang="en">This definition attempts to capture &quot;A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.&quot; (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents.</obo:IAO_0000116>
         <cco:definition xml:lang="en">a Role that inheres in an Agent and which is externally grounded in the normative expectations of some Group of Agents concerning how that Agent should behave.</cco:definition>
         <cco:definition_source xml:lang="en">Modified; originally from Mathias Brochhausen &amp; Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021008 (&apos;deontic role&apos;)</cco:definition_source>
-        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Deontic Role</rdfs:label>
+        <rdfs:comment xml:lang="en">This definition attempts to capture &quot;A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.&quot; (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents.</rdfs:comment>
+		<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+		<cco:example_of_usage xml:lang="en">President role</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Legal judge role</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Mandatory reporter role</cco:example_of_usage>
+		<rdfs:label xml:lang="en">Deontic Role</rdfs:label>
     </owl:Class>
-    
-
 
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
 
