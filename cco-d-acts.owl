@@ -135,13 +135,15 @@
      -->
  
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
-        <obo:IAO_0000116 xml:lang="en">Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus.</obo:IAO_0000116>
         <cco:definition xml:lang="en">a Document that is intended to be the specified input in a Deontic Document Act. It has a Plan Specification as a part that specifies the intended socio-legal entities that are created through the document (objective specification) and the way in which the Deontic Document Act is to be performed (by signing, by stamping, etc.) (action specification).</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts Ontology), http://purl.obolibrary.org/obo/IAO_0021007</cco:definition_source>
-        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <rdfs:comment xml:lang="en">Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus.</rdfs:comment>
+	<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+	<cco:example_of_usage xml:lang="en">An informed consent form that is intended to have a subject&apos;s PII data fields filled in.</cco:example_of_usage>
+	<cco:example_of_usage xml:lang="en">A loan application form that is not yet filled with personal and financial information.</cco:example_of_usage>
+	<cco:example_of_usage xml:lang="en">A marriage license that is intended to be used in the documented solemnization of marital vows.</cco:example_of_usage>
         <rdfs:label xml:lang="en">Document Act Input Document</rdfs:label>
     </owl:Class>
     
