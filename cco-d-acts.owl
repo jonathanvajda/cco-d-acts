@@ -94,8 +94,35 @@
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
 		<rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
 	</owl:ObjectProperty>
-<!--    ////   HERE ENDS ASSERTIONS FROM OTHER ONTOLOGIES   ////  -->
+<!--    ////   HERE ENDS ASSERTIONS FROM OBI          ////  -->
 
+	<!-- 
+	//////////////////////////////////////////////////////////////////////////////////
+	//										//
+	//	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)	//
+	//										//
+	//	ObjectProperty Assertions						//
+	//										//
+	//////////////////////////////////////////////////////////////////////////////////
+     	-->
+
+    <!-- ObjectProperty legally_revokes -->
+    <owl:ObjectProperty rdf:about="hhttps://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000006"/>
+        <rdfs:range rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
+        <cco:definition xml:lang="en">d socio-legally revokes s, if s participates in d and at the end of d s no longer exists.</cco:definition>
+        <rdfs:comment xml:lang="en">Comment from original curator: It is important to note that this going out of existence of s is complete and unlike the going out of existence for material entities which basically always are transformed into something else. After the declaration nothing is left of the socio-legal generically dependent continuant in question.</rdfs:comment>
+        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+	<cco:term_editor xml:lang="en">Mathias Brochhausen</cco:term_editor>
+        <cco:alternative_label xml:lang="en">socio-legally revokes</cco:alternative_label>
+        <rdfs:label xml:lang="en">legally revokes</rdfs:label>
+    </owl:ObjectProperty>
+<!--    ////   HERE ENDS ASSERTIONS FROM D-Acts            ////  -->
+<!--    ////   HERE ENDS ASSERTIONS FROM OTHER ONTOLOGIES   ////  -->
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
