@@ -16,6 +16,9 @@ Since D-Acts is an extension of IAO, it would benefit those who rely on CCO onto
   - Mathias Brochhausen, et al.
 - Common Core Ontologies (CCO) https://github.com/CommonCoreOntology/CommonCoreOntologies
   - CUBRC et al.
+- "Common Core Conformant Definitions for an Ontology of Commercial Exchange"
+  - Eric C. Merrell, Olivier Massin & Barry Smith
+  - https://philarchive.org/rec/MERCCC
 
 ## Licensing
 https://creativecommons.org/licenses/by/4.0/
