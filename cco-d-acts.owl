@@ -312,33 +312,42 @@
 
 
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000015 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <cco:definition xml:lang="en">a Role that inheres in an Identification Artifact and is realized by some Authentication process.</cco:definition>
-        <cco:definition_source xml:lang="en">Modified; originally by Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020024
-
-See the notes on &apos;Identification Artifact&apos;, which clarifies why &apos;Identity Document&apos; is significantly corrected and why &apos;documented identity&apos; is obviated
-
-Original definition &quot;A role that inheres in a concretization of an identity document and is realized by an authentication process.&quot; Also, originally asserted as a defined class, equivalent to: BFO_0000023 and (&apos;realized in&apos; some authentication) and (RO_0000052 some (RO_0000053 some (RO_0000059 some &apos;identity document&apos;)))</cco:definition_source>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000016"/>
+                    </owl:Restriction>
+					<owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+		<cco:definition xml:lang="en">a Role that inheres in an Identification Artifact and is realized by some Act of Authentication process.</cco:definition>
+		<cco:definition_source xml:lang="en">Modified; originally by Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020024. See the notes on &apos;Identification Artifact&apos;, which clarifies why &apos;Identity Document&apos; is significantly corrected and why &apos;documented identity&apos; is obviated. Original definition &apos;A role that inheres in a concretization of an identity document and is realized by an authentication process.&apos; Equivalent class is adjusted, since &apos;identity document&apos; is not an ICE but rather artifact IBE. Originally: to BFO_0000023[role] and (RO_0000054[realized in] some authentication) and (RO_0000052[characteristic of/inheres in] some (RO_0000053[characterized by/bearer of] some (RO_0000059[concretizes] some &apos;identity document&apos;)))</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <cco:example_of_usage xml:lang="en">A server&apos;s role in an authentication into an online banking system</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">A passport&apos;s role for an act of authentication for boarding an international flight</cco:example_of_usage>
         <rdfs:label xml:lang="en">Credential Role</rdfs:label>
     </owl:Class>
-    
-
-
+  
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000016 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000016">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact"/>
-        <cco:definition xml:lang="en">an Information Bearing Artifact that bears some Designative Information Content Entity</cco:definition>
-        <cco:definition_source xml:lang="en">Modified significantly. Originally by Amanda Hicks (D-Acts; http://purl.obolibrary.org/obo/IAO_0020021) as &apos;identity document&apos;, which was a subclass of &apos;document&apos;, which is a Information Content Entity rather than an information bearing artifact. This is a critical difference. Moreover, the associated class having to do with &apos;documented identity&apos; (another ICE) is obviated by CCO&apos;s Designative Information Content Entity. Original definition: &quot;A document that denotes some identity and is concretized by the bearer of some credential role.&quot; It was a defined class, equivalent to: IAO_0000310 and (IAO_0000136 some &apos;documented identity&apos;) and (RO_0000058 some 
-(BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;)))) and (RO_0000058 only 
-(BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;))))</cco:definition_source>
+        <cco:definition xml:lang="en">an Information Bearing Artifact that is the bearer of some Designative Information Content Entity and is the bearer of some Credential Role.</cco:definition>
+        <cco:definition_source xml:lang="en">Modified significantly. Originally by Amanda Hicks (D-Acts; http://purl.obolibrary.org/obo/IAO_0020021) as &apos;identity document&apos;, which was a subclass of &apos;document&apos;, which is a Information Content Entity rather than an information bearing artifact. This is a critical difference. Moreover, the associated class having to do with &apos;documented identity&apos; (another ICE) is obviated by CCO&apos;s Designative Information Content Entity. Original definition: &quot;A document that denotes some identity and is concretized by the bearer of some credential role.&quot; It was a defined class, equivalent to: IAO_0000310 and (IAO_0000136 some &apos;documented identity&apos;) and (RO_0000058 some (BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;)))) and (RO_0000058 only (BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;))))</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Identification Artifact</rdfs:label>
+		<cco:example_of_usage xml:lang="en">A passport</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">A bank statement</cco:example_of_usage>
+		<cco:alternative_label xml:lang="en">Identity Document</cco:alternative_label>
+		<rdfs:label xml:lang="en">Identification Artifact</rdfs:label>
     </owl:Class>
-</rdf:RDF>
 
 
 
