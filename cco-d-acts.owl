@@ -16,6 +16,85 @@
         <owl:imports rdf:resource="https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/master/cco-merged/MergedAllCoreOntology_v1.3.ttl"/>
     </owl:Ontology>
     
+	<!-- 
+    //////////////////////////////////////////////////////////////////////////////
+    //																			//
+    //	Assertions from other Ontologies                                		//
+	//																			//
+    //////////////////////////////////////////////////////////////////////////////
+     -->
+
+	<!-- ObjectProperty: has_specified_input (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293">
+		<owl:equivalentProperty>
+			<rdf:Description>
+				<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+			</rdf:Description>
+		</owl:equivalentProperty>
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+		<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+		<!-- <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:definition xml:lang="en">The inverse property of is_specified_input_of</cco:definition>
+		<obo:IAO_0000116>8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
+		<cco:term_editor xml:lang="en">PERSON: Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Bjoern Peters</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Larry Hunter</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Melanie Coutot</cco:term_editor>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">has_specified_input</rdfs:label>
+	</owl:ObjectProperty>
+
+	<!-- ObjectProperty: has_specified_output (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295">
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+		<!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:example_of_usage xml:lang="en">some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) is_input_for instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay</cco:example_of_usage>
+		<cco:definition xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</cco:definition>
+		<cco:term_editor xml:lang="en">Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON:Bjoern Peters</cco:term_editor>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">is_specified_input_of</rdfs:label>
+	</owl:ObjectProperty>
+
+	<!-- ObjectProperty: has_specified_output (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299">
+		<owl:equivalentProperty>
+			<rdf:Description>
+				<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+			</rdf:Description>
+		</owl:equivalentProperty>
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+		<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+		<!-- <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:definition xml:lang="en">The inverse property of is_specified_output_of</cco:definition>
+		<cco:term_editor xml:lang="en">PERSON: Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Bjoern Peters</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Larry Hunter</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Melanie Courtot</cco:term_editor>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">has_specified_output</rdfs:label>
+	</owl:ObjectProperty>
+
+	<!-- ObjectProperty: is_specified_output_of (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312">
+		<owl:equivalentProperty>
+			<rdf:Description>
+				<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+			</rdf:Description>
+		</owl:equivalentProperty>
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+		<!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:definition xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</cco:definition>
+		<cco:term_editor xml:lang="en">Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON:Bjoern Peters</cco:term_editor>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
+	</owl:ObjectProperty>
+<!--    ////   HERE ENDS ASSERTIONS FROM OTHER ONTOLOGIES   ////  -->
 
 
     <!-- 
