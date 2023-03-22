@@ -16,140 +16,262 @@
         <owl:imports rdf:resource="https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/master/cco-merged/MergedAllCoreOntology_v1.3.ttl"/>
     </owl:Ontology>
     
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
+	<!-- 
+    //////////////////////////////////////////////////////////////////////////////
+    //																			//
+    //	Assertions from other Ontologies          	                     		//
+    //																			//
+    //////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+	<!-- ObjectProperty: has_specified_input (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293">
+		<owl:equivalentProperty>
+			<rdf:Description>
+				<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+			</rdf:Description>
+		</owl:equivalentProperty>
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+		<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
+		<!-- <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:definition xml:lang="en">The inverse property of is_specified_input_of</cco:definition>
+		<obo:IAO_0000116>8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
+		<cco:term_editor xml:lang="en">PERSON: Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Bjoern Peters</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Larry Hunter</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Melanie Coutot</cco:term_editor>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">has_specified_input</rdfs:label>
+	</owl:ObjectProperty>
 
+	<!-- ObjectProperty: has_specified_output (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295">
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+		<!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:example_of_usage xml:lang="en">some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) is_input_for instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay</cco:example_of_usage>
+		<cco:definition xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</cco:definition>
+		<cco:term_editor xml:lang="en">Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON:Bjoern Peters</cco:term_editor>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">is_specified_input_of</rdfs:label>
+	</owl:ObjectProperty>
 
+	<!-- ObjectProperty: has_specified_output (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299">
+		<owl:equivalentProperty>
+			<rdf:Description>
+				<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+			</rdf:Description>
+		</owl:equivalentProperty>
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+		<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+		<!-- <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:definition xml:lang="en">The inverse property of is_specified_output_of</cco:definition>
+		<cco:term_editor xml:lang="en">PERSON: Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Bjoern Peters</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Larry Hunter</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON: Melanie Courtot</cco:term_editor>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">has_specified_output</rdfs:label>
+	</owl:ObjectProperty>
+
+	<!-- ObjectProperty: is_specified_output_of (OBI) -->
+	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312">
+		<owl:equivalentProperty>
+			<rdf:Description>
+				<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+			</rdf:Description>
+		</owl:equivalentProperty>
+		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+		<!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
+		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<cco:definition xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</cco:definition>
+		<cco:term_editor xml:lang="en">Alan Ruttenberg</cco:term_editor>
+		<cco:term_editor xml:lang="en">PERSON:Bjoern Peters</cco:term_editor>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+		<rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
+	</owl:ObjectProperty>
+<!--    ////   HERE ENDS ASSERTIONS FROM OBI          ////  -->
+
+	<!-- 
+	//////////////////////////////////////////////////////////////////////////////////
+	//																				//
+	//	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)			//
+	//																				//
+	//	ObjectProperty Assertions													//
+	//																				//
+	//////////////////////////////////////////////////////////////////////////////////
+    -->
+
+    <!-- ObjectProperty legally_revokes -->
+    <owl:ObjectProperty rdf:about="hhttps://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000006"/>
+        <rdfs:range rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
+        <cco:definition xml:lang="en">d socio-legally revokes s, if s participates in d and at the end of d s no longer exists.</cco:definition>
+        <rdfs:comment xml:lang="en">Comment from original curator: It is important to note that this going out of existence of s is complete and unlike the going out of existence for material entities which basically always are transformed into something else. After the declaration nothing is left of the socio-legal generically dependent continuant in question.</rdfs:comment>
+        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+	<cco:term_editor xml:lang="en">Mathias Brochhausen</cco:term_editor>
+        <cco:alternative_label xml:lang="en">socio-legally revokes</cco:alternative_label>
+        <rdfs:label xml:lang="en">legally revokes</rdfs:label>
+    </owl:ObjectProperty>
+<!--    ////   HERE ENDS ASSERTIONS FROM D-Acts            ////  -->
+<!--    ////   HERE ENDS ASSERTIONS FROM OTHER ONTOLOGIES   ////  -->
+
+    <!-- 
+    //////////////////////////////////////////////////////////////////////////////
+    //																			//
+    //	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)		//
+    //																			//
+    //	CLASS ASSERTIONS														//
+    //																			//
+    //////////////////////////////////////////////////////////////////////////////
+     -->
+ 
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
-        <obo:IAO_0000116 xml:lang="en">Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus.</obo:IAO_0000116>
         <cco:definition xml:lang="en">a Document that is intended to be the specified input in a Deontic Document Act. It has a Plan Specification as a part that specifies the intended socio-legal entities that are created through the document (objective specification) and the way in which the Deontic Document Act is to be performed (by signing, by stamping, etc.) (action specification).</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts Ontology), http://purl.obolibrary.org/obo/IAO_0021007</cco:definition_source>
-        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <rdfs:comment xml:lang="en">Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus.</rdfs:comment>
+	<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+	<cco:example_of_usage xml:lang="en">An informed consent form that is intended to have a subject&apos;s PII data fields filled in.</cco:example_of_usage>
+	<cco:example_of_usage xml:lang="en">A loan application form that is not yet filled with personal and financial information.</cco:example_of_usage>
+	<cco:example_of_usage xml:lang="en">A marriage license that is intended to be used in the documented solemnization of marital vows.</cco:example_of_usage>
         <rdfs:label xml:lang="en">Document Act Input Document</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000003 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000003">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/SocialAct"/>
-        <obo:IAO_0000118 xml:lang="en">enactment</obo:IAO_0000118>
+        <cco:alternative_label xml:lang="en">enactment</cco:alternative_label>
         <cco:definition xml:lang="en">A social act that postulates a socio-legal fact for a specified group of people or organizations.</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021102</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Standing Declaration</rdfs:label>
+		<cco:example_of_usage xml:lang="en">A verbal utterance to obligate oneself to take care of a neighbor&apos;s pet animal.</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">A written document to permit some person to reside in exchange for a fee.</cco:example_of_usage>
+		<rdfs:label xml:lang="en">Standing Declaration</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <obo:IAO_0000116 xml:lang="en">This definition attempts to capture &quot;A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.&quot; (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents.</obo:IAO_0000116>
         <cco:definition xml:lang="en">a Role that inheres in an Agent and which is externally grounded in the normative expectations of some Group of Agents concerning how that Agent should behave.</cco:definition>
         <cco:definition_source xml:lang="en">Modified; originally from Mathias Brochhausen &amp; Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021008 (&apos;deontic role&apos;)</cco:definition_source>
-        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Deontic Role</rdfs:label>
+        <rdfs:comment xml:lang="en">This definition attempts to capture &quot;A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.&quot; (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents.</rdfs:comment>
+		<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+		<cco:example_of_usage xml:lang="en">President role</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Legal judge role</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Mandatory reporter role</cco:example_of_usage>
+		<rdfs:label xml:lang="en">Deontic Role</rdfs:label>
     </owl:Class>
-    
 
-
-    <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
-
+<!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005">
-        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/SocialAct"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SocialAct"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="hhttps://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017"/>
+                                <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <cco:definition xml:lang="en">a Social Act that creates, revokes, or modifies a Deontic Role.</cco:definition>
-        <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021009 . Their class is a defined class, equivalent to some Social Act that either &apos;legally revokes&apos; some &apos;deontic role&apos; OR &apos;has_specified_output&apos; some &apos;deontic role&apos;</cco:definition_source>
+        <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021009 . Equivalent to some Social Act that either &apos;legally revokes&apos; some &apos;deontic role&apos; OR &apos;has_specified_output&apos; some &apos;deontic role&apos;</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <cco:example_of_usage xml:lang="en">Pronouncement of knighthood</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Permission for a surgeon to perform a hysterectomy</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Oath to speak the truth on the witness stand in a court of law</cco:example_of_usage>
         <rdfs:label xml:lang="en">Deontic Declaration</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000006 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000006">
-        <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005"/>
+		<owl:equivalentClass>
+			<owl:Class>
+				<owl:intersectionOf rdf:parseType="Collection">
+					<rdf:Description rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005"/>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+						<owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001"/>
+					</owl:Restriction>
+					<owl:Restriction>
+						<owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+						<owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+					</owl:Restriction>
+				</owl:intersectionOf>
+			</owl:Class>
+		</owl:equivalentClass>	
         <cco:definition xml:lang="en">a Deontic Declaration that creates, revokes, or modifies a Deontic Role by legitimately manipulating (signing, stamping, publishing) a Document</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021001 .Their class is a defined class, equivalent to some Deontic Declaration that &apos;has_specified_input&apos; some &apos;document act input document&apos; AND &apos;has_specified_output&apos; some &apos;document&apos;</cco:definition_source>
         <cco:example_of_usage xml:lang="en">my filling in an immigration form, a judge&apos;s signing and stamping a court order (Mathias Brochhausen)</cco:example_of_usage>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <cco:example_of_usage xml:lang="en">Issuance of a citation that an individual has violated a legal regulation</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Attestation of degree conferral by means of a diploma</cco:example_of_usage>
         <rdfs:label xml:lang="en">Deontic Document Act</rdfs:label>
     </owl:Class>
-    
 
-
-    <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007 -->
-
+       <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
         <cco:definition xml:lang="en">an Intentional Act that verifies the legitimacy and truth value of some identity claim, whether that claim was given explicitly or implicitly</cco:definition>
-        <cco:definition_source xml:lang="en">Modified, originally from Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020023
-
-Originally came with axioms: BFO_0000015 and (realizes some &apos;credential role&apos;) and (RO_0000057 some IAO_0000027) and (RO_0000057 some ( inverse (IAO_0000136) some IAO_0000027))</cco:definition_source>
-        <cco:example_of_usage xml:lang="en">I order a beer and the bartender authenticates my age by looking at my DOB on my driver&apos;s license.  I sign into my email account, and the system authenticates my permission to read the email by checking the password I enter against my password listed in the database. (Amanda Hicks)</cco:example_of_usage>
+        <cco:definition_source xml:lang="en">Modified, originally from Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020023. Originally came with axioms: BFO_0000015 and (realizes some &apos;credential role&apos;) and (RO_0000057 some IAO_0000027) and (RO_0000057 some ( inverse (IAO_0000136) some IAO_0000027))</cco:definition_source>
+        <cco:example_of_usage xml:lang="en">I order a beer and the bartender authenticates my age by looking at my DOB on my driver&apos;s license. I sign into my email account, and the system authenticates my permission to read the email by checking the password I enter against my password listed in the database. (Amanda Hicks)</cco:example_of_usage>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Authentication</rdfs:label>
+        <cco:alternative_label xml:lang="en">Authentication</cco:alternative_label>
+		<rdfs:label xml:lang="en">Act of Authentication</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000008 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000008">
         <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
         <cco:definition xml:lang="en">a Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Duty Holder Role borne by Agent B, and that specifies B performaing or abstaining from some Act C, or providing or surrendering some Continuant D to A.</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021013 which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919.</cco:definition_source>
-        <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:comment xml:lang="en">Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. 
-https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child.</rdfs:comment>
+		<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
         <rdfs:label xml:lang="en">Claimant Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000009 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000009">
         <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
         <cco:definition xml:lang="en">a Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Claimant Role borne by Agent B, and that specifies A performing or abstaining from some Act C, or providing or surrendering some Continuant D to B.</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021016 (&apos;duty holder role&apos;) which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919.</cco:definition_source>
+        <rdfs:comment xml:lang="en">Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child.</rdfs:comment>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:comment xml:lang="en">Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. 
-https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child.</rdfs:comment>
-        <rdfs:label xml:lang="en">Duty Holder Role</rdfs:label>
+		<rdfs:label xml:lang="en">Duty Holder Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000010 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000010">
         <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
-        <cco:definition xml:lang="en">a Deontic Role that, if realized, is realized by its bearer’s creating, revoking, or modifying some Deontic Role.</cco:definition>
+        <cco:definition xml:lang="en">a Deontic Role that, if realized, is realized by its bearer&apos;s creating, revoking, or modifying some Deontic Role.</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen &amp; J. Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021023 (&apos;power role&apos;)</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Deontic Power Role</rdfs:label>
+        <cco:example_of_usage xml:lang="en">Governor role</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Legal judge role</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">Employer role</cco:example_of_usage>
+		<rdfs:label xml:lang="en">Deontic Power Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000011 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000011">
         <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
         <cco:definition xml:lang="en">a Deontic Role that inheres in an Agent A, that specifies that no Agent B bears a Claimant Role against A performing Act C.</cco:definition>
@@ -158,36 +280,27 @@ https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the clai
         <rdfs:label xml:lang="en">Privilege Holder Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000012 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000012">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <cco:definition xml:lang="en">a Role inhering in an Agent (either a human, an organization, or an aggregate of  of either) that is realized by the bearer being an agent (initiating participant) in a Document Act.</cco:definition>
+        <cco:definition xml:lang="en">a Role inhering in an Agent (either a human, an organization, or an aggregate of either) that is realized by the bearer being an agent (initiating participant) in a Document Act.</cco:definition>
         <cco:definition_source xml:lang="en">Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021031</cco:definition_source>
         <cco:example_of_usage xml:lang="en">a judge&apos;s role of signing a court order</cco:example_of_usage>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Document Act Performer Role</rdfs:label>
+		<rdfs:label xml:lang="en">Document Act Performer Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000013 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000013">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
         <cco:definition xml:lang="en">a Role that inheres in an Agent (a human, organization, or aggregate of these) that is realized in preparing a Document that is the specified input to a Document Act and is the Input Document of a Document Act.</cco:definition>
         <cco:definition_source xml:lang="en">Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021021</cco:definition_source>
         <cco:example_of_usage xml:lang="en">The role of the U.S. Citizenship and Immigration Service realized by the creation of an immigration form that is being filled in, the role of a national professional association realized by the creation of a clinical guideline that is to be certified</cco:example_of_usage>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Document Act Template Creator Role</rdfs:label>
+		<rdfs:label xml:lang="en">Document Act Template Creator Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000014 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000014">
         <rdfs:subClassOf rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000004"/>
         <cco:definition xml:lang="en">a Role inhering in an Agent or Aggregate of Agents that is realized by the bearer being the active participant (agent in) a Deontic Declaration.</cco:definition>
@@ -199,33 +312,42 @@ https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the clai
 
 
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000015 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
-        <cco:definition xml:lang="en">a Role that inheres in an Identification Artifact and is realized by some Authentication process.</cco:definition>
-        <cco:definition_source xml:lang="en">Modified; originally by Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020024
-
-See the notes on &apos;Identification Artifact&apos;, which clarifies why &apos;Identity Document&apos; is significantly corrected and why &apos;documented identity&apos; is obviated
-
-Original definition &quot;A role that inheres in a concretization of an identity document and is realized by an authentication process.&quot; Also, originally asserted as a defined class, equivalent to: BFO_0000023 and (&apos;realized in&apos; some authentication) and (RO_0000052 some (RO_0000053 some (RO_0000059 some &apos;identity document&apos;)))</cco:definition_source>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000023"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000016"/>
+                    </owl:Restriction>
+					<owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000054"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+		<cco:definition xml:lang="en">a Role that inheres in an Identification Artifact and is realized by some Act of Authentication process.</cco:definition>
+		<cco:definition_source xml:lang="en">Modified; originally by Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020024. See the notes on &apos;Identification Artifact&apos;, which clarifies why &apos;Identity Document&apos; is significantly corrected and why &apos;documented identity&apos; is obviated. Original definition &apos;A role that inheres in a concretization of an identity document and is realized by an authentication process.&apos; Equivalent class is adjusted, since &apos;identity document&apos; is not an ICE but rather artifact IBE. Originally: to BFO_0000023[role] and (RO_0000054[realized in] some authentication) and (RO_0000052[characteristic of/inheres in] some (RO_0000053[characterized by/bearer of] some (RO_0000059[concretizes] some &apos;identity document&apos;)))</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+        <cco:example_of_usage xml:lang="en">A server&apos;s role in an authentication into an online banking system</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">A passport&apos;s role for an act of authentication for boarding an international flight</cco:example_of_usage>
         <rdfs:label xml:lang="en">Credential Role</rdfs:label>
     </owl:Class>
-    
-
-
+  
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000016 -->
-
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000016">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact"/>
-        <cco:definition xml:lang="en">an Information Bearing Artifact that bears some Designative Information Content Entity</cco:definition>
-        <cco:definition_source xml:lang="en">Modified significantly. Originally by Amanda Hicks (D-Acts; http://purl.obolibrary.org/obo/IAO_0020021) as &apos;identity document&apos;, which was a subclass of &apos;document&apos;, which is a Information Content Entity rather than an information bearing artifact. This is a critical difference. Moreover, the associated class having to do with &apos;documented identity&apos; (another ICE) is obviated by CCO&apos;s Designative Information Content Entity. Original definition: &quot;A document that denotes some identity and is concretized by the bearer of some credential role.&quot; It was a defined class, equivalent to: IAO_0000310 and (IAO_0000136 some &apos;documented identity&apos;) and (RO_0000058 some 
-(BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;)))) and (RO_0000058 only 
-(BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;))))</cco:definition_source>
+        <cco:definition xml:lang="en">an Information Bearing Artifact that is the bearer of some Designative Information Content Entity and is the bearer of some Credential Role.</cco:definition>
+        <cco:definition_source xml:lang="en">Modified significantly. Originally by Amanda Hicks (D-Acts; http://purl.obolibrary.org/obo/IAO_0020021) as &apos;identity document&apos;, which was a subclass of &apos;document&apos;, which is a Information Content Entity rather than an information bearing artifact. This is a critical difference. Moreover, the associated class having to do with &apos;documented identity&apos; (another ICE) is obviated by CCO&apos;s Designative Information Content Entity. Original definition: &quot;A document that denotes some identity and is concretized by the bearer of some credential role.&quot; It was a defined class, equivalent to: IAO_0000310 and (IAO_0000136 some &apos;documented identity&apos;) and (RO_0000058 some (BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;)))) and (RO_0000058 only (BFO_0000020 and (RO_0000052 some (RO_0000053 some &apos;credential role&apos;))))</cco:definition_source>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-        <rdfs:label xml:lang="en">Identification Artifact</rdfs:label>
+		<cco:example_of_usage xml:lang="en">A passport</cco:example_of_usage>
+        <cco:example_of_usage xml:lang="en">A bank statement</cco:example_of_usage>
+		<cco:alternative_label xml:lang="en">Identity Document</cco:alternative_label>
+		<rdfs:label xml:lang="en">Identification Artifact</rdfs:label>
     </owl:Class>
-</rdf:RDF>
 
 
 
