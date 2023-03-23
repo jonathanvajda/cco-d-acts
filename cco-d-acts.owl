@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://github.com/jonathanvajda/cco-d-acts">
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/master/cco-merged/MergedAllCoreOntology_v1.3.ttl"/>
+    <!--    <owl:imports rdf:resource="https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/master/cco-merged/MergedAllCoreOntology_v1.3.ttl"/> -->
     </owl:Ontology>
     
 	<!-- 
