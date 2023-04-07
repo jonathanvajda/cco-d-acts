@@ -19,12 +19,13 @@
 		 <rdfs:comment xml:lang="en">The most recent version of this file is always hosted on GitHub https://github.com/jonathanvajda/cco-d-acts</rdfs:comment>
 		 <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
     </owl:Ontology>
-    
+
+
 	<!-- 
     //////////////////////////////////////////////////////////////////////////////
     //																			//
-    //	Assertions from other Ontologies          	                     		//
-    //																			//
+    //	Assertions from other Ontologies                                		//
+	//																			//
     //////////////////////////////////////////////////////////////////////////////
      -->
 
@@ -37,7 +38,6 @@
 		</owl:equivalentProperty>
 		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
 		<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
-		<!-- <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
 		<rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
 		<cco:definition xml:lang="en">The inverse property of is_specified_input_of</cco:definition>
 		<obo:IAO_0000116>8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
@@ -52,7 +52,6 @@
 	<!-- ObjectProperty: has_specified_output (OBI) -->
 	<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295">
 		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
-		<!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
 		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
 		<cco:example_of_usage xml:lang="en">some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) is_input_for instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay</cco:example_of_usage>
 		<cco:definition xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</cco:definition>
@@ -71,7 +70,6 @@
 		</owl:equivalentProperty>
 		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
 		<owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-		<!-- <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
 		<rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
 		<cco:definition xml:lang="en">The inverse property of is_specified_output_of</cco:definition>
 		<cco:term_editor xml:lang="en">PERSON: Alan Ruttenberg</cco:term_editor>
@@ -90,27 +88,28 @@
 			</rdf:Description>
 		</owl:equivalentProperty>
 		<rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
-		<!-- <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/> tentatively I am treating OBI'PlannedProcess' as equivalent to CCO:IntentionalAct -->
-		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+		<rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>>
 		<cco:definition xml:lang="en">A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of.</cco:definition>
 		<cco:term_editor xml:lang="en">Alan Ruttenberg</cco:term_editor>
 		<cco:term_editor xml:lang="en">PERSON:Bjoern Peters</cco:term_editor>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
 		<rdfs:label xml:lang="en">is_specified_output_of</rdfs:label>
 	</owl:ObjectProperty>
-<!--    ////   HERE ENDS ASSERTIONS FROM OBI          ////  -->
+<!--    ////   HERE ENDS ASSERTIONS FROM OTHER ONTOLOGIES   ////  -->
+
 
 	<!-- 
-	//////////////////////////////////////////////////////////////////////////////////
-	//																				//
-	//	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)			//
-	//																				//
-	//	ObjectProperty Assertions													//
-	//																				//
-	//////////////////////////////////////////////////////////////////////////////////
-    -->
+    //////////////////////////////////////////////////////////////////////////////
+    //																			//
+    //	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)		//
+	//																			//
+    //	ObjectProperty Assertions												//
+	//																			//
+    //////////////////////////////////////////////////////////////////////////////
+     -->
 
     <!-- ObjectProperty legally_revokes -->
+
     <owl:ObjectProperty rdf:about="hhttps://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -121,33 +120,33 @@
         <cco:definition xml:lang="en">d socio-legally revokes s, if s participates in d and at the end of d s no longer exists.</cco:definition>
         <rdfs:comment xml:lang="en">Comment from original curator: It is important to note that this going out of existence of s is complete and unlike the going out of existence for material entities which basically always are transformed into something else. After the declaration nothing is left of the socio-legal generically dependent continuant in question.</rdfs:comment>
         <cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-	<cco:term_editor xml:lang="en">Mathias Brochhausen</cco:term_editor>
+        <cco:term_editor xml:lang="en">Mathias Brochhausen</cco:term_editor>
         <cco:alternative_label xml:lang="en">socio-legally revokes</cco:alternative_label>
         <rdfs:label xml:lang="en">legally revokes</rdfs:label>
     </owl:ObjectProperty>
-<!--    ////   HERE ENDS ASSERTIONS FROM D-Acts            ////  -->
-<!--    ////   HERE ENDS ASSERTIONS FROM OTHER ONTOLOGIES   ////  -->
 
-    <!-- 
+
+	<!-- 
     //////////////////////////////////////////////////////////////////////////////
     //																			//
     //	A Document Acts (D-Acts) extension for Common Core Ontologies (CCO)		//
-    //																			//
+	//																			//
     //	CLASS ASSERTIONS														//
-    //																			//
+	//																			//
     //////////////////////////////////////////////////////////////////////////////
      -->
- 
+    
+
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000001">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
         <cco:definition xml:lang="en">a Document that is intended to be the specified input in a Deontic Document Act. It has a Plan Specification as a part that specifies the intended socio-legal entities that are created through the document (objective specification) and the way in which the Deontic Document Act is to be performed (by signing, by stamping, etc.) (action specification).</cco:definition>
         <cco:definition_source xml:lang="en">Modified, originally from Mathias Brochhausen (D-Acts Ontology), http://purl.obolibrary.org/obo/IAO_0021007</cco:definition_source>
         <rdfs:comment xml:lang="en">Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus.</rdfs:comment>
-	<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
-	<cco:example_of_usage xml:lang="en">An informed consent form that is intended to have a subject&apos;s PII data fields filled in.</cco:example_of_usage>
-	<cco:example_of_usage xml:lang="en">A loan application form that is not yet filled with personal and financial information.</cco:example_of_usage>
-	<cco:example_of_usage xml:lang="en">A marriage license that is intended to be used in the documented solemnization of marital vows.</cco:example_of_usage>
+		<cco:term_editor xml:lang="en">Jonathan M. Vajda</cco:term_editor>
+		<cco:example_of_usage xml:lang="en">An informed consent form that is intended to have a subject&apos;s PII data fields filled in.</cco:example_of_usage>
+		<cco:example_of_usage xml:lang="en">A loan application form that is not yet filled with personal and financial information.</cco:example_of_usage>
+		<cco:example_of_usage xml:lang="en">A marriage license that is intended to be used in the documented solemnization of marital vows.</cco:example_of_usage>
         <rdfs:label xml:lang="en">Document Act Input Document</rdfs:label>
     </owl:Class>
     
@@ -175,8 +174,8 @@
         <cco:example_of_usage xml:lang="en">Mandatory reporter role</cco:example_of_usage>
 		<rdfs:label xml:lang="en">Deontic Role</rdfs:label>
     </owl:Class>
-
-<!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
+    
+    <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000005">
         <owl:equivalentClass>
             <owl:Class>
@@ -231,8 +230,8 @@
         <cco:example_of_usage xml:lang="en">Attestation of degree conferral by means of a diploma</cco:example_of_usage>
         <rdfs:label xml:lang="en">Deontic Document Act</rdfs:label>
     </owl:Class>
-
-       <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007 -->
+    
+    <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000007">
         <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
         <cco:definition xml:lang="en">an Intentional Act that verifies the legitimacy and truth value of some identity claim, whether that claim was given explicitly or implicitly</cco:definition>
@@ -313,8 +312,6 @@
         <rdfs:label xml:lang="en">Deontic Declaration Performer Role</rdfs:label>
     </owl:Class>
     
-
-
     <!-- https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000015 -->
     <owl:Class rdf:about="https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000015">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
@@ -354,7 +351,63 @@
     </owl:Class>
 
 
+    <!-- 
+    //////////////////////////////////////////////////////////////////////////////
+    //																			//
+    //	CLASS ASSERTIONS from miscellaneous ontologiess 						//
+	//																			//
+    //////////////////////////////////////////////////////////////////////////////
+     -->
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+	<!-- OBI:'organism' = CCO:'Organism'
+	<owl:DeprecatedClass rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <owl:equivalentClass rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organism"/>
+        <obo:IAO_0000115 xml:lang="en">A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs.</obo:IAO_0000115>
+		<rdfs:label xml:lang="en">organism</rdfs:label>
+    </owl:DeprecatedClass> -->
+
+	<!-- NCIT:'Homo sapiens' = CCO:'Person'
+    <owl:DeprecatedClass rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+		<rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+		<owl:equivalentClass rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+		<cco:alternative_label xml:lang="en">Homo sapiens</cco:alternative_label>
+		<rdfs:label xml:lang="en">Person</rdfs:label>
+	</owl:DeprecatedClass> -->
+
+	<!-- OMRSE:'Collection of Humans' = CCO:'Group of Persons'
+    <owl:DeprecatedClass rdf:about="http://purl.obolibrary.org/obo/OMRSE_00000023">
+		<rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OMRSE_00000022"/>
+		<owl:equivalentClass rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/GroupOfPersons"/>
+		<cco:alternative_label xml:lang="en">Collection of Humans</cco:alternative_label>
+		<rdfs:label xml:lang="en">Group of Persons</rdfs:label>
+	</owl:DeprecatedClass> -->
+	
+    <!-- OMRSE:'Aggregate of Objectual Organisms'
+    <owl:DeprecatedClass rdf:about="http://purl.obolibrary.org/obo/OMRSE_00000022">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <obo:IAO_0000115 xml:lang="en">An object aggregate of objectual organisms.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">aggregate of objectual organisms</rdfs:label>
+    </owl:DeprecatedClass> -->
+	
+	<!-- OMRSE:'Aggregate of Organizations' = CCO:'Group of Organizations'
+    <owl:DeprecatedClass rdf:about="http://purl.obolibrary.org/obo/OMRSE_00000033">
+		<rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+		<owl:equivalentClass rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/GroupOfOrganizations"/>
+		<cco:alternative_label xml:lang="en">Aggregate of Organizations</cco:alternative_label>
+		<rdfs:label xml:lang="en">Group of Organizations</rdfs:label>
+	</owl:DeprecatedClass> -->
+	
+	<!-- OBI:'organization' = CCO:'Organization'
+    <owl:DeprecatedClass rdf:about="http://purl.obolibrary.org/obo/OBI_0000245">
+		<rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+		<owl:equivalentClass rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+		<cco:alternative_label xml:lang="en">organization</cco:alternative_label>
+		<rdfs:label xml:lang="en">Organization</rdfs:label>
+	</owl:DeprecatedClass> -->
 
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
