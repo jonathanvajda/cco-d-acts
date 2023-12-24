@@ -27,17 +27,17 @@ Progress in providing coverage is tracked with the checklist below (or with an i
 The following sections give explicit scope for what design patterns are to be extended and need coverage. Use cases may be exp
 
 ### General account Use Cases and Competency Questions
-General-UC1. This person is an authority with respect to the use of this asset, but the person is not the owner.
-General-UC2. This information is normally private (not for public). The first part of the document is permitted for organization 1 to access (read). The second part of the document is permitted for organization 1 and organization 2 to access (read).
-General-UC3. Document1 trumps document2. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
-General-UC4. Document2 trumps document1. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
-General-UC5. Regulation1 permits some person to perform some action, but regulation2 changes (is repealed or replaced?) and the permission no longer holds.
-General-UC6. 
+- General-UC1. This person is an authority with respect to the use of this asset, but the person is not the owner.
+- General-UC2. This information is normally private (not for public). The first part of the document is permitted for organization 1 to access (read). The second part of the document is permitted for organization 1 and - organization 2 to access (read).
+- General-UC3. Document1 trumps document2. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
+- General-UC4. Document2 trumps document1. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
+- General-UC5. Regulation1 permits some person to perform some action, but regulation2 changes (is repealed or replaced?) and the permission no longer holds.
+- General-UC6. 
 
-General-CQ1. What authorities are recognized by law?
-General-CQ2. What documents create obligations? (SELECT
-General-CQ3. What organizations are prohibited from doing this action?
-General-CQ4. 
+- General-CQ1. What authorities are recognized by law?
+- General-CQ2. What documents create obligations? (SELECT
+- General-CQ3. What organizations are prohibited from doing this action?
+- General-CQ4. 
 
 ### Biomedical Use Cases and Competency Questions
 
