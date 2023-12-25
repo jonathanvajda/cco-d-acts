@@ -2,7 +2,7 @@
 This working group is to develop the theory and framework of Document Acts. Document Acts are processes which have ....
 
 ## Use Cases, Competency Questions, and Intended Knowledge Graphs
-Each use case is framed in terms of a type of scenario and/or a competency question. A scenario may be a set of assertions (information about entities and their relationships). A compentency question is an informal (or semi-formal) question for which some data would return as an answer. The competency question is used as a benchmark for whether the representation is sufficiently expressive to be able to return the information in view. A set of competency questions can be used as a set of requirements for a tell-and-ask system supported with an ontology. The questions can be formalized in terms of a SPARQL query. The use case or the competency question may be diagramed with the relationships, made explicit in a visualization of a graph of individuals, classes, and object and data properties asserted in the model. If the visualization represents knowledge, it may be considered an "intended knowledge graph."
+Each use case is framed in terms of a type of scenario and/or a competency question. A scenario may be a set of assertions (information about entities and their relationships). A competency question is an informal (or semi-formal) question for which some data would return as an answer. The competency question is used as a benchmark for whether the representation is sufficiently expressive to be able to return the information in view. A set of competency questions can be used as a set of requirements for a tell-and-ask system supported with an ontology. The questions can be formalized in terms of a SPARQL query. The use case or the competency question may be diagramed with the relationships, made explicit in a visualization of a graph of individuals, classes, and object and data properties asserted in the model. If the visualization represents knowledge, it may be considered an "intended knowledge graph."
 
 Progress in providing coverage is tracked with the checklist below (or with an issue tracker link). Every use case is considered "covered" when:
 - the representation exemplifies or extends the Common Core Ontologies' design pattern(s)
@@ -67,7 +67,7 @@ Use Cases
 Competency Questions
 1. Who has rights as next-of-kin for this patient's remains?
 2. What health organizations in a given state/province are not permitted to perform abortive surgical procedures?
-3. What What surgical operations does this power of attorney document permit, and who holds the power of attorney?
+3. What surgical operations does this power of attorney document permit, and who holds the power of attorney?
 4. Given this malpractice claim against this health provider, what obligations does the health provider have with respect to informing their patients?
 5. What healthcare options are available to this 14 year old patient, without a parent's consent?
 
