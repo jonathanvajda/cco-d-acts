@@ -44,41 +44,46 @@ Competency Questions
 ### Commercial
 Use cases
 1. This bank hired an appraiser to assess the market value of that house.
-2. Company1 made an offer for a contract to build house1, and the terms name a sub-contractor, company2, to install the plumbing and septic system in house1.
-3. Customer1 purchased couch1 from business1, but the couch1 is not yet built.
-4. This document is private. Yet organization1 is permitted to access (read) the section1 of the document, and organization2 is permitted to access (read) section1 and share its contents with third parties if relevant to advertising.
-5. This customer has been banned from entering the building 
+2. This company made an offer for a contract to build a house, and the terms name that company as a sub-contractor to install the plumbing and septic system in the house.
+3. This customer purchased a couch from that business, but the couch is not yet built.
+4. This document is private. Yet this organization is permitted to access (read) the first section of the document, and that organization is permitted to access (read) the first section and share its contents with third parties if relevant to advertising.
+5. This customer has been banned from entering any stores run by the same owner.
  
-### Competency Questions
-Com-CQ1. What contracts exist where this organization is a party?
-Com-CQ2. What rights and obligations are enumerated in this service contract?
-Com-CQ3. What processes performed by business1 are conditions that must be satisfied in order for business2 to have an obligation?
-Com-CQ4. What rights does this employee have with respect to safe labor conditions?
-Com-CQ5. What obligations does business1 have with respect to customer1?
+Competency Questions
+1. What contracts exist where this organization is a party?
+2. What rights and obligations are enumerated in this service contract?
+3. What processes performed by business1 are conditions that must be satisfied in order for business2 to have an obligation?
+4. What rights does this employee have with respect to safe labor conditions?
+5. What obligations does this business have with respect to any customer?
 
-### Biomedical Use Cases and Competency Questions
-Bio-UC1. This specimen is stored in x repository. It is permitted for retreival (to any member of some organization).
-Bio-UC2. This organization is a member of a network of organizations, and certain permissions hold for all members of the organization.
-Bio-UC3. 
+### Biomedical
+Use Cases
+1. This insurance plan provides coverage for that tier 5 medication.
+2. This organization is a member of a network of organizations, and certain permissions hold for all members of the organization with respect to sharing anonymized data.
+3. This genome research organization has an obligation to report incidental findings to persons who have predispositions to life-threatening diseases and disorders.
+4. This nation prohibits biological research that produces or uses embryonic stem cells.
+5. This person receives a discount for this line of pharmaceutical products and preference on that organ transplant waitlist.
 
-Bio-CQ1. What health organizations in a given state/province are not permitted to perform abortive surgical procedures?
-Bio-CQ2. What What health organizations in a given state/province are not permitted to perform abortive surgical procedures?
-Bio-CQ3. What surgical operations does this power of attorney document permit, and who holds the power of attorney?
-Bio-CQ4. Who is the next of kin for this patient?
-BIo-CQ5. 
+Competency Questions
+1. Who has rights as next-of-kin for this patient's remains?
+2. What health organizations in a given state/province are not permitted to perform abortive surgical procedures?
+3. What What surgical operations does this power of attorney document permit, and who holds the power of attorney?
+4. Given this malpractice claim against this health provider, what obligations does the health provider have with respect to informing their patients?
+5. What healthcare options are available to this 14 year old patient, without a parent's consent?
 
-### Government Use Cases and Competency Questions
-- Gov-CQ1. What prohibitions are enumerated in this State law?
-- Gov-CQ2. What citizens are eligible for this benefit according to the regulations in this welfare program? 
-- Gov-CQ3. What regulations are in force at this location, given that it is within 3 overlapping jurisdictions?
-- Gov-CQ4. What rights are recognized by this State's laws but not Federal law?
-- Gov-CQ5. What laws come into effect in this jurisdiction when a majority of States ratify the law?
+### Government
+Use Cases
+1. What prohibitions are enumerated in this State law?
+2. What citizens are eligible for this benefit according to the regulations in this welfare program? 
+3. What regulations are in force at this location, given that it is within 3 overlapping jurisdictions?
+4. What rights are recognized by this State's laws but not Federal law?
+5. What laws come into effect in this jurisdiction when a majority of States ratify the law?
 
-- Gov-UC1. This person has waived a right to sue that organization.
-- Gov-UC2. Some government regulation requires all organizations of such-and-such type to anonymize all information about persons of such-and-such status.
-- Gov-UC3. Document1 trumps document2. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
-- Gov-UC4. Document2 trumps document1. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
-- Gov-UC5. Regulation1 permits some person to perform some action, but regulation2 changes (is repealed or replaced?) and the permission no longer holds.
-
+Competency Questions
+1. This person has waived a right to sue that organization.
+2. Some government regulation requires all organizations of such-and-such type to anonymize all information about persons of such-and-such status.
+3. Document1 trumps document2. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
+4. Document2 trumps document1. Document1 permits this type of action in jurisdiction1. Document2 prohibits this type of action in a larger jurisdiction2. Jurisdiction1 is located in jurisdiction2.
+5. Regulation1 permits some person to perform some action, but regulation2 changes (is repealed or replaced?) and the permission no longer holds.
 
 **Thesis: this set of use cases cannot be adequately captured without deontic roles.**
