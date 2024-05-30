@@ -16,7 +16,7 @@ Basic Formal Ontology adopts realism, fallibilism, and adequatism ([Otte, Beverl
 - Join our National Center for Ontology Research Working Group for Documents Acts: [NCor D-Acts WG](https://johnbeve.github.io/NCOR-Test/d-acts-wg/)
 - Current efforts in Use case coverage can be found in the [Use Case Markdown](https://github.com/jonathanvajda/cco-d-acts/blob/main/use-cases.md) in this repository
 - Design pattern documentation (...folder to be created)
-- Running list of terms, staging the lexicon before the ontology file (term list, definitions, axioms to be added, sources identified, etc.) [Google Sheets Lexicon(https://docs.google.com/spreadsheets/d/1tC-z5rIos7nOuSaQSgVJ5ik4RHgvnObt/edit#gid=177562300)]
+- Running list of terms, staging the lexicon before the ontology file (term list, definitions, axioms to be added, sources identified, etc.) [Google Sheets Lexicon](https://docs.google.com/spreadsheets/d/1tC-z5rIos7nOuSaQSgVJ5ik4RHgvnObt/edit#gid=177562300)
 - Open issues: see [issue tracker](https://github.com/jonathanvajda/cco-d-acts/issues) for problems 
 
 ## Resources
