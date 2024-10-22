@@ -36,7 +36,7 @@ dc:license rdf:type owl:AnnotationProperty .
 
 ###  https://github.com/jonathanvajda/cco-d-acts/CCO-D-ACTS_00000017
 dacts:CCO-D-ACTS_00000017	rdf:type		owl:ObjectProperty ;
-                    	rdfs:subPropertyOf	obo:RO_0000057 ;
+                    	rdfs:subPropertyOf	obo:BFO_0000057 ;
                     	rdf:type		owl:FunctionalProperty ,
                      				owl:AsymmetricProperty ,
                      				owl:IrreflexiveProperty ;
@@ -52,7 +52,7 @@ dacts:CCO-D-ACTS_00000017	rdf:type		owl:ObjectProperty ;
 ###  http://purl.obolibrary.org/obo/OBI_0000293
 obo:OBI_0000293		rdf:type		owl:ObjectProperty ;
                 	owl:equivalentProperty	[ owl:inverseOf obo:OBI_0000295 ] ;
-                	rdfs:subPropertyOf	obo:RO_0000057 ;
+                	rdfs:subPropertyOf	obo:BFO_0000057 ;
                 	owl:inverseOf		obo:OBI_0000295 ;
                 	rdfs:domain		cco:IntentionalAct ;
                 	obo:IAO_0000116		"8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how 'has participant' works." ;
@@ -66,7 +66,7 @@ obo:OBI_0000293		rdf:type		owl:ObjectProperty ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000295
 obo:OBI_0000295		rdf:type		owl:ObjectProperty ;
-                	rdfs:subPropertyOf	obo:RO_0000056 ;
+                	rdfs:subPropertyOf	obo:BFO_0000056 ;
                 	rdfs:range		cco:IntentionalAct ;
                 	obo:IAO_0000412		obo:obi.owl ;
                 	skos:definition		"A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of."@en ;
@@ -78,7 +78,7 @@ obo:OBI_0000295		rdf:type		owl:ObjectProperty ;
 ###  http://purl.obolibrary.org/obo/OBI_0000299
 obo:OBI_0000299 	rdf:type		owl:ObjectProperty ;
                 	owl:equivalentProperty	[ owl:inverseOf obo:OBI_0000312 ] ;
-                	rdfs:subPropertyOf	obo:RO_0000057 ;
+                	rdfs:subPropertyOf	obo:BFO_0000057 ;
                 	owl:inverseOf		obo:OBI_0000312 ;
                 	rdfs:domain		cco:IntentionalAct ;
                 	obo:IAO_0000412		obo:obi.owl ;
@@ -91,7 +91,7 @@ obo:OBI_0000299 	rdf:type		owl:ObjectProperty ;
 
 ###  http://purl.obolibrary.org/obo/OBI_0000312
 obo:OBI_0000312 	rdf:type		owl:ObjectProperty ;
-                	rdfs:subPropertyOf	obo:RO_0000056 ;
+                	rdfs:subPropertyOf	obo:BFO_0000056 ;
                 	rdfs:range		cco:IntentionalAct ;
                 	obo:IAO_0000412		obo:obi.owl ;
                 	skos:definition		"A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of."@en ;
@@ -180,7 +180,7 @@ dacts:CCO-D-ACTS_00000007	rdf:type		owl:Class ;
                         rdfs:subClassOf		cco:IntentionalAct ;
                         skos:altLabel	"Authentication"@en ;
                         skos:definition		"an Intentional Act that verifies the legitimacy and truth value of some identity claim, whether that claim was given explicitly or implicitly"@en ;
-                        skos:definition_source	"Modified, originally from Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020023. Originally came with axioms: BFO_0000015 and (realizes some 'credential role') and (RO_0000057 some IAO_0000027) and (RO_0000057 some ( inverse (IAO_0000136) some IAO_0000027))"@en ;
+                        skos:definition_source	"Modified, originally from Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020023. Originally came with axioms: BFO_0000015 and (realizes some 'credential role') and (BFO_0000057 some IAO_0000027) and (BFO_0000057 some ( inverse (IAO_0000136) some IAO_0000027))"@en ;
                         skos:example	"I order a beer and the bartender authenticates my age by looking at my DOB on my driver's license. I sign into my email account, and the system authenticates my permission to read the email by checking the password I enter against my password listed in the database. (Amanda Hicks)"@en ;
                         cco:term_editor		"Jonathan M. Vajda"@en ;
                         rdfs:label		"Act of Authentication"@en .
@@ -255,7 +255,7 @@ dacts:CCO-D-ACTS_00000015	rdf:type	owl:Class ;
                                                                    owl:onProperty obo:BFO_0000054 ;
                                                                    owl:someValuesFrom dacts:CCO-D-ACTS_00000007 ]
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty obo:RO_0000052 ;
+                                                          owl:onProperty obo:BFO_0000197 ;
                                                           owl:someValuesFrom dacts:CCO-D-ACTS_00000016 ]     ) ;
                                                	rdf:type owl:Class ] ;
                         rdfs:subClassOf		obo:BFO_0000023 ;
