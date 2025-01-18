@@ -15,7 +15,7 @@
 <https://github.com/jonathanvajda/cco-d-acts> rdf:type owl:Ontology ;
                                               owl:imports <https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged> ;
                                               dcterms:contributor "Jonathan M. Vajda" ;
-                                              dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                              dcterms:license <https://opensource.org/license/BSD-3-Clause> ;
                                               dcterms:description "The Common Core Ontologies (CCO) Conformant Documents Ontology is a domain ontology that represents the generic domain of entities relevant to the creation, modification, or termination of social arrangements by means of some document. This includes social acts, deontic roles, and directive information and information bearing entities."@en ;
                                               owl:versionIRI <https://github.com/jonathanvajda/2025-01-17/cco-d-acts> ;
                                               owl:versionInfo "2025-01-17"@en ; 
