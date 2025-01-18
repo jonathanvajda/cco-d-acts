@@ -50,7 +50,7 @@ jobs:
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: main
-        run: robot report --catalog "catalog-v001.xml" --input "cco-d-acts.ttl" --fail-on none --output "report.tsv" 
+        run: robot report --catalog "catalog-v001.xml" --input "cco-d-acts.ttl" --output "report.tsv" 
       - name: Upload QC Report
         uses: actions/upload-artifact@v4
         with:
