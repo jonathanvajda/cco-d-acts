@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1729621568314" name="https://github.com/jonathanvajda/cco-d-acts" uri="cco-d-acts.owl"/>
+        <uri id="User Provided Entry" name="https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged" uri="imports/CommonCoreOntologiesMerged.ttl"/>
     </group>
 </catalog>
