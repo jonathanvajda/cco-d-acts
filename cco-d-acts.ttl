@@ -1,6 +1,7 @@
 @prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
 @prefix cco2: <https://www.commoncoreontologies.org/> .
 @prefix dacts: <https://github.com/jonathanvajda/cco-d-acts/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -20,7 +21,8 @@
                                               owl:versionInfo "2025-01-17"@en ; 
                                               rdfs:comment "CCO-D-Acts is designed to fill a gap in representation of social, legal, normative, and deontic entities for ontologies that rely on the Common Core Ontologies (CCO) suite (https://github.com/CommonCoreOntology/CommonCoreOntologies). Within the Basic Formal Ontology (BFO) ecosystem, the Document Acts (D-Acts) ontology (https://github.com/d-acts/d-acts) is an extension of the OBO Foundry Information Artifact Ontology (IAO). This ontology proposes to transpose that OBO ontology into a CCO equivalent."@en ,
                                                            "The most recent version of this file is always hosted on GitHub https://github.com/jonathanvajda/cco-d-acts"@en ;
-                                              rdfs:label "CCO-Conformant Document Acts Ontology" .
+                                              rdfs:label "CCO-Conformant Document Acts Ontology"@en ;
+                                              dc:title "CCO-Conformant Document Acts Ontology"@en .
 
 #################################################################
 #    Annotation properties
