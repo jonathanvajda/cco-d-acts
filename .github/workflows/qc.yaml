@@ -29,4 +29,4 @@ jobs:
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: main
-        run: test IMP=false PAT=false
+        run: make test # IMP=false PAT=false
