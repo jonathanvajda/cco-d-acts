@@ -1,0 +1,33 @@
+name: Run Robot Reasoner
+
+on:
+  push:
+    branches:
+      - main  # Trigger the pipeline on pushes to the main branch
+
+jobs:
+  reason-ontology:
+    container:
+      image: obolibrary/robot:latest  # Use the ROBOT Docker image directly
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4  # Download repository files into the container
+
+      - name: Run ROBOT Reasoning
+        run: |
+          robot reason \
+            --catalog "catalog-v001.xml" \
+            --input "cco-d-acts.ttl" \
+            --output "inferred-cco-d-acts.ttl"
+
+      - name: Save Output
+        run: |
+          mkdir -p output
+          mv inferred-cco-d-acts.ttl output/
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: inferred-ontology
+          path: output/inferred-cco-d-acts.ttl
