@@ -29,7 +29,7 @@ jobs:
       - name: Run ontology DL profile validation
         env:
           DEFAULT_BRANCH: main
-        run: robot validate-profile --profile DL --catalog "catalog-v001.xml"  --input "cco-d-acts.ttl" --output "cco-d-acts-validation.txt"
+        run: robot validate-profile --profile Full --catalog "catalog-v001.xml"  --input "cco-d-acts.ttl" --output "cco-d-acts-validation.txt"
 
   ontology_qc:
     # The type of runner that the job will run on
