@@ -44,6 +44,3 @@ Basic Formal Ontology adopts realism, fallibilism, and adequatism ([Otte, Beverl
 - Common Core Ontologies (CCO) suite [GitHub repository](https://github.com/CommonCoreOntology/CommonCoreOntologies)
   - CUBRC et al.
 - "Common Core Conformant Definitions for an Ontology of Commercial Exchange" ([Eric C. Merrell, Olivier Massin & Barry Smith](https://philarchive.org/rec/MERCCC)
-
-## Licensing
-https://creativecommons.org/licenses/by/4.0/
