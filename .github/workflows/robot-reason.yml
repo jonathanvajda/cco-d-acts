@@ -1,4 +1,4 @@
-name: Run Robot Reasoner
+name: Validate Logic Profile
 
 on:
   push:
@@ -32,3 +32,49 @@ jobs:
         with:
           name: inferred-ontology
           path: output/inferred-cco-d-acts.ttl
+  ontology-validate-dl:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: obolibrary/robot:latest
+    outputs:
+      validation-status: ${{ steps.validate.outcome }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run ontology DL profile validation
+        id: validate-dl
+        continue-on-error: true # Allow this step to continue even if it fails.
+        env:
+          DEFAULT_BRANCH: main
+        run: robot validate-profile --profile DL --catalog "catalog-v001.xml" --input "cco-d-acts.ttl" --output "cco-d-acts-dl-validation.txt"
+
+      - name: Upload Validation Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results
+          path: cco-d-acts-dl-validation.txt
+
+  ontology-validate-full:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: ontology-validate-dl
+    if: needs.ontology-validate-dl.outputs.validation-status == 'failure'  # Run only if the previous job failed
+    container: obolibrary/robot:latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Run ontology Full profile validation
+        env:
+          DEFAULT_BRANCH: main
+        run: robot validate-profile --profile Full --catalog "catalog-v001.xml" --input "cco-d-acts.ttl" --output "cco-d-acts-full-validation.txt"
+
+      - name: Upload Validation Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results
+          path: cco-d-acts-full-validation.txt
