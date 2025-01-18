@@ -31,7 +31,7 @@ jobs:
           DEFAULT_BRANCH: main
         run: robot validate-profile --profile DL --catalog "catalog-v001.xml"  --input "cco-d-acts.ttl" --output "cco-d-acts-validation.txt"
 
-    ontology_qc:
+  ontology_qc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: obolibrary/robot:latest
