@@ -7,6 +7,7 @@ on:
 
 jobs:
   reason-ontology:
+    runs-on: ubuntu-latest  # Required base runner
     container:
       image: obolibrary/robot:latest  # Use the ROBOT Docker image directly
 
