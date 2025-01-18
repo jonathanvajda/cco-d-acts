@@ -29,7 +29,13 @@ jobs:
       - name: Run ontology DL profile validation
         env:
           DEFAULT_BRANCH: main
-        run: robot validate-profile --profile Full --catalog "catalog-v001.xml"  --input "cco-d-acts.ttl" --output "cco-d-acts-validation.txt"
+        run: robot validate-profile --profile Full --catalog "catalog-v001.xml" --input "cco-d-acts.ttl" --output "cco-d-acts-validation.txt"
+
+      - name: Upload Validation Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results
+          path: cco-d-acts-validation.txt
 
   ontology_qc:
     # The type of runner that the job will run on
@@ -45,3 +51,8 @@ jobs:
         env:
           DEFAULT_BRANCH: main
         run: robot report --catalog "catalog-v001.xml" --input "cco-d-acts.ttl" --output "report.tsv"
+      - name: Upload QC Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: qc-report
+          path: report.tsv
