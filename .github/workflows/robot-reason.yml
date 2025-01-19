@@ -20,7 +20,7 @@ jobs:
           robot reason \
             --catalog "catalog-v001.xml" \
             --input "cco-d-acts.ttl" \
-            --output "inferred-cco-d-acts.ttl"
+            --output "inferred-cco-d-acts.ttl" -vvv
 
       - name: Save Output
         run: |
@@ -47,8 +47,11 @@ jobs:
         id: validate-dl  # Assign ID to the step
         continue-on-error: true  # Allow this step to continue even if it fails
         run: |
-          robot validate-profile --profile DL --catalog "catalog-v001.xml" \
-            --input "cco-d-acts.ttl" --output "cco-d-acts-dl-validation.txt"
+          robot validate-profile \
+            --profile DL \
+            --catalog "catalog-v001.xml" \
+            --input "cco-d-acts.ttl" \
+            --output "cco-d-acts-dl-validation.txt" -vvv
 
       - name: Upload Validation Results
         uses: actions/upload-artifact@v4
@@ -69,8 +72,11 @@ jobs:
 
       - name: Run ontology Full profile validation
         run: |
-          robot validate-profile --profile Full --catalog "catalog-v001.xml" \
-            --input "cco-d-acts.ttl" --output "cco-d-acts-full-validation.txt"
+          robot validate-profile \
+            --profile Full \
+            --catalog "catalog-v001.xml" \
+            --input "cco-d-acts.ttl" \
+            --output "cco-d-acts-full-validation.txt" -vvv
 
       - name: Upload Validation Results
         uses: actions/upload-artifact@v4
