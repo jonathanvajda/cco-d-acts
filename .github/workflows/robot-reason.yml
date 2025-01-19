@@ -2,8 +2,7 @@ name: Validate Logic Profile
 
 on:
   push:
-    branches:
-      - main  # Trigger the pipeline on pushes to the main branch
+    branches: [ main , dev ]
 
 jobs:
   reason-ontology:
