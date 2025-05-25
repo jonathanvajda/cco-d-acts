@@ -159,7 +159,7 @@ dacts:ont00000024 rdf:type owl:ObjectProperty ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000025
 dacts:ont00000025 rdf:type owl:ObjectProperty ;
                   owl:inverseOf dacts:ont00000026 ;
-                  rdfs:domain obo:Role ;
+                  rdfs:domain obo:BFO_0000023 ;
                   rdfs:range cco:GroupOfPersons ;
                   obo:has_curation_status "metadata incomplete" ;
                   rdfs:label "has social group context"@en ;
@@ -169,7 +169,7 @@ dacts:ont00000025 rdf:type owl:ObjectProperty ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000026
 dacts:ont00000026 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco:GroupOfPersons ;
-                  rdfs:range obo:Role ;
+                  rdfs:range obo:BFO_0000023 ;
                   obo:has_curation_status "metadata incomplete" ;
                   rdfs:label "is social group context of"@en ;
                   skos:definition "."@en .
@@ -183,24 +183,12 @@ dacts:ont00000026 rdf:type owl:ObjectProperty ;
 obo:Process rdf:type owl:Class .
 
 
-###  http://purl.obolibrary.org/obo/Role
-obo:Role rdf:type owl:Class .
-
-
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/Agent
 cco:Agent rdf:type owl:Class .
 
 
-###  http://www.ontologyrepository.com/CommonCoreOntologies/DeonticAct
-cco:DeonticAct rdf:type owl:Class .
-
-
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/DeonticDocument
-cco:DeonticDocument rdf:type owl:Class .
-
-
-###  http://www.ontologyrepository.com/CommonCoreOntologies/DeonticRole
-cco:DeonticRole rdf:type owl:Class .
+dacts:ont00000001 rdf:type owl:Class .
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/GroupOfPersons
@@ -213,10 +201,6 @@ cco:PlannedAct rdf:type owl:Class .
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/SocialRole
 cco:SocialRole rdf:type owl:Class .
-
-
-###  https://github.com/jonathanvajda/cco-d-acts/DeonticDeclaration
-dacts:DeonticDeclaration rdf:type owl:Class .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000001
@@ -468,7 +452,7 @@ dacts:ont00000027 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000028
 dacts:ont00000028 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000018 ;
+                  rdfs:subClassOf obo:BFO_0000023 ;
                   obo:has_curation_status "metadata incomplete" ;
                   rdfs:label "Causal Accountability Role"@en ;
                   skos:definition "a social role that is realized, when it is realized, in some act of..."@en .
@@ -493,64 +477,64 @@ dacts:ont00000030 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000031
 dacts:ont00000031 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Marriage Pronouncing"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000032
 dacts:ont00000032 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Authorizing"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000033
 dacts:ont00000033 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Release Form Document"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000034
 dacts:ont00000034 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:DeonticDeclaration ;
+                  rdfs:subClassOf dacts:ont00000005 ;
                   rdfs:label "Act of Permitting	"@en ;
                   skos:definition "	A deontic declaration that has specified output some Action Permission regulation and some Permission Role the realization of which stands in a permitted-by relation to the regulation.	"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000035
 dacts:ont00000035 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:DeonticDeclaration ;
+                  rdfs:subClassOf dacts:ont00000005 ;
                   rdfs:label "Act of Obligating	"@en ;
                   skos:definition "	A deontic declaration that has specified output some Action Obligation regulation and some Obligation Role the realization of which stands in an obligated-by relation to the regulation.	"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000036
 dacts:ont00000036 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:DeonticDeclaration ;
+                  rdfs:subClassOf dacts:ont00000005 ;
                   rdfs:label "Act of Prohibiting	"@en ;
                   skos:definition "	A deontic declaration that has specified output some Action Prohibition regulation and some Prohibition Role the realization of which stands in a prohibited-by relation to the regulation.	"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000037
 dacts:ont00000037 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Notarizing"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000038
 dacts:ont00000038 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Mortgage Contract Document"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000039
 dacts:ont00000039 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Mortgage Contract Information Content"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000040
 dacts:ont00000040 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:SocialRole ;
+                  rdfs:subClassOf obo:BFO_0000023 ;
                   rdfs:comment "Either use IAO_0020027 (d-acts) OR mint a new IRI (worst cast scenario). Original def: A role in a human social process that is based on a social act and whose bearer exercises exclusive control over a property, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en ;
                   rdfs:label "Owner Entity Role	"@en ;
                   skos:definition "A role that inheres in a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en .
@@ -558,73 +542,73 @@ dacts:ont00000040 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000041
 dacts:ont00000041 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:SocialRole ;
+                  rdfs:subClassOf obo:BFO_0000023 ;
                   rdfs:label "Owned Entity Role"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000042
 dacts:ont00000042 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Ownership"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000043
 dacts:ont00000043 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Advance Directive Declaring"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000044
 dacts:ont00000044 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Advance Directive"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000045
 dacts:ont00000045 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Estate Planning"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000046
 dacts:ont00000046 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticRole ;
+                  rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:label "Heir Role"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000047
 dacts:ont00000047 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticAct ;
+                  rdfs:subClassOf dacts:ont00000019 ;
                   rdfs:label "Act of Asset Inheriting"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000048
 dacts:ont00000048 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticRole ;
+                  rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:label "Will Executor Role"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000049
 dacts:ont00000049 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Will and Testament Content"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000050
 dacts:ont00000050 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Heir Designation Content"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000051
 dacts:ont00000051 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticDocument ;
+                  rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Estate"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000052
 dacts:ont00000052 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticRole ;
+                  rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:comment "https://www.perplexity.ai/search/whats-the-difference-Go4iygh1Q62r.WXfMOAUFg"@en ;
                   rdfs:label "Legal Attorney Role	"@en ;
                   skos:altLabel "Licensed Lawyer Role	"@en ;
@@ -633,7 +617,7 @@ dacts:ont00000052 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000053
 dacts:ont00000053 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticRole ;
+                  rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:comment "Attorney vs lawyer vs other role (consider nuances in who can represent a client in court) -- preparations of a brief, for example, might require an advocate who is distinct	"@en ;
                   rdfs:label "Legal Party Proxy Role"@en ;
                   skos:altLabel "Legal Client Representative Role"@en ;
@@ -643,7 +627,7 @@ dacts:ont00000053 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000054
 dacts:ont00000054 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticRole ;
+                  rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:label "Legal Advisor Role"@en ;
                   skos:definition "deontic role that is realized in communicating legal advice to some person or group of persons"@en ;
                   skos:example "realized in giving client legal advice"@en .
@@ -651,7 +635,7 @@ dacts:ont00000054 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000055
 dacts:ont00000055 rdf:type owl:Class ;
-                  rdfs:subClassOf cco:DeonticRole ;
+                  rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:label "Legal Attorney Role"@en .
 
 
@@ -663,7 +647,7 @@ dacts:ont00000056 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000057
 dacts:ont00000057 rdf:type owl:Class ;
-                  rdfs:subClassOf obo:Role ;
+                  rdfs:subClassOf obo:BFO_0000023 ;
                   rdfs:label "Law-degree Recipient Role"@en .
 
 
