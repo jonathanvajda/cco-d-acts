@@ -599,7 +599,7 @@ dacts:ont00000050 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000051
 dacts:ont00000051 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  rdfs:label "Estate Document"@en .
+                  rdfs:label "Estate"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000052
