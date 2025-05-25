@@ -1,0 +1,51 @@
+IRI	Ontology Element	Label	Alternative Label	Definition	Immediate Parent	Axioms	Example of Usage	Source to Consider	
+18	class	Social Act		a planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents.	cco:PlannedAct				
+19	class	Deontic Act			cco:SocialAct				
+20	class	Speech Act		a social act that changes some social arrangement by means of speech.	cco:SocialAct				
+21	class	Document Act		a social act that changes some social arrangement by means of document.	cco:SocialAct				
+22	object property	is responsible for		x is responsible for y iff....		domain: cco:agent, range: bfo:process			
+23	object property	is causally responsible for		x is causally responsible for y iff x is an Agent, y is a Process, and z is a Process, and x is agent_in z, and z is the cause of y		domain: cco:agent, range: bfo:process			
+24	object property	is normatively accountable for		x is normatively accountable for y iff x is an Agent, y is a Process, and z is a Process, and x is agent_in z, and z is the cause of y		domain: cco:agent, range: bfo:process	parent is a responsible for a child; parent is responsible or a child's actions; manager is responsible for the subordinate's actions		
+25	object property	has social group context				domain: bfo:role, range: cco:'group of persons'			
+26	object property	is social group context of				domain: cco:'group of persons', range: bfo:role			
+27	class	Normative Accountability Role		a deontic role that is realized, when it is realized, in some act of...	deontic role			Adrien Barton? (Sherbrooke) Realizable entities, trigger conditions, role parts, etc. Taxonomy of disposition parthood https://hal.science/hal-02983145/ And https://ceur-ws.org/Vol-2285/ICBO_2018_paper_13.pdf	
+28	class	Causal Accountability Role		a social role that is realized, when it is realized, in some act of...	Social Role				
+29	class	Obligor Role		a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ...	Deontic Role				
+30	class	Obligee Role		a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ...	Deontic Role				
+31	class	Act of Marriage Pronouncing			cco:DeonticAct				
+32	class	Act of Authorizing			Deontic Act				
+33	class	Release Form Document							
+34	class	Act of Permitting		A deontic declaration that has specified output some Action Permission regulation and some Permission Role the realization of which stands in a permitted-by relation to the regulation.	(cco-d-acts) Deontic Declaration				
+35	class	Act of Obligating		A deontic declaration that has specified output some Action Obligation regulation and some Obligation Role the realization of which stands in an obligated-by relation to the regulation.	(cco-d-acts) Deontic Declaration				
+36	class	Act of Prohibiting		A deontic declaration that has specified output some Action Prohibition regulation and some Prohibition Role the realization of which stands in a prohibited-by relation to the regulation.	(cco-d-acts) Deontic Declaration				
+37	class	Act of Notarizing			Deontic Act				
+38	class	Mortgage Contract Document							
+39	class	Mortgage Contract Information Content			Deontic Document				
+40	class	Owner Entity Role		A role that inheres in a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role.	Social Role			Either use IAO_0020027 (d-acts) OR mint a new IRI (worst cast scenario). Original def: A role in a human social process that is based on a social act and whose bearer exercises exclusive control over a property, where this control is permitted by one or more deontic roles, which are parts of the owner role.	
+41	class	Owned Entity Role			Social Role				Emphasize the differences? GDC roles?
+42	class	Act of Ownership			Deontic Act				
+43	class	Act of Advance Directive Declaring			Deontic Act				
+44	class	Advance Directive			Deontic Document				
+45	class	Act of Estate Planning			Deontic Act				
+46	class	Heir Role			Deontic Role				
+47	class	Act of Asset Inheriting			Deontic Act				
+48	class	Will Executor Role			Deontic Role				
+49	class	Will and Testament Content			Deontic Document				
+50	class	Heir Designation Content			Deontic Document				
+51	class	Estate			Deontic Document				
+52	class	Legal Attorney Role	Licensed Lawyer Role		Deontic Role		realized in maintaining confidentiality with respect to some subject matter; realized in negotiating with a potential client whether representation is apt	https://www.perplexity.ai/search/whats-the-difference-Go4iygh1Q62r.WXfMOAUFg	Redundant with attorney?
+53	class	Legal Party Proxy Role	Legal Client Representative Role	deontic role that is ... acting on behalf of some person or group of persons	Deontic Role		realized in speaking to a court official on behalf of some party; realized in maintaining confidentiality with respect to some subject matter; 		Attorney vs lawyer vs other role (consider nuances in who can represent a client in court) -- preparations of a brief, for example, might require an advocate who is distinct
+54	class	Legal Advisor Role		deontic role that is realized in communicating legal advice to some person or group of persons	Deontic Role		realized in giving client legal advice		
+55	class	Legal Attorney Role			Deontic Role				
+56	class	Lawyer License Document							
+57	class	Law-degree Recipient Role			Role				
+58	class	Lawyer Licensing Process							
+59	class	Legal Representation Assignment Process							
+60	class	Legal Representation Declaration Document							
+61	class	Fiduciary Negotiation Process							
+62	class	Employment Contract Negotiation Process							
+63	class	Legal Filing Process							
+64	class	Personal Custodian Role		A role that is realized managing the personal affairs of a person.			This person is acting as a custodian by making legal decisions on behalf of that person.		
+65	class	Legal Guardian Role		A Role that inheres in an Agent by virtue of that Agent's responsibilities to care for or control some Person					
+66	class	Social group?			cco:Group of Persons				
+67	class	Privacy Entitlement Role							
