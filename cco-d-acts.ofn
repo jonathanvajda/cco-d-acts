@@ -1,0 +1,643 @@
+Prefix(:=<https://github.com/jonathanvajda/cco-d-acts#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<https://github.com/jonathanvajda/cco-d-acts>
+<https://github.com/jonathanvajda/2025-05-24/cco-d-acts>
+Import(<https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged>)
+Annotation(<http://purl.org/dc/elements/1.1/title> "CCO-Conformant Document Acts Ontology"@en)
+Annotation(<http://purl.org/dc/terms/contributor> "Jonathan M. Vajda")
+Annotation(<http://purl.org/dc/terms/description> "The Common Core Ontologies (CCO) Conformant Documents Ontology is a domain ontology that represents the generic domain of entities relevant to the creation, modification, or termination of social arrangements by means of some document. This includes social acts, deontic roles, and directive information and information bearing entities."@en)
+Annotation(<http://purl.org/dc/terms/license> <https://opensource.org/license/BSD-3-Clause>)
+Annotation(rdfs:comment "CCO-D-Acts is designed to fill a gap in representation of social, legal, normative, and deontic entities for ontologies that rely on the Common Core Ontologies (CCO) suite (https://github.com/CommonCoreOntology/CommonCoreOntologies). Within the Basic Formal Ontology (BFO) ecosystem, the Document Acts (D-Acts) ontology (https://github.com/d-acts/d-acts) is an extension of the OBO Foundry Information Artifact Ontology (IAO). This ontology proposes to transpose that OBO ontology into a CCO equivalent."@en)
+Annotation(rdfs:comment "The most recent version of this file is always hosted on GitHub https://github.com/jonathanvajda/cco-d-acts"@en)
+Annotation(rdfs:label "CCO-Conformant Document Acts Ontology"@en)
+Annotation(owl:versionInfo "2025-05-24"@en)
+
+Declaration(Class(<http://www.ontologyrepository.com/CommonCoreOntologies/SocialRole>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000001>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000003>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000004>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000005>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000006>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000007>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000008>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000009>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000010>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000011>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000012>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000013>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000014>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000015>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000016>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000018>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000019>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000020>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000021>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000027>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000028>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000029>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000030>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000031>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000032>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000033>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000034>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000035>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000036>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000037>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000038>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000039>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000040>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000041>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000042>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000043>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000044>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000045>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000046>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000047>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000048>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000049>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000050>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000051>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000052>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000053>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000054>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000055>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000056>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000057>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000058>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000059>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000060>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000061>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000062>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000063>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000064>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000065>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000066>))
+Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000067>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000293>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000295>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000299>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000312>))
+Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>))
+Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000022>))
+Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000023>))
+Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000024>))
+Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000025>))
+Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000026>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000116>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000412>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/has_curation_status>))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/title>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/license>))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://purl.obolibrary.org/obo/OBI_0000293> (has specified input)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/OBI_0000293> "8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how 'has participant' works.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/OBI_0000293> <http://purl.obolibrary.org/obo/obi.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0000293> "has specified input"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <http://purl.obolibrary.org/obo/OBI_0000293> "The inverse property of 'is specified input of'"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000293> "PERSON: Alan Ruttenberg"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000293> "PERSON: Bjoern Peters"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000293> "PERSON: Larry Hunter"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000293> "PERSON: Melanie Coutot"@en)
+EquivalentObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000293> ObjectInverseOf(<http://purl.obolibrary.org/obo/OBI_0000295>))
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000293> <http://purl.obolibrary.org/obo/BFO_0000057>)
+InverseObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000293> <http://purl.obolibrary.org/obo/OBI_0000295>)
+ObjectPropertyDomain(<http://purl.obolibrary.org/obo/OBI_0000293> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Object Property: <http://purl.obolibrary.org/obo/OBI_0000295> (is specified input of)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/OBI_0000295> <http://purl.obolibrary.org/obo/obi.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0000295> "is specified input of"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <http://purl.obolibrary.org/obo/OBI_0000295> "A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <http://purl.obolibrary.org/obo/OBI_0000295> "some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) 'is input for' instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000295> "Alan Ruttenberg"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000295> "PERSON:Bjoern Peters"@en)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000295> <http://purl.obolibrary.org/obo/BFO_0000056>)
+ObjectPropertyRange(<http://purl.obolibrary.org/obo/OBI_0000295> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Object Property: <http://purl.obolibrary.org/obo/OBI_0000299> (has specified output)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/OBI_0000299> <http://purl.obolibrary.org/obo/obi.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0000299> "has specified output"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <http://purl.obolibrary.org/obo/OBI_0000299> "The inverse property of 'is specified output of'"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000299> "PERSON: Alan Ruttenberg"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000299> "PERSON: Bjoern Peters"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000299> "PERSON: Larry Hunter"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000299> "PERSON: Melanie Courtot"@en)
+EquivalentObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000299> ObjectInverseOf(<http://purl.obolibrary.org/obo/OBI_0000312>))
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000299> <http://purl.obolibrary.org/obo/BFO_0000057>)
+InverseObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000299> <http://purl.obolibrary.org/obo/OBI_0000312>)
+ObjectPropertyDomain(<http://purl.obolibrary.org/obo/OBI_0000299> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Object Property: <http://purl.obolibrary.org/obo/OBI_0000312> (is specified output of)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/OBI_0000312> <http://purl.obolibrary.org/obo/obi.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0000312> "is specified output of"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <http://purl.obolibrary.org/obo/OBI_0000312> "A relation between a planned process and a continuant participating in that process. The presence of the continuant at the end of the process is explicitly specified in the objective specification which the process realizes the concretization of."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000312> "Alan Ruttenberg"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <http://purl.obolibrary.org/obo/OBI_0000312> "PERSON:Bjoern Peters"@en)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000312> <http://purl.obolibrary.org/obo/BFO_0000056>)
+ObjectPropertyRange(<http://purl.obolibrary.org/obo/OBI_0000312> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Object Property: <https://github.com/jonathanvajda/cco-d-acts/ont00000017> (legally revokes)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000017> "Comment from original curator: It is important to note that this going out of existence of s is complete and unlike the going out of existence for material entities which basically always are transformed into something else. After the declaration nothing is left of the socio-legal generically dependent continuant in question."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000017> "legally revokes"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://github.com/jonathanvajda/cco-d-acts/ont00000017> "socio-legally revokes"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000017> "d socio-legally revokes s, if s participates in d and at the end of d s no longer exists."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000017> "Jonathan M. Vajda"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000017> "Mathias Brochhausen"@en)
+SubObjectPropertyOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <http://purl.obolibrary.org/obo/BFO_0000057>)
+FunctionalObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>)
+AsymmetricObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>)
+IrreflexiveObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>)
+ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <https://github.com/jonathanvajda/cco-d-acts/ont00000006>)
+ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Object Property: <https://github.com/jonathanvajda/cco-d-acts/ont00000022> (is responsible for)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000022> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000022> "is responsible for"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000022> "x is responsible for y iff ..."@en)
+ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000022> <https://www.commoncoreontologies.org/ont00001017>)
+ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000022> <http://purl.obolibrary.org/obo/BFO_0000015>)
+
+# Object Property: <https://github.com/jonathanvajda/cco-d-acts/ont00000023> (is causally responsible for)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000023> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000023> "is causally responsible for"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000023> "x is causally responsible for y iff x is an Agent, y is a Process, and z is a Process, and x is agent_in z, and z is the cause of y"@en)
+ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000023> <https://www.commoncoreontologies.org/ont00001017>)
+ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000023> <http://purl.obolibrary.org/obo/BFO_0000015>)
+
+# Object Property: <https://github.com/jonathanvajda/cco-d-acts/ont00000024> (is normatively accountable for)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "metadata incomplete")
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "this is not importantly different from causal responsibility's definition (draft)"@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "is normatively accountable for"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "x is normatively accountable for y iff x is an Agent, y is a Process, and z is a Process, and x is agent_in z, and z is the cause of y"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "manager is responsible for the subordinate's actions"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "parent is a responsible for a child"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000024> "parent is responsible or a child's actions"@en)
+ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000024> <https://www.commoncoreontologies.org/ont00001017>)
+ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000024> <http://purl.obolibrary.org/obo/BFO_0000015>)
+
+# Object Property: <https://github.com/jonathanvajda/cco-d-acts/ont00000025> (has social group context)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000025> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000025> "has social group context"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000025> "."@en)
+InverseObjectProperties(<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <https://github.com/jonathanvajda/cco-d-acts/ont00000026>)
+ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <http://purl.obolibrary.org/obo/BFO_0000023>)
+ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <https://www.commoncoreontologies.org/ont00000914>)
+
+# Object Property: <https://github.com/jonathanvajda/cco-d-acts/ont00000026> (is social group context of)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000026> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000026> "is social group context of"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000026> "."@en)
+ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000026> <https://www.commoncoreontologies.org/ont00000914>)
+ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000026> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000001> (Document Act Input Document)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "Document Act Input Document"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "A Document that is intended to be the specified input in a Deontic Document Act. It has a Plan Specification as a part that specifies the intended socio-legal entities that are created through the document (objective specification) and the way in which the Deontic Document Act is to be performed (by signing, by stamping, etc.) (action specification)."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "A loan application form that is not yet filled with personal and financial information."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "A marriage license that is intended to be used in the documented solemnization of marital vows."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "An informed consent form that is intended to have a subject's PII data fields filled in."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "Modified, originally from Mathias Brochhausen (D-Acts Ontology), http://purl.obolibrary.org/obo/IAO_0021007"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000001> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000001> <https://www.commoncoreontologies.org/ont00001298>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000003> (Standing Declaration)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "Standing Declaration"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "enactment"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "A social act that postulates a socio-legal fact for a specified group of people or organizations."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "A verbal utterance to obligate oneself to take care of a neighbor's pet animal."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "A written document to permit some person to reside in exchange for a fee."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021102"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000003> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000003> <https://www.commoncoreontologies.org/ont00001327>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000004> (Deontic Role)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "This definition attempts to capture \"A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.\" (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "Deontic Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "A Role that inheres in an Agent and which is externally grounded in the normative expectations of some Group of Agents concerning how that Agent should behave."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "Legal judge role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "Mandatory reporter role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "President role"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "Modified; originally from Mathias Brochhausen & Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021008 ('deontic role')"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000004> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000004> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000005> (Deontic Declaration)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "Deontic Declaration"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "A Social Act that creates, revokes, or modifies a Deontic Role."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "Oath to speak the truth on the witness stand in a court of law"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "Permission for a surgeon to perform a hysterectomy"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "Pronouncement of knighthood"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021009 . Equivalent to some Social Act that either 'legally revokes' some 'deontic role' OR 'has_specified_output' some 'deontic role'"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000005> "Jonathan M. Vajda"@en)
+EquivalentClasses(<https://github.com/jonathanvajda/cco-d-acts/ont00000005> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00001327> ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/OBI_0000299> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>) ObjectSomeValuesFrom(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>))))
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000005> <https://www.commoncoreontologies.org/ont00001327>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000006> (Deontic Document Act)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "Deontic Document Act"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "A Deontic Declaration that creates, revokes, or modifies a Deontic Role by legitimately manipulating (signing, stamping, publishing) a Document"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "Attestation of degree conferral by means of a diploma"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "Issuance of a citation that an individual has violated a legal regulation"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "my filling in an immigration form, a judge's signing and stamping a court order (Mathias Brochhausen)"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021001 .Their class is a defined class, equivalent to some Deontic Declaration that 'has_specified_input' some 'document act input document' AND 'has_specified_output' some 'document'"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000006> "Jonathan M. Vajda"@en)
+EquivalentClasses(<https://github.com/jonathanvajda/cco-d-acts/ont00000006> ObjectIntersectionOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000005> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/OBI_0000293> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/OBI_0000299> <https://www.commoncoreontologies.org/ont00001298>)))
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000006> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000007> (Act of Authentication)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000007> "Act of Authentication"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://github.com/jonathanvajda/cco-d-acts/ont00000007> "Authentication"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000007> "An Intentional Act that verifies the legitimacy and truth value of some identity claim, whether that claim was given explicitly or implicitly"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000007> "I order a beer and the bartender authenticates my age by looking at my DOB on my driver's license. I sign into my email account, and the system authenticates my permission to read the email by checking the password I enter against my password listed in the database. (Amanda Hicks)"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000007> "Modified, originally from Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020023. Originally came with axioms: BFO_0000015 and (realizes some 'credential role') and (BFO_0000057 some IAO_0000027) and (BFO_0000057 some ( inverse (IAO_0000136) some IAO_0000027))"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000007> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000007> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000008> (Claimant Role)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000008> "Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000008> "Claimant Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000008> "A Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Duty Holder Role borne by Agent B, and that specifies B performaing or abstaining from some Act C, or providing or surrendering some Continuant D to A."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000008> "Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021013 which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000008> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000008> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000009> (Duty Holder Role)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000009> "Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000009> "Duty Holder Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000009> "A Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Claimant Role borne by Agent B, and that specifies A performing or abstaining from some Act C, or providing or surrendering some Continuant D to B."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000009> "Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021016 ('duty holder role') which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000009> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000009> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000010> (Deontic Power Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "Deontic Power Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "A Deontic Role that, if realized, is realized by its bearer's creating, revoking, or modifying some Deontic Role."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "Employer role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "Governor role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "Legal judge role"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "Modified, originally from Mathias Brochhausen & J. Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021023 ('power role')"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000010> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000010> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000011> (Privilege Holder Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000011> "Privilege Holder Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000011> "A Deontic Role that inheres in an Agent A, that specifies that no Agent B bears a Claimant Role against A performing Act C."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000011> "Modified; originally from Mathias Brochhausen and J. Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021019 which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000011> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000011> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000012> (Document Act Performer Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000012> "Document Act Performer Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000012> "A Role inhering in an Agent (either a human, an organization, or an aggregate of either) that is realized by the bearer being an agent (initiating participant) in a Document Act."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000012> "a judge's role of signing a court order"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000012> "Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021031"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000012> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000012> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000013> (Document Act Template Creator Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000013> "Document Act Template Creator Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000013> "A Role that inheres in an Agent (a human, organization, or aggregate of these) that is realized in preparing a Document that is the specified input to a Document Act and is the Input Document of a Document Act."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000013> "The role of the U.S. Citizenship and Immigration Service realized by the creation of an immigration form that is being filled in, the role of a national professional association realized by the creation of a clinical guideline that is to be certified"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000013> "Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021021"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000013> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000013> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000014> (Deontic Declaration Performer Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000014> "Deontic Declaration Performer Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000014> "A Role inhering in an Agent or Aggregate of Agents that is realized by the bearer being the active participant (agent in) a Deontic Declaration."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000014> "Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021022 . Originally a subclass of BFO_0000023 ('role'), but this is clearly a subclass of deontic role."@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000014> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000014> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000015> (Credential Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000015> "Credential Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000015> "A Role that inheres in an Identification Artifact and is realized by some Act of Authentication process."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000015> "A passport's role for an act of authentication for boarding an international flight"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000015> "A server's role in an authentication into an online banking system"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000015> "Modified; originally by Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020024. See the notes on 'Identification Artifact', which clarifies why 'Identity Document' is significantly corrected and why 'documented identity' is obviated. Original definition 'A role that inheres in a concretization of an identity document and is realized by an authentication process.' Equivalent class is adjusted, since 'identity document' is not an ICE but rather artifact IBE. Originally: to BFO_0000023[role] and (RO_0000054[realized in] some authentication) and (RO_0000052[characteristic of/inheres in] some (RO_0000053[characterized by/bearer of] some (RO_0000059[concretizes] some 'identity document')))"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000015> "Jonathan M. Vajda"@en)
+EquivalentClasses(<https://github.com/jonathanvajda/cco-d-acts/ont00000015> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000023> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> <https://github.com/jonathanvajda/cco-d-acts/ont00000007>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000197> <https://github.com/jonathanvajda/cco-d-acts/ont00000016>)))
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000015> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000016> (Identification Artifact)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "Identification Artifact"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "Identity Document"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "An Information Bearing Artifact that is the bearer of some Designative Information Content Entity and is the bearer of some Credential Role."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "A bank statement"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "A passport"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001754> <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "Modified significantly. Originally by Amanda Hicks (D-Acts; http://purl.obolibrary.org/obo/IAO_0020021) as 'identity document', which was a subclass of 'document', which is a Information Content Entity rather than an information bearing artifact. This is a critical difference. Moreover, the associated class having to do with 'documented identity' (another ICE) is obviated by CCO's Designative Information Content Entity. Original definition: \"A document that denotes some identity and is concretized by the bearer of some credential role.\" It was a defined class, equivalent to: IAO_0000310 and (IAO_0000136 some 'documented identity') and (RO_0000058 some (BFO_0000020 and (RO_0000052 some (RO_0000053 some 'credential role')))) and (RO_0000058 only (BFO_0000020 and (RO_0000052 some (RO_0000053 some 'credential role'))))"@en)
+AnnotationAssertion(<https://www.commoncoreontologies.org/ont00001762> <https://github.com/jonathanvajda/cco-d-acts/ont00000016> "Jonathan M. Vajda"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000016> <https://www.commoncoreontologies.org/ont00000798>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000018> (Social Act)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000018> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000018> "Social Act"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000018> "a planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000018> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000019> (Deontic Act)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000019> "uncurated")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000019> "Deontic Act"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000019> "."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000019> <https://github.com/jonathanvajda/cco-d-acts/ont00000018>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000020> (Speech Act)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000020> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000020> "Speech Act"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000020> "A social act that changes some social arrangement by means of speech."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000020> <https://github.com/jonathanvajda/cco-d-acts/ont00000018>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000021> (Document Act)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000021> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000021> "Document Act"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000021> "A social act that changes some social arrangement by means of document."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000021> <https://github.com/jonathanvajda/cco-d-acts/ont00000018>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000027> (Normative Accountability Role)
+
+AnnotationAssertion(<http://purl.org/dc/terms/bibliographicCitation> <https://github.com/jonathanvajda/cco-d-acts/ont00000027> "Taxonomy of disposition parthood https://hal.science/hal-02983145/"@en)
+AnnotationAssertion(<http://purl.org/dc/terms/bibliographicCitation> <https://github.com/jonathanvajda/cco-d-acts/ont00000027> "https://ceur-ws.org/Vol-2285/ICBO_2018_paper_13.pdf"@en)
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000027> "Adrien Barton? (Sherbrooke) Realizable entities, trigger conditions, role parts, etc."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000027> "Normative Accountability Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000027> "a deontic role that is realized, when it is realized, in some act of..."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000027> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000028> (Causal Accountability Role)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000028> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000028> "Causal Accountability Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000028> "a social role that is realized, when it is realized, in some act of..."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000028> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000029> (Obligor Role)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000029> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000029> "Obligor Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000029> "a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ..."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000029> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000030> (Obligee Role)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000030> "metadata incomplete")
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000030> "definition doesn't differ from obligor role much (draft)"@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000030> "Obligee Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000030> "a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ..."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000030> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000031> (Act of Marriage Pronouncing)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000031> "Act of Marriage Pronouncing"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000031> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000032> (Act of Authorizing)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000032> "Act of Authorizing"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000032> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000033> (Release Form Document)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000033> "Release Form Document"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000033> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000034> (Act of Permitting	)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000034> "Act of Permitting	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000034> "	A deontic declaration that has specified output some Action Permission regulation and some Permission Role the realization of which stands in a permitted-by relation to the regulation.	"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000034> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000035> (Act of Obligating	)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000035> "Act of Obligating	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000035> "	A deontic declaration that has specified output some Action Obligation regulation and some Obligation Role the realization of which stands in an obligated-by relation to the regulation.	"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000035> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000036> (Act of Prohibiting	)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000036> "Act of Prohibiting	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000036> "	A deontic declaration that has specified output some Action Prohibition regulation and some Prohibition Role the realization of which stands in a prohibited-by relation to the regulation.	"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000036> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000037> (Act of Notarizing)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000037> "Act of Notarizing"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000037> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000038> (Mortgage Contract Document)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000038> "Mortgage Contract Document"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000038> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000039> (Mortgage Contract Information Content)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000039> "Mortgage Contract Information Content"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000039> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000040> (Owner Entity Role	)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000040> "Either use IAO_0020027 (d-acts) OR mint a new IRI (worst cast scenario). Original def: A role in a human social process that is based on a social act and whose bearer exercises exclusive control over a property, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000040> "Owner Entity Role	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000040> "A role that inheres in a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000040> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000041> (Owned Entity Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000041> "Owned Entity Role"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000041> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000042> (Act of Ownership)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000042> "Act of Ownership"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000042> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000043> (Act of Advance Directive Declaring)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000043> "Act of Advance Directive Declaring"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000043> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000044> (Advance Directive)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000044> "Advance Directive"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000044> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000045> (Act of Estate Planning)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000045> "Act of Estate Planning"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000045> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000046> (Heir Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000046> "Heir Role"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000046> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000047> (Act of Asset Inheriting)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000047> "Act of Asset Inheriting"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000047> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000048> (Will Executor Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000048> "Will Executor Role"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000048> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000049> (Will and Testament Content)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000049> "Will and Testament Content"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000049> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000050> (Heir Designation Content)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000050> "Heir Designation Content"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000050> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000051> (Estate Document)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000051> "Estate Document"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000051> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000052> (Legal Attorney Role	)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000052> "https://www.perplexity.ai/search/whats-the-difference-Go4iygh1Q62r.WXfMOAUFg"@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000052> "Legal Attorney Role	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://github.com/jonathanvajda/cco-d-acts/ont00000052> "Licensed Lawyer Role	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000052> "realized in maintaining confidentiality with respect to some subject matter; realized in negotiating with a potential client whether representation is apt"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000052> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000053> (Legal Party Proxy Role)
+
+AnnotationAssertion(rdfs:comment <https://github.com/jonathanvajda/cco-d-acts/ont00000053> "Attorney vs lawyer vs other role (consider nuances in who can represent a client in court) -- preparations of a brief, for example, might require an advocate who is distinct	"@en)
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000053> "Legal Party Proxy Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#altLabel> <https://github.com/jonathanvajda/cco-d-acts/ont00000053> "Legal Client Representative Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000053> "deontic role that is ... acting on behalf of some person or group of persons	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000053> "realized in speaking to a court official on behalf of some party; realized in maintaining confidentiality with respect to some subject matter"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000053> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000054> (Legal Advisor Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000054> "Legal Advisor Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000054> "deontic role that is realized in communicating legal advice to some person or group of persons"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000054> "realized in giving client legal advice"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000054> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000055> (Legal Attorney Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000055> "Legal Attorney Role"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000055> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000056> (Lawyer License Document)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000056> "uncurated")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000056> "Lawyer License Document"@en)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000057> (Law-degree Recipient Role)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000057> "Law-degree Recipient Role"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000057> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000058> (Lawyer Licensing Process)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000058> "uncurated")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000058> "Lawyer Licensing Process"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000058> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000059> (Legal Representation Assignment Process)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000059> "uncurated")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000059> "Legal Representation Assignment Process"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000059> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000060> (Legal Representation Declaration Document)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000060> "uncurated")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000060> "Legal Representation Declaration Document"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000060> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000061> (Fiduciary Negotiation Process)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000061> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000061> "Fiduciary Negotiation Process"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000061> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000062> (Employment Contract Negotiation Process)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000062> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000062> "Employment Contract Negotiation Process"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000062> <https://www.commoncoreontologies.org/ont00000228>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000063> (Legal Filing Process)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000063> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000063> "Legal Filing Process"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000063> <https://www.commoncoreontologies.org/ont00001314>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000064> (Personal Custodian Role	)
+
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000064> "Personal Custodian Role	"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000064> "A role that is realized managing the personal affairs of a person."@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#example> <https://github.com/jonathanvajda/cco-d-acts/ont00000064> "This person is acting as a custodian by making legal decisions on behalf of that person."@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000064> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000065> (Legal Guardian Role)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000065> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000065> "Legal Guardian Role"@en)
+AnnotationAssertion(<http://www.w3.org/2004/02/skos/core#definition> <https://github.com/jonathanvajda/cco-d-acts/ont00000065> "A Role that inheres in an Agent by virtue of that Agent's responsibilities to care for or control some Person"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000065> <http://purl.obolibrary.org/obo/BFO_0000023>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000066> (Social group)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000066> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000066> "Social group"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000066> <https://www.commoncoreontologies.org/ont00000914>)
+
+# Class: <https://github.com/jonathanvajda/cco-d-acts/ont00000067> (Privacy Entitlement Role)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/has_curation_status> <https://github.com/jonathanvajda/cco-d-acts/ont00000067> "metadata incomplete")
+AnnotationAssertion(rdfs:label <https://github.com/jonathanvajda/cco-d-acts/ont00000067> "Privacy Entitlement Role"@en)
+SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000067> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+
+
+)
