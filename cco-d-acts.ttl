@@ -725,7 +725,8 @@ dacts:ont00000065 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
                   rdfs:label "Legal Guardian Role"@en ;
                   skos:definition "A Role that inheres in an Agent by virtue of that Agent's responsibilities to care for or control some Person"@en ;
-                  obo:IAO_0000114 obo:IAO_0000123 .
+                  obo:IAO_0000114 obo:IAO_0000123 ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000066
