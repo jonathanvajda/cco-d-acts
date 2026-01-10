@@ -37,8 +37,8 @@ obo:IAO_0000116 rdf:type owl:AnnotationProperty .
 obo:IAO_0000412 rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.obolibrary.org/obo/has_curation_status
-obo:has_curation_status rdf:type owl:AnnotationProperty .
+###  http://purl.obolibrary.org/obo/IAO_0000114
+obo:IAO_0000114 rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/title
@@ -129,7 +129,7 @@ dacts:ont00000017 rdf:type owl:ObjectProperty ;
 dacts:ont00000022 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000015 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "is responsible for"@en ;
                   skos:definition "x is responsible for y iff ..."@en .
 
@@ -138,7 +138,7 @@ dacts:ont00000022 rdf:type owl:ObjectProperty ;
 dacts:ont00000023 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000015 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "is causally responsible for"@en ;
                   skos:definition "x is causally responsible for y iff x is an Agent, y is a Process, and z is a Process, and x is agent_in z, and z is the cause of y"@en .
 
@@ -147,7 +147,7 @@ dacts:ont00000023 rdf:type owl:ObjectProperty ;
 dacts:ont00000024 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000015 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:comment "this is not importantly different from causal responsibility's definition (draft)"@en ;
                   rdfs:label "is normatively accountable for"@en ;
                   skos:definition "x is normatively accountable for y iff x is an Agent, y is a Process, and z is a Process, and x is agent_in z, and z is the cause of y"@en ;
@@ -161,7 +161,7 @@ dacts:ont00000025 rdf:type owl:ObjectProperty ;
                   owl:inverseOf dacts:ont00000026 ;
                   rdfs:domain obo:BFO_0000023 ;
                   rdfs:range cco2:ont00000914 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "has social group context"@en ;
                   skos:definition "."@en .
 
@@ -170,7 +170,7 @@ dacts:ont00000025 rdf:type owl:ObjectProperty ;
 dacts:ont00000026 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00000914 ;
                   rdfs:range obo:BFO_0000023 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "is social group context of"@en ;
                   skos:definition "."@en .
 
@@ -391,7 +391,7 @@ dacts:ont00000016 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000018
 dacts:ont00000018 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Social Act"@en ;
                   skos:definition "a planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents."@en .
 
@@ -399,7 +399,7 @@ dacts:ont00000018 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000019
 dacts:ont00000019 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:has_curation_status "uncurated" ;
+                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:label "Deontic Act"@en ;
                   skos:definition "."@en .
 
@@ -407,7 +407,7 @@ dacts:ont00000019 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000020
 dacts:ont00000020 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Speech Act"@en ;
                   skos:definition "A social act that changes some social arrangement by means of speech."@en .
 
@@ -415,7 +415,7 @@ dacts:ont00000020 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000021
 dacts:ont00000021 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Document Act"@en ;
                   skos:definition "A social act that changes some social arrangement by means of document."@en .
 
@@ -433,7 +433,7 @@ dacts:ont00000027 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000028
 dacts:ont00000028 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Causal Accountability Role"@en ;
                   skos:definition "a social role that is realized, when it is realized, in some act of..."@en .
 
@@ -441,7 +441,7 @@ dacts:ont00000028 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000029
 dacts:ont00000029 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Obligor Role"@en ;
                   skos:definition "a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ..."@en .
 
@@ -449,7 +449,7 @@ dacts:ont00000029 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000030
 dacts:ont00000030 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:comment "definition doesn't differ from obligor role much (draft)"@en ;
                   rdfs:label "Obligee Role"@en ;
                   skos:definition "a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ..."@en .
@@ -621,7 +621,7 @@ dacts:ont00000055 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000056
 dacts:ont00000056 rdf:type owl:Class ;
-                  obo:has_curation_status "uncurated" ;
+                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:label "Lawyer License Document"@en .
 
 
@@ -634,20 +634,20 @@ dacts:ont00000057 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000058
 dacts:ont00000058 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:has_curation_status "uncurated" ;
+                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:label "Lawyer Licensing Process"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000059
 dacts:ont00000059 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:has_curation_status "uncurated" ;
+                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:label "Legal Representation Assignment Process"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000060
 dacts:ont00000060 rdf:type owl:Class ;
-                  obo:has_curation_status "uncurated" ;
+                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:subClassOf dacts:ont00000001 ;
                   rdfs:label "Legal Representation Declaration Document"@en .
 
@@ -655,21 +655,21 @@ dacts:ont00000060 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000061
 dacts:ont00000061 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Fiduciary Negotiation Process"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000062
 dacts:ont00000062 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Employment Contract Negotiation Process"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000063
 dacts:ont00000063 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00001314 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Legal Filing Process"@en .
 
 
@@ -686,21 +686,28 @@ dacts:ont00000065 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
                   rdfs:label "Legal Guardian Role"@en ;
                   skos:definition "A Role that inheres in an Agent by virtue of that Agent's responsibilities to care for or control some Person"@en ;
-                  obo:has_curation_status "metadata incomplete" .
+                  obo:IAO_0000114 obo:IAO_0000123 .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000066
 dacts:ont00000066 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000914 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Social group"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000067
 dacts:ont00000067 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:has_curation_status "metadata incomplete" ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Privacy Entitlement Role"@en .
 
 
 ###  Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi
+
+  UNCURATED: 'http://purl.obolibrary.org/obo/IAO_0000124',
+  METADATA_INCOMPLETE: 'http://purl.obolibrary.org/obo/IAO_0000123',
+  METADATA_COMPLETE: 'http://purl.obolibrary.org/obo/IAO_0000120',
+  PENDING_FINAL_VETTING: 'http://purl.obolibrary.org/obo/IAO_0000125',
+  REQUIRES_DISCUSSION: 'http://example.org/curation-status/requires-discussion',
+  READY_FOR_RELEASE: 'http://example.org/curation-status/ready-for-release'
