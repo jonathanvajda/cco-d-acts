@@ -31,7 +31,8 @@
 
 <https://github.com/jonathanvajda/cco-d-acts/ont00000068> a owl:ObjectProperty;
     owl:inverseOf dacts:ont00000069 ;
-    rdfs:domain cco2:ont00000228
+    rdfs:domain cco2:ont00000228 ;
+    rdfs:range obo:BFO_0000002 ;
     rdfs:label "has specified input";
     skos:definition "The inverse property of 'is specified input of'"@en ;
     cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
@@ -44,6 +45,9 @@
 
 <https://github.com/jonathanvajda/cco-d-acts/ont00000069> a owl:ObjectProperty;
     rdfs:label "is specified input of";
+    rdfs:range obo:BFO_0000002 ;
+        rdfs:domain cco2:ont00000228 ;
+    
     skos:definition "A relation between a planned process and a continuant that participates in that planned process, is specified in the plan specification that prescribes the planned process, and is not created during the planned process."@en ;
     cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
                                 "PERSON: Alan Ruttenberg"@en ,
@@ -55,6 +59,8 @@
 
 <https://github.com/jonathanvajda/cco-d-acts/ont00000070> a owl:ObjectProperty;
     owl:inverseOf dacts:ont00000071 ;
+    rdfs:domain cco2:ont00000228 ;
+    rdfs:range obo:BFO_0000002 ;
     rdfs:label "has specified output"@en ;
     skos:definition "The inverse property of 'is specified output of'"@en ;
     rdfs:subPropertyOf cco2:ont00001986;
@@ -67,6 +73,8 @@
 
 <https://github.com/jonathanvajda/cco-d-acts/ont00000071> a owl:ObjectProperty;
                   rdfs:label "is specified output of"@en ;
+                  rdfs:range obo:BFO_0000002 ;
+        rdfs:domain cco2:ont00000228 ;
                   skos:definition "A relation between a planned process and a continuant that participates in that planned process, such that the continuant is specified in the plan specification that prescribes the planned process, and the continuant is specified to be be present at the conclusion of the process."@en ;
                   rdfs:subPropertyOf cco2:ont00001816;
                   cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
