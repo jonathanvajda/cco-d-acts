@@ -14,7 +14,7 @@
 @base <https://github.com/jonathanvajda/cco-d-acts> .
 
 <https://github.com/jonathanvajda/cco-d-acts> rdf:type owl:Ontology ;
-                                               owl:versionIRI <https://github.com/jonathanvajda/2025-05-24/cco-d-acts> ;
+                                               owl:versionIRI <https://github.com/jonathanvajda/2026-05-13/cco-d-acts> ;
                                                owl:imports <https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged> ;
                                                dc:title "CCO-Conformant Document Acts Ontology"@en ;
                                                dcterms:contributor "Jonathan M. Vajda" ;
@@ -23,23 +23,7 @@
                                                rdfs:comment "CCO-D-Acts is designed to fill a gap in representation of social, legal, normative, and deontic entities for ontologies that rely on the Common Core Ontologies (CCO) suite (https://github.com/CommonCoreOntology/CommonCoreOntologies). Within the Basic Formal Ontology (BFO) ecosystem, the Document Acts (D-Acts) ontology (https://github.com/d-acts/d-acts) is an extension of the OBO Foundry Information Artifact Ontology (IAO). This ontology proposes to transpose that OBO ontology into a CCO equivalent."@en ,
                                                             "The most recent version of this file is always hosted on GitHub https://github.com/jonathanvajda/cco-d-acts"@en ;
                                                rdfs:label "CCO-Conformant Document Acts Ontology"@en ;
-                                               owl:versionInfo "2025-05-24"@en .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.obolibrary.org/obo/IAO_0000114
-obo:IAO_0000114 rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000232
-obo:IAO_0000232 rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/elements/1.1/title
-dc:title rdf:type owl:AnnotationProperty .
-
+                                               owl:versionInfo "2026-05-13"@en .
 
 #################################################################
 #    Object Properties
@@ -69,35 +53,37 @@ dacts:ont00000017 rdf:type owl:ObjectProperty ;
 dacts:ont00000022 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000001 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
-                  rdfs:label "is responsible for"@en ;
+                  rdfs:label "is normatively responsible for"@en ;
                   skos:definition "x is normatively responsible for y, iff x is an Agent and y is an Entity, such that x bears some role with respect to y, that is realized in some act that regulates, oversees, or manages entities with respect to y, and x may be held normatively accountable for the outcomes of that regulation, oversight or management."@en ;
                   skos:example "That organization is responsible for that service area"@en ,
                                "This manager is responsible for the facility's condition and upkeep"@en ,
                                "This person is parent is responsible for that Act of Vehicle Use"@en ;
                   skos:scopeNote "Use this broader relation when the intended sense is supervisory or practical responsibility in general; use more specific accountability relations when causal or normative answerability is intended."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000023
 dacts:ont00000023 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000015 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
                   rdfs:label "is causally responsible for"@en ;
                   skos:definition "x is causally responsible for y iff x is an agent and y is a process, x is an agent in the process z, such that z is the cause of y."@en ;
                   skos:example "A driver is causally responsible for the collision process that followed the driver's negligent turn."@en ;
                   skos:scopeNote "Use this relation for causal contribution to a process regardless of whether the contribution is blameworthy, lawful, or normatively excused."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000024
 dacts:ont00000024 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000015 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:label "is normatively accountable for event"@en ;
                   skos:definition "x is normatively accountable for event y iff x is normatively responsible for y, and y is a process (or event)."@en ;
@@ -105,7 +91,8 @@ dacts:ont00000024 rdf:type owl:ObjectProperty ;
                                "parent is a responsible for a child"@en ,
                                "parent is responsible or a child's actions"@en ;
                   skos:scopeNote "Use this relation only where some norm makes the agent answerable for the event; mere causal involvement without answerability belongs under causal responsibility instead."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000025
@@ -113,26 +100,28 @@ dacts:ont00000025 rdf:type owl:ObjectProperty ;
                   owl:inverseOf dacts:ont00000026 ;
                   rdfs:domain obo:BFO_0000023 ;
                   rdfs:range cco2:ont00000914 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
                   rdfs:label "has social group context"@en ;
                   skos:definition "x has social group context y iff x is a role, y is a social group, and the bearer of x is a member of y."@en ;
                   skos:example "A deontic role of parish member has social group context the parish community."@en ;
                   skos:scopeNote "Use this relation for the group-level normative context of a role, not merely for the bearer's accidental membership in a crowd or aggregate."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000026
 dacts:ont00000026 rdf:type owl:ObjectProperty ;
                   rdfs:domain cco2:ont00000914 ;
                   rdfs:range obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
                   rdfs:label "is social group context of"@en ;
                   skos:definition "x is social group context of y iff y has social group context x."@en ;
                   skos:example "A court is social group context of the judicial offices constituted within that court."@en ;
                   skos:scopeNote "This is the inverse of 'has social group context' and should be used only for groups that ground the relevant role, not for groups merely affected by it."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000068
@@ -470,49 +459,53 @@ dacts:ont00000016 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000018
 dacts:ont00000018 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://plato.stanford.edu/archives/spr2024/entries/social-ontology/"^^xsd:anyURI ;
                   rdfs:label "Social Act"@en ;
                   skos:definition "A planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents."@en ;
                   skos:example "A legislature enacts a statute by communicating it in an institutionally recognized setting."@en ;
                   skos:scopeNote "Use this class for communicative acts that create, modify, or extinguish social entities; communication lacking such constitutive effect does not qualify."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000019
 dacts:ont00000019 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:IAO_0000114 obo:IAO_0000124 ;
+
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:label "Deontic Act"@en ;
                   skos:definition "A social act that creates, modifies, or extinguishes a deontic role."@en ;
                   skos:example "A board resolution creates a treasurer's duty to make quarterly reports."@en ;
                   skos:scopeNote "Use this class for social acts whose primary social output is the creation, modification, or extinguishing of deontic roles."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000020
 dacts:ont00000020 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://plato.stanford.edu/archives/fall2023/entries/speech-acts/"^^xsd:anyURI ;
                   rdfs:label "Speech Act"@en ;
                   skos:definition "A social act that changes some social arrangement by means of speech."@en ;
                   skos:example "A judge orally sentences a defendant in open court."@en ;
                   skos:scopeNote "Use this class where spoken or otherwise uttered linguistic performance is the constitutive medium of the social act; written or signed performances belong under document-act classes instead."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000021
 dacts:ont00000021 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Document Act"@en ;
                   skos:definition "A social act that changes some social arrangement by means of document."@en ;
                   skos:example "A signed deed transfers title to a parcel of land."@en ;
                   skos:scopeNote "Use this class where a document is the constitutive medium through which the social arrangement is changed, not where a document merely records or reports a change brought about otherwise."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000027
@@ -525,31 +518,34 @@ dacts:ont00000027 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent and is realized in that agent's being answerable within some social or legal context for whether a relevant act or outcome conforms to applicable norms."@en ;
                   skos:example "A supervisor's role of answering to an accrediting body for a laboratory's compliance failures."@en ;
                   skos:scopeNote "Use this class where answerability depends on a norm or institution, even when the bearer did not directly cause every relevant event."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000028
 dacts:ont00000028 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
                   rdfs:label "Causal Accountability Role"@en ;
                   skos:definition "A Role that inheres in an Agent and is realized in that agent's being answerable for an outcome by virtue of the agent's causal contribution to a process producing it."@en ;
                   skos:example "A ship captain's role of being held answerable for a collision caused by the navigation process under the captain's control."@en ;
                   skos:scopeNote "Use this class only where causal contribution is central to the accountability relation; normative accountability without causal contribution belongs under Normative Accountability Role instead."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000029
 dacts:ont00000029 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/obligor"^^xsd:anyURI ;
                   rdfs:label "Obligor Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and is externally grounded in an obligation owed to some obligee, such that the bearer is required to perform, refrain from, or transfer something."@en ;
                   skos:example "A tenant's role of owing rent payments to a landlord under a lease."@en ;
                   skos:scopeNote "Use this class for the duty-bearing side of an obligation relation; a bearer can be an obligor even when performance is not yet due."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000030
@@ -560,7 +556,8 @@ dacts:ont00000030 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent and is externally grounded in an obligation owed by some obligor, such that the bearer is entitled to the obligor's performance, forbearance, or transfer."@en ;
                   skos:example "A lender's role of being entitled to repayment by a borrower."@en ;
                   skos:scopeNote "Use this class for the right-holding side of an obligation relation; it is correlative to an obligor role."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000031
@@ -571,7 +568,8 @@ dacts:ont00000031 rdf:type owl:Class ;
                   skos:definition "A Deontic Act that creates a marital status by an authorized officiant's declaring that the parties are married."@en ;
                   skos:example "A judge pronounces two applicants married during a civil ceremony."@en ;
                   skos:scopeNote "Use this class for the performative pronouncement itself, not for the larger wedding ceremony or the administrative issuance of a marriage license."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000032
@@ -582,7 +580,8 @@ dacts:ont00000032 rdf:type owl:Class ;
                   skos:definition "A Deontic Declaration that grants an agent or organization the authority, permission, or institutional standing to perform some specified act."@en ;
                   skos:example "A hospital administrator issues an authorization allowing a clinician to access a restricted record set."@en ;
                   skos:scopeNote "Use this class where the declaration itself confers authority or permission, not where it merely reports an authorization granted elsewhere."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000033
@@ -593,7 +592,8 @@ dacts:ont00000033 rdf:type owl:Class ;
                   skos:definition "A Document Act Input Document that is prepared to be executed in a document act whose output is the waiver, discharge, or surrender of a claim, duty, or liability."@en ;
                   skos:example "A liability waiver signed before participation in a hazardous recreational activity."@en ;
                   skos:scopeNote "Use this class for the input document prepared for execution; a completed and legally effective release may additionally bear output-document roles not modeled here."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000034
@@ -604,7 +604,8 @@ dacts:ont00000034 rdf:type owl:Class ;
                   skos:definition "A Deontic Declaration that creates or confirms a Privilege Holder Role with respect to some specified act or omission."@en ;
                   skos:example "A city issues a permit allowing a contractor to close a lane for utility work."@en ;
                   skos:scopeNote "Use this class where the declaration grants a liberty or permission; if the same act also imposes obligations, model those outputs separately."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000035
@@ -615,7 +616,8 @@ dacts:ont00000035 rdf:type owl:Class ;
                   skos:definition "A Deontic Declaration that creates or confirms an Obligor Role with respect to some specified performance, forbearance, or transfer."@en ;
                   skos:example "A signed employment contract obligates the employer to pay wages and the employee to perform agreed work."@en ;
                   skos:scopeNote "Use this class where the declaration itself creates or confirms an obligation, not where it merely describes a pre-existing duty."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000036
@@ -626,7 +628,8 @@ dacts:ont00000036 rdf:type owl:Class ;
                   skos:definition "A Deontic Declaration that creates or confirms a Duty Holder Role to refrain from some specified act."@en ;
                   skos:example "A court injunction prohibits a company from disclosing specified trade-secret information."@en ;
                   skos:scopeNote "Use this class for declarations that normatively forbid conduct; a mere warning that conduct is risky or inadvisable does not suffice."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000037
@@ -637,7 +640,8 @@ dacts:ont00000037 rdf:type owl:Class ;
                   skos:definition "A Deontic Document Act that authenticates a signature, acknowledgment, oath, or copy on a document by means of a notary's official attestation."@en ;
                   skos:example "A notary public witnesses a principal's signature on a power-of-attorney document and affixes a seal."@en ;
                   skos:scopeNote "Use this class for the notarial act itself, not for the broader transaction in which the notarized document is later used."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000038
@@ -648,7 +652,8 @@ dacts:ont00000038 rdf:type owl:Class ;
                   skos:definition "A Document Act Input Document that is prepared to be executed in a transaction creating a mortgage interest as security for a debt or other obligation."@en ;
                   skos:example "A residential mortgage instrument signed at a real-estate closing."@en ;
                   skos:scopeNote "Use this class for the document prepared for execution in the mortgage transaction; separate classes would be needed for recorded copies, notes, or deeds of trust if finer distinctions are required."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000039
@@ -659,7 +664,8 @@ dacts:ont00000039 rdf:type owl:Class ;
                   skos:definition "A Directive Information Content Entity that specifies the terms under which a mortgage interest secures repayment of a debt or other obligation."@en ;
                   skos:example "The clauses in a signed mortgage instrument specifying the secured property, repayment terms, and default consequences."@en ;
                   skos:scopeNote "Use this class for the content borne by a mortgage document, not for the document artifact itself."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000040
@@ -670,7 +676,8 @@ dacts:ont00000040 rdf:type owl:Class ;
                   skos:definition "A Role that inheres iin a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en ;
                   skos:example "A homeowner's role of controlling access to a house and transferring title to it."@en ;
                   skos:scopeNote "Use this class for the role inhering in the owner, not for the owned thing itself or for every factual possessor lacking socially recognized title or authority."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000041
@@ -681,7 +688,8 @@ dacts:ont00000041 rdf:type owl:Class ;
                   skos:definition "A Role that inheres in an Entity and is externally grounded in a social or legal arrangement such that the entity stands as the object over which some bearer has an Owner Entity Role."@en ;
                   skos:example "The role of a parcel of land that is the object of a homeowner's ownership."@en ;
                   skos:scopeNote "Use this class for the role of the owned entity within an ownership arrangement, not for ordinary material constitution or physical containment relations."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000042
@@ -692,7 +700,8 @@ dacts:ont00000042 rdf:type owl:Class ;
                   skos:definition "A Deontic Act that creates, transfers, acknowledges, or extinguishes an Owner Entity Role with respect to some entity."@en ;
                   skos:example "The signing and delivery of a deed that transfers ownership of a parcel of land."@en ;
                   skos:scopeNote "Use this class for social acts that change ownership status, not for mere physical taking possession without recognized normative effect."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000043
@@ -703,7 +712,8 @@ dacts:ont00000043 rdf:type owl:Class ;
                   skos:definition "A Deontic Act that creates an advance directive by documenting instructions or proxy designations for future healthcare decision-making under specified incapacity conditions."@en ;
                   skos:example "A patient signs and witnesses a living will naming a healthcare surrogate."@en ;
                   skos:scopeNote "Use this class for the constitutive document act that creates the directive, not for later clinical reliance on the directive during treatment."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000044
@@ -714,7 +724,8 @@ dacts:ont00000044 rdf:type owl:Class ;
                   skos:definition "A Document Act Input Document that bears information intended to govern future healthcare decisions if its author later lacks decisional capacity."@en ;
                   skos:example "A signed living will stored in a patient's medical records."@en ;
                   skos:scopeNote "Use this class for the document prepared and executed to state future healthcare instructions or designate a proxy; a broader care plan is not necessarily an advance directive."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000045
@@ -725,7 +736,8 @@ dacts:ont00000045 rdf:type owl:Class ;
                   skos:definition "A Deontic Act that creates, revises, or arranges the future management or distribution of a person's estate."@en ;
                   skos:example "A consultation and drafting session in which a client prepares a will, trust, and powers of attorney."@en ;
                   skos:scopeNote "Use this class for the broader planned activity of arranging estate-related directives and transfers; particular constitutive declarations within it may instantiate more specific document-act classes."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000046
@@ -736,7 +748,8 @@ dacts:ont00000046 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent and entitles its bearer to receive some portion of a decedent's estate under an inheritance arrangement."@en ;
                   skos:example "A child designated to receive a share of a deceased parent's estate."@en ;
                   skos:scopeNote "This class is used broadly enough to cover heirs and heir-like designated recipients in estate arrangements; if strict distinction between heirs at law and beneficiaries is needed, add separate subclasses."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000047
@@ -747,7 +760,8 @@ dacts:ont00000047 rdf:type owl:Class ;
                   skos:definition "A Deontic Act through which an heir or similar successor acquires an Owner Entity Role in an asset of a decedent's estate."@en ;
                   skos:example "A beneficiary accepts distribution of a house from an estate and thereby acquires ownership."@en ;
                   skos:scopeNote "Use this class for the ownership-changing social act in succession, not for the biological inheritance of traits or for the whole probate proceeding."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000048
@@ -758,7 +772,8 @@ dacts:ont00000048 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent and is realized in administering a decedent's estate in accordance with a will and applicable law."@en ;
                   skos:example "The role of a person named in a will to pay the decedent's debts and distribute assets."@en ;
                   skos:scopeNote "Use this class for the office or role of the executor, not for the person as a human being independently of the estate-administration context."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000049
@@ -769,7 +784,8 @@ dacts:ont00000049 rdf:type owl:Class ;
                   skos:definition "A Document Act Input Document that specifies how a testator's assets or estate is to be managed or distributed after the testator's death."@en ;
                   skos:example "The clauses in a will directing that a house be sold and the proceeds divided among named children."@en ;
                   skos:scopeNote "Use this class for the directive content borne by a will, not for the signed paper or electronic artifact that bears that content."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000050
@@ -780,7 +796,8 @@ dacts:ont00000050 rdf:type owl:Class ;
                   skos:definition "A Designative Information Content Entity that designates one or more agents as intended recipients of estate assets, responsibilities, or related succession statuses."@en ;
                   skos:example "A clause naming a daughter as the recipient of a family residence under a will."@en ;
                   skos:scopeNote "Use this class for the designating content within a succession instrument; the fuller will content may include additional directive clauses beyond designation."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000051
@@ -791,7 +808,8 @@ dacts:ont00000051 rdf:type owl:Class ;
                   skos:definition "A Document Act Input Document that bears information intended to govern the management, transfer, or administration of a person's estate or related affairs."@en ;
                   skos:example "A will, codicil, or trust amendment prepared for execution as part of estate planning."@en ;
                   skos:scopeNote "Use this class as a broad estate-planning document category; more specific subclasses can distinguish wills, trusts, powers of attorney, and related instruments."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000052
@@ -804,7 +822,8 @@ dacts:ont00000052 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent authorized to practice law and is realized in representing, advising, or appearing for clients in legal matters."@en ;
                   skos:example "A licensed attorney advises a client about litigation risk and files motions on the client's behalf."@en ;
                   skos:scopeNote "Use this class for the professional legal role of an attorney at law, not for an attorney-in-fact created by an ordinary power of attorney."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000053
@@ -816,7 +835,8 @@ dacts:ont00000053 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent and is realized in acting on behalf of a legal party under delegated or institutionally recognized authority."@en ;
                   skos:example "A guardian signs a filing on behalf of a minor ward in a probate matter."@en ;
                   skos:scopeNote "Use this class for proxy or representative authority in legal matters generally, whether or not the bearer is a licensed attorney."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000054
@@ -827,7 +847,8 @@ dacts:ont00000054 rdf:type owl:Class ;
                   skos:definition "A Deontic Role that inheres in an Agent and is realized in communicating advice about legal rights, duties, procedures, or consequences to another agent."@en ;
                   skos:example "In-house counsel advises a company officer about reporting obligations under a regulation."@en ;
                   skos:scopeNote "Use this class for advisory functions specifically about legal matters; broader strategic, financial, or policy advising belongs elsewhere."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000055
@@ -839,19 +860,21 @@ dacts:ont00000055 rdf:type owl:Class ;
                   skos:definition "A Legal Attorney Role that inheres in an Agent and is realized in formally appearing in a legal proceeding on behalf of a represented party."@en ;
                   skos:example "The lawyer listed on the docket as counsel responsible for receiving filings in a civil case."@en ;
                   skos:scopeNote "Use this class when formal appearance in a specific matter is central; not every legal attorney role is an attorney-of-record role."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000056
 dacts:ont00000056 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000016 ;
-                  obo:IAO_0000114 obo:IAO_0000124 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/admission_to_practice"^^xsd:anyURI ;
                   rdfs:label "Lawyer License Document"@en ;
                   skos:definition "An Identification Artifact that bears information evidencing that some agent has been admitted or authorized to practice law within a jurisdiction."@en ;
                   skos:example "A certificate of admission to the bar issued by a state supreme court."@en ;
                   skos:scopeNote "Use this class for the document evidencing legal licensure or admission, not for the licensure process or the attorney role borne by its subject."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000057
@@ -862,79 +885,86 @@ dacts:ont00000057 rdf:type owl:Class ;
                   skos:definition "A Role that inheres in an Agent by virtue of that agent's having been awarded a degree in law by an educational institution."@en ;
                   skos:example "The role borne by a person after receiving a Juris Doctor degree."@en ;
                   skos:scopeNote "Use this class for educational attainment, not for professional licensure to practice law; the latter belongs under legal attorney or licensing classes."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000058
 dacts:ont00000058 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000124 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/admission_to_practice"^^xsd:anyURI ;
                   rdfs:label "Lawyer Licensing Process"@en ;
                   skos:definition "A Planned Act that evaluates and records whether an applicant satisfies the conditions for admission or authorization to practice law in a jurisdiction."@en ;
                   skos:example "A state bar admission workflow including character review, examination results, oath, and license issuance."@en ;
                   skos:scopeNote "Use this class for the licensing or admission process as a planned social process, not for the resulting license document or attorney role."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000059
 dacts:ont00000059 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000124 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/represent"^^xsd:anyURI ;
                   rdfs:label "Legal Representation Assignment Process"@en ;
                   skos:definition "A Planned Act that establishes or records that a legal attorney or other proxy is authorized to represent a party in a specified legal matter."@en ;
                   skos:example "A client signs an engagement agreement and notice of appearance authorizing counsel to act in a lawsuit."@en ;
                   skos:scopeNote "Use this class for the process that assigns or records representational authority, not for the attorney-client relationship considered as a continuing social arrangement."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000060
 dacts:ont00000060 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000124 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/represent"^^xsd:anyURI ;
                   rdfs:label "Legal Representation Declaration Document"@en ;
                   skos:definition "A Document Act Input Document that is prepared to be executed in a document act establishing or recording an assignment of legal representation."@en ;
                   skos:example "A signed notice of appearance or retainer agreement submitted to a tribunal or client file."@en ;
                   skos:scopeNote "Use this class for the document used to establish or document representation; a filed copy in the court record may warrant further specialization."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000061
 dacts:ont00000061 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/fiduciary_duty"^^xsd:anyURI ;
                   rdfs:label "Fiduciary Negotiation Process"@en ;
                   skos:definition "A Planned Act in which one or more agents negotiate terms while at least one participant bears fiduciary duties toward another party."@en ;
                   skos:example "Trustees negotiate the terms of an investment-management agreement on behalf of beneficiaries."@en ;
                   skos:scopeNote "Use this class when fiduciary obligations shape the negotiation's normative structure; ordinary arms-length bargaining does not suffice."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000062
 dacts:ont00000062 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/bilateral_contract"^^xsd:anyURI ;
                   rdfs:label "Employment Contract Negotiation Process"@en ;
                   skos:definition "A Planned Act in which prospective or existing parties negotiate the terms of an employment contract."@en ;
                   skos:example "A candidate and employer negotiate salary, duties, and non-disclosure terms before signing an offer letter."@en ;
                   skos:scopeNote "Use this class for the negotiation process leading toward an employment agreement, not for the employment relation after the contract takes effect."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000063
 dacts:ont00000063 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00001314 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/plead"^^xsd:anyURI ;
                   rdfs:label "Legal Filing Process"@en ;
                   skos:definition "A Legal System Act that places a legal document into the official record of a court or other legal authority."@en ;
                   skos:example "An attorney electronically files a complaint with a trial court clerk."@en ;
                   skos:scopeNote "Use this class for the act of formally filing, not for drafting the underlying document or for later adjudicative steps triggered by the filing."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000064
@@ -945,43 +975,122 @@ dacts:ont00000064 rdf:type owl:Class ;
                   skos:definition "A Role that inheres in an Agent and is realized in managing some person's personal affairs under a socially or legally recognized custodial arrangement."@en ;
                   skos:example "A court-appointed custodian decides where an incapacitated adult will receive daily care."@en ;
                   skos:scopeNote "Use this class for custodial responsibility over personal affairs; if the role is specifically created by a formal guardianship order, Legal Guardian Role may be more precise."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000065
 dacts:ont00000065 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/guardian"^^xsd:anyURI ;
                   rdfs:label "Legal Guardian Role"@en ;
                   skos:definition "A Role that has as a proper part some Deontic Role, inheres in an Agent, and is realized in caring for, deciding for, or controlling the affairs of a ward under a legally recognized guardianship."@en ;
                   skos:example "A guardian appointed by a probate court to make medical and residential decisions for an incapacitated adult."@en ;
                   skos:scopeNote "Use this class for roles constituted by law or court order; broader caregiving roles without formal legal standing do not belong here."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000066
 dacts:ont00000066 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000914 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://plato.stanford.edu/archives/spr2024/entries/social-ontology/"^^xsd:anyURI ;
                   rdfs:label "Social Group"@en ;
                   skos:definition "A Group of Persons whose members stand in socially recognized relations of membership, participation, or common practice."@en ;
                   skos:example "A court, parish, club, guild, or professional association considered as a group of persons."@en ;
                   skos:scopeNote "Use this class for groups constituted or sustained by social relations or practices; merely spatial aggregates of people without relevant social organization do not qualify."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000067
 dacts:ont00000067 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/right_to_privacy"^^xsd:anyURI ;
                   rdfs:label "Privacy Entitlement Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and entitles its bearer to restrict or control access to information, spaces, bodily states, or activities concerning that bearer."@en ;
                   skos:example "A patient's role of controlling who may access the patient's protected health information."@en ;
                   skos:scopeNote "Use this class for normatively grounded privacy entitlements, not merely for factual secrecy or inaccessibility lacking any right-like structure."@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+                <https://github.com/jonathanvajda/cco-d-acts/ont00000004> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000001> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000007> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000016> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000003> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000005> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000006> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000008> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000009> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000010> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000011> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000012> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000013> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000014> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000015> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000018> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000019> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000020> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000021> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000027> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000027> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000027> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000028> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000029> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000030> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000031> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000032> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000033> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000034> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000035> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000036> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000037> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000038> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000039> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000040> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000041> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000042> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000043> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000044> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000045> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000046> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000047> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000048> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000049> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000050> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000051> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000052> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000053> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000054> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000055> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000056> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000057> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000058> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000059> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000060> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000061> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000062> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000063> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000064> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000065> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000066> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000067> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000070> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000068> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000022> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000023> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000024> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000026> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000120> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000069> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+<https://github.com/jonathanvajda/cco-d-acts/ont00000071> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000123> .
+
 
 
 ###  Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi
