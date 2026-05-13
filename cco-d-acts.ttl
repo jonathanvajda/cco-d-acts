@@ -1,4 +1,4 @@
-@prefix : <https://github.com/jonathanvajda/cco-d-acts/> .
+@prefix : <https://github.com/jonathanvajda/cco-d-acts#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
@@ -26,64 +26,24 @@
                                                owl:versionInfo "2025-05-24"@en .
 
 #################################################################
-#    Object Properties
+#    Annotation properties
 #################################################################
 
-<https://github.com/jonathanvajda/cco-d-acts/ont00000068> a owl:ObjectProperty;
-    owl:inverseOf dacts:ont00000069 ;
-    rdfs:domain cco2:ont00000228 ;
-    rdfs:range obo:BFO_0000002 ;
-    rdfs:label "has specified input";
-    skos:definition "The inverse property of 'is specified input of'"@en ;
-    cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
-                                "PERSON: Alan Ruttenberg"@en ,
-                                 "PERSON: Bjoern Peters"@en ,
-                                 "PERSON: Larry Hunter"@en ,
-                                 "PERSON: Melanie Coutot"@en ;
-    rdfs:subPropertyOf cco2:ont00001921;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+###  http://purl.obolibrary.org/obo/IAO_0000114
+obo:IAO_0000114 rdf:type owl:AnnotationProperty .
 
-<https://github.com/jonathanvajda/cco-d-acts/ont00000069> a owl:ObjectProperty;
-    rdfs:label "is specified input of";
-    rdfs:range obo:BFO_0000002 ;
-        rdfs:domain cco2:ont00000228 ;
-    
-    skos:definition "A relation between a planned process and a continuant that participates in that planned process, is specified in the plan specification that prescribes the planned process, and is not created during the planned process."@en ;
-    cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
-                                "PERSON: Alan Ruttenberg"@en ,
-                                 "PERSON: Bjoern Peters"@en ,
-                                 "PERSON: Larry Hunter"@en ,
-                                 "PERSON: Melanie Coutot"@en ;
-    rdfs:subPropertyOf cco2:ont00001841;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
-<https://github.com/jonathanvajda/cco-d-acts/ont00000070> a owl:ObjectProperty;
-    owl:inverseOf dacts:ont00000071 ;
-    rdfs:domain cco2:ont00000228 ;
-    rdfs:range obo:BFO_0000002 ;
-    rdfs:label "has specified output"@en ;
-    skos:definition "The inverse property of 'is specified output of'"@en ;
-    rdfs:subPropertyOf cco2:ont00001986;
-    cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
-                                "PERSON: Alan Ruttenberg"@en ,
-                                 "PERSON: Bjoern Peters"@en ,
-                                 "PERSON: Larry Hunter"@en ,
-                                 "PERSON: Melanie Coutot"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+###  http://purl.obolibrary.org/obo/IAO_0000232
+obo:IAO_0000232 rdf:type owl:AnnotationProperty .
 
-<https://github.com/jonathanvajda/cco-d-acts/ont00000071> a owl:ObjectProperty;
-                  rdfs:label "is specified output of"@en ;
-                  rdfs:range obo:BFO_0000002 ;
-        rdfs:domain cco2:ont00000228 ;
-                  skos:definition "A relation between a planned process and a continuant that participates in that planned process, such that the continuant is specified in the plan specification that prescribes the planned process, and the continuant is specified to be be present at the conclusion of the process."@en ;
-                  rdfs:subPropertyOf cco2:ont00001816;
-                  cco2:ont00001762 "PERSON: Jonathan Vajda"@en ,
-                                "PERSON: Alan Ruttenberg"@en ,
-                                 "PERSON: Bjoern Peters"@en ,
-                                 "PERSON: Larry Hunter"@en ,
-                                 "PERSON: Melanie Coutot"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000017
 dacts:ont00000017 rdf:type owl:ObjectProperty ;
@@ -97,9 +57,9 @@ dacts:ont00000017 rdf:type owl:ObjectProperty ;
                   rdfs:label "legally revokes"@en ;
                   skos:altLabel "socio-legally revokes"@en ;
                   skos:definition "d socio-legally revokes s, if s participates in d and at the end of d s no longer exists."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Jonathan M. Vajda"@en ,
-                                   "Mathias Brochhausen"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                                   "Mathias Brochhausen"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000022
@@ -157,13 +117,71 @@ dacts:ont00000026 rdf:type owl:ObjectProperty ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000068
+dacts:ont00000068 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco2:ont00001921 ;
+                  owl:inverseOf dacts:ont00000069 ;
+                  rdfs:domain cco2:ont00000228 ;
+                  rdfs:range obo:BFO_0000002 ;
+                  rdfs:label "has specified input" ;
+                  skos:definition "The inverse property of 'is specified input of'"@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "PERSON: Alan Ruttenberg"@en ,
+                                   "PERSON: Bjoern Peters"@en ,
+                                   "PERSON: Jonathan Vajda"@en ,
+                                   "PERSON: Larry Hunter"@en ,
+                                   "PERSON: Melanie Coutot"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000069
+dacts:ont00000069 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco2:ont00001841 ;
+                  rdfs:domain cco2:ont00000228 ;
+                  rdfs:range obo:BFO_0000002 ;
+                  rdfs:label "is specified input of" ;
+                  skos:definition "A relation between a planned process and a continuant that participates in that planned process, is specified in the plan specification that prescribes the planned process, and is not created during the planned process."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "PERSON: Alan Ruttenberg"@en ,
+                                   "PERSON: Bjoern Peters"@en ,
+                                   "PERSON: Jonathan Vajda"@en ,
+                                   "PERSON: Larry Hunter"@en ,
+                                   "PERSON: Melanie Coutot"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000070
+dacts:ont00000070 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco2:ont00001986 ;
+                  owl:inverseOf dacts:ont00000071 ;
+                  rdfs:domain cco2:ont00000228 ;
+                  rdfs:range obo:BFO_0000002 ;
+                  rdfs:label "has specified output"@en ;
+                  skos:definition "The inverse property of 'is specified output of'"@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "PERSON: Alan Ruttenberg"@en ,
+                                   "PERSON: Bjoern Peters"@en ,
+                                   "PERSON: Jonathan Vajda"@en ,
+                                   "PERSON: Larry Hunter"@en ,
+                                   "PERSON: Melanie Coutot"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000071
+dacts:ont00000071 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco2:ont00001816 ;
+                  rdfs:domain cco2:ont00000228 ;
+                  rdfs:range obo:BFO_0000002 ;
+                  rdfs:label "is specified output of"@en ;
+                  skos:definition "A relation between a planned process and a continuant that participates in that planned process, such that the continuant is specified in the plan specification that prescribes the planned process, and the continuant is specified to be be present at the conclusion of the process."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "PERSON: Alan Ruttenberg"@en ,
+                                   "PERSON: Bjoern Peters"@en ,
+                                   "PERSON: Jonathan Vajda"@en ,
+                                   "PERSON: Larry Hunter"@en ,
+                                   "PERSON: Melanie Coutot"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
-
-###  http://www.ontologyrepository.com/CommonCoreOntologies/SocialRole
-cco:SocialRole rdf:type owl:Class .
-
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000001
 dacts:ont00000001 rdf:type owl:Class ;
@@ -175,8 +193,8 @@ dacts:ont00000001 rdf:type owl:Class ;
                                "A marriage license that is intended to be used in the documented solemnization of marital vows."@en ,
                                "An informed consent form that is intended to have a subject's PII data fields filled in."@en ;
                   cco2:ont00001754 "Modified, originally from Mathias Brochhausen (D-Acts Ontology), http://purl.obolibrary.org/obo/IAO_0021007"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000003
@@ -188,8 +206,8 @@ dacts:ont00000003 rdf:type owl:Class ;
                   skos:example "A verbal utterance to obligate oneself to take care of a neighbor's pet animal."@en ,
                                "A written document to permit some person to reside in exchange for a fee."@en ;
                   cco2:ont00001754 "Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021102"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000004
@@ -202,8 +220,8 @@ dacts:ont00000004 rdf:type owl:Class ;
                                "Mandatory reporter role"@en ,
                                "President role"@en ;
                   cco2:ont00001754 "Modified; originally from Mathias Brochhausen & Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021008 ('deontic role')"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000005
@@ -211,11 +229,11 @@ dacts:ont00000005 rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( cco2:ont00001327
                                                              [ rdf:type owl:Class ;
                                                                owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty obo:OBI_0000299 ;
+                                                                               owl:onProperty dacts:ont00000017 ;
                                                                                owl:someValuesFrom dacts:ont00000004
                                                                              ]
                                                                              [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty dacts:ont00000017 ;
+                                                                               owl:onProperty dacts:ont00000070 ;
                                                                                owl:someValuesFrom dacts:ont00000004
                                                                              ]
                                                                            )
@@ -230,19 +248,19 @@ dacts:ont00000005 rdf:type owl:Class ;
                                "Permission for a surgeon to perform a hysterectomy"@en ,
                                "Pronouncement of knighthood"@en ;
                   cco2:ont00001754 "Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021009 . Equivalent to some Social Act that either 'legally revokes' some 'deontic role' OR 'has_specified_output' some 'deontic role'"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000006
 dacts:ont00000006 rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( dacts:ont00000005
                                                              [ rdf:type owl:Restriction ;
-                                                               owl:onProperty obo:OBI_0000293 ;
+                                                               owl:onProperty dacts:ont00000068 ;
                                                                owl:someValuesFrom dacts:ont00000001
                                                              ]
                                                              [ rdf:type owl:Restriction ;
-                                                               owl:onProperty obo:OBI_0000299 ;
+                                                               owl:onProperty dacts:ont00000070 ;
                                                                owl:someValuesFrom cco2:ont00001298
                                                              ]
                                                            ) ;
@@ -255,8 +273,8 @@ dacts:ont00000006 rdf:type owl:Class ;
                                "Issuance of a citation that an individual has violated a legal regulation"@en ,
                                "my filling in an immigration form, a judge's signing and stamping a court order (Mathias Brochhausen)"@en ;
                   cco2:ont00001754 "Modified, originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021001 .Their class is a defined class, equivalent to some Deontic Declaration that 'has_specified_input' some 'document act input document' AND 'has_specified_output' some 'document'"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000007
@@ -267,8 +285,8 @@ dacts:ont00000007 rdf:type owl:Class ;
                   skos:definition "An Intentional Act that verifies the legitimacy and truth value of some identity claim, whether that claim was given explicitly or implicitly"@en ;
                   skos:example "I order a beer and the bartender authenticates my age by looking at my DOB on my driver's license. I sign into my email account, and the system authenticates my permission to read the email by checking the password I enter against my password listed in the database. (Amanda Hicks)"@en ;
                   cco2:ont00001754 "Modified, originally from Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020023. Originally came with axioms: BFO_0000015 and (realizes some 'credential role') and (BFO_0000057 some IAO_0000027) and (BFO_0000057 some ( inverse (IAO_0000136) some IAO_0000027))"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000008
@@ -278,8 +296,8 @@ dacts:ont00000008 rdf:type owl:Class ;
                   rdfs:label "Claimant Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Duty Holder Role borne by Agent B, and that specifies B performaing or abstaining from some Act C, or providing or surrendering some Continuant D to A."@en ;
                   cco2:ont00001754 "Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021013 which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000009
@@ -289,8 +307,8 @@ dacts:ont00000009 rdf:type owl:Class ;
                   rdfs:label "Duty Holder Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Claimant Role borne by Agent B, and that specifies A performing or abstaining from some Act C, or providing or surrendering some Continuant D to B."@en ;
                   cco2:ont00001754 "Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021016 ('duty holder role') which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000010
@@ -298,12 +316,12 @@ dacts:ont00000010 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
                   rdfs:label "Deontic Power Role"@en ;
                   skos:definition "A Deontic Role that, if realized, is realized by its bearer's creating, revoking, or modifying some Deontic Role."@en ;
-                  skos:example "Employer role"@en ,
-                               "Governor role"@en ,
-                               "Legal judge role"@en ;
+                  skos:example "Employer role has continuant part some deontic power role"@en ,
+                               "Governor role has continuant part some deontic power role"@en ,
+                               "Legal judge role has continuant part some deontic power role"@en ;
                   cco2:ont00001754 "Modified, originally from Mathias Brochhausen & J. Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021023 ('power role')"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000011
@@ -312,8 +330,8 @@ dacts:ont00000011 rdf:type owl:Class ;
                   rdfs:label "Privilege Holder Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent A, that specifies that no Agent B bears a Claimant Role against A performing Act C."@en ;
                   cco2:ont00001754 "Modified; originally from Mathias Brochhausen and J. Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021019 which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000012
@@ -323,8 +341,8 @@ dacts:ont00000012 rdf:type owl:Class ;
                   skos:definition "A Role inhering in an Agent (either a human, an organization, or an aggregate of either) that is realized by the bearer being an agent (initiating participant) in a Document Act."@en ;
                   skos:example "a judge's role of signing a court order"@en ;
                   cco2:ont00001754 "Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021031"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000013
@@ -334,8 +352,8 @@ dacts:ont00000013 rdf:type owl:Class ;
                   skos:definition "A Role that inheres in an Agent (a human, organization, or aggregate of these) that is realized in preparing a Document that is the specified input to a Document Act and is the Input Document of a Document Act."@en ;
                   skos:example "The role of the U.S. Citizenship and Immigration Service realized by the creation of an immigration form that is being filled in, the role of a national professional association realized by the creation of a clinical guideline that is to be certified"@en ;
                   cco2:ont00001754 "Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021021"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000014
@@ -344,8 +362,8 @@ dacts:ont00000014 rdf:type owl:Class ;
                   rdfs:label "Deontic Declaration Performer Role"@en ;
                   skos:definition "A Role inhering in an Agent or Aggregate of Agents that is realized by the bearer being the active participant (agent in) a Deontic Declaration."@en ;
                   cco2:ont00001754 "Modified; originally from Mathias Brochhausen (D-Acts), http://purl.obolibrary.org/obo/IAO_0021022 . Originally a subclass of BFO_0000023 ('role'), but this is clearly a subclass of deontic role."@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000015
@@ -368,8 +386,8 @@ dacts:ont00000015 rdf:type owl:Class ;
                   skos:example "A passport's role for an act of authentication for boarding an international flight"@en ,
                                "A server's role in an authentication into an online banking system"@en ;
                   cco2:ont00001754 "Modified; originally by Amanda Hicks (D-Acts), http://purl.obolibrary.org/obo/IAO_0020024. See the notes on 'Identification Artifact', which clarifies why 'Identity Document' is significantly corrected and why 'documented identity' is obviated. Original definition 'A role that inheres in a concretization of an identity document and is realized by an authentication process.' Equivalent class is adjusted, since 'identity document' is not an ICE but rather artifact IBE. Originally: to BFO_0000023[role] and (RO_0000054[realized in] some authentication) and (RO_0000052[characteristic of/inheres in] some (RO_0000053[characterized by/bearer of] some (RO_0000059[concretizes] some 'identity document')))"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000016
@@ -381,8 +399,8 @@ dacts:ont00000016 rdf:type owl:Class ;
                   skos:example "A bank statement"@en ,
                                "A passport"@en ;
                   cco2:ont00001754 "Modified significantly. Originally by Amanda Hicks (D-Acts; http://purl.obolibrary.org/obo/IAO_0020021) as 'identity document', which was a subclass of 'document', which is a Information Content Entity rather than an information bearing artifact. This is a critical difference. Moreover, the associated class having to do with 'documented identity' (another ICE) is obviated by CCO's Designative Information Content Entity. Original definition: \"A document that denotes some identity and is concretized by the bearer of some credential role.\" It was a defined class, equivalent to: IAO_0000310 and (IAO_0000136 some 'documented identity') and (RO_0000058 some (BFO_0000020 and (RO_0000052 some (RO_0000053 some 'credential role')))) and (RO_0000058 only (BFO_0000020 and (RO_0000052 some (RO_0000053 some 'credential role'))))"@en ;
-                  cco2:ont00001762 "Jonathan M. Vajda"@en ;
-                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000018
@@ -390,7 +408,7 @@ dacts:ont00000018 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Social Act"@en ;
-                  skos:definition "a planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents."@en ;
+                  skos:definition "A planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
@@ -399,7 +417,7 @@ dacts:ont00000019 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
                   obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:label "Deontic Act"@en ;
-                  skos:definition "."@en ;
+                  skos:definition "A social act that creates, modifies, or extinguishes a deontic role."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
@@ -428,7 +446,7 @@ dacts:ont00000027 rdf:type owl:Class ;
                                                 "https://ceur-ws.org/Vol-2285/ICBO_2018_paper_13.pdf"@en ;
                   rdfs:comment "Adrien Barton? (Sherbrooke) Realizable entities, trigger conditions, role parts, etc."@en ;
                   rdfs:label "Normative Accountability Role"@en ;
-                  skos:definition "a deontic role that is realized, when it is realized, in some act of..."@en ;
+                  skos:definition "A deontic role that is realized, when it is realized, in some act of..."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
@@ -436,8 +454,9 @@ dacts:ont00000027 rdf:type owl:Class ;
 dacts:ont00000028 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
+                  obo:IAO_0000232 "This definition is not yet fully fleshed out, since the use case and competency question for which this class was created needs further clarification."@en ;
                   rdfs:label "Causal Accountability Role"@en ;
-                  skos:definition "a social role that is realized, when it is realized, in some act of..."@en ;
+                  skos:definition "A social role that is realized, when it is realized, in some process, such that the bearer is an agent in that process, and the process has some causal relation to some outcome for which the bearer of the role is held accountable."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
@@ -446,7 +465,7 @@ dacts:ont00000029 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Obligor Role"@en ;
-                  skos:definition "a Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ..."@en ;
+                  skos:definition "A Deontic Role that inheres in an Agent and is realized, when it is realized, in some planned act ..."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
@@ -681,8 +700,8 @@ dacts:ont00000059 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000060
 dacts:ont00000060 rdf:type owl:Class ;
-                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:subClassOf dacts:ont00000001 ;
+                  obo:IAO_0000114 obo:IAO_0000124 ;
                   rdfs:label "Legal Representation Declaration Document"@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
@@ -723,9 +742,9 @@ dacts:ont00000064 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000065
 dacts:ont00000065 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "Legal Guardian Role"@en ;
                   skos:definition "A Role that inheres in an Agent by virtue of that Agent's responsibilities to care for or control some Person"@en ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI .
 
 
