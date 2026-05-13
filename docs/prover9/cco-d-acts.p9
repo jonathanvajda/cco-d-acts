@@ -1,0 +1,560 @@
+% background axiom: domain consists of objects and data
+fof(axiom0,axiom,(![X]:('http___www_w3_org_2002_07_owl_Thing'(X)|'http___www_w3_org_2000_01_rdf_schema_Literal'(X)))).
+
+% background axiom: object domain and data domain are disjoint
+fof(axiom1,axiom,(![X]:('http___www_w3_org_2002_07_owl_Thing'(X)=>~'http___www_w3_org_2000_01_rdf_schema_Literal'(X)))).
+
+% background axiom: there are things
+fof(axiom2,axiom,(?[X]:'http___www_w3_org_2002_07_owl_Thing'(X))).
+
+% background axiom: there are literals
+fof(axiom3,axiom,(?[X]:'http___www_w3_org_2000_01_rdf_schema_Literal'(X))).
+
+% facets can only be applied to literals
+fof(axiom4,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_minExclusive'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom5,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_fractionDigits'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom6,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_pattern'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom7,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_minLength'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom8,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_minInclusive'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom9,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_totalDigits'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom10,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_length'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom11,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_maxExclusive'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom12,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_maxLength'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom13,axiom,(![X,Y]:('http___www_w3_org_1999_02_22_rdf_syntax_ns_langRange'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% facets can only be applied to literals
+fof(axiom14,axiom,(![X,Y]:('http___www_w3_org_2001_XMLSchema_maxInclusive'(X,Y)=>('http___www_w3_org_2000_01_rdf_schema_Literal'(X)&'http___www_w3_org_2000_01_rdf_schema_Literal'(Y))))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000010>))
+fof(axiom15,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000010'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000003>))
+fof(axiom16,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000003'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubObjectPropertyOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <http://purl.obolibrary.org/obo/BFO_0000057>)
+fof(axiom17,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000057'(X0,X1)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000022>))
+fof(axiom18,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000022'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000022>))
+fof(axiom19,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000022'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000295> <http://purl.obolibrary.org/obo/BFO_0000056>)
+fof(axiom20,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000295'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000056'(X0,X1)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000043> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom21,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000043'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000001> <https://www.commoncoreontologies.org/ont00001298>)
+fof(axiom22,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)=>'https___www_commoncoreontologies_org_ont00001298'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000050> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom23,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000050'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000040> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom24,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000040'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000005>))
+fof(axiom25,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000023>))
+fof(axiom26,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000023'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000023>))
+fof(axiom27,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000023'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000012>))
+fof(axiom28,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000012'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000022> <https://www.commoncoreontologies.org/ont00001017>)
+fof(axiom29,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000022'(X0,X1)=>'https___www_commoncoreontologies_org_ont00001017'(X0)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>))
+fof(axiom30,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>))
+fof(axiom31,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000020> <https://github.com/jonathanvajda/cco-d-acts/ont00000018>)
+fof(axiom32,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000020'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000018'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000004>))
+fof(axiom33,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000011>))
+fof(axiom34,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000011'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000063> <https://www.commoncoreontologies.org/ont00001314>)
+fof(axiom35,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000063'(X0)=>'https___www_commoncoreontologies_org_ont00001314'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000044> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom36,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000044'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000067> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom37,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000067'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000066> <https://www.commoncoreontologies.org/ont00000914>)
+fof(axiom38,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000066'(X0)=>'https___www_commoncoreontologies_org_ont00000914'(X0)))).
+
+% ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom39,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X1)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X1)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000031> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom40,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000031'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000067>))
+fof(axiom41,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000067'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000037> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom42,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000037'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000312> <http://purl.obolibrary.org/obo/BFO_0000056>)
+fof(axiom43,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000312'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000056'(X0,X1)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000006> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+fof(axiom44,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000006'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)))).
+
+% ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000023> <http://purl.obolibrary.org/obo/BFO_0000015>)
+fof(axiom45,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000023'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000015'(X1)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000009> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom46,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000009'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000001>))
+fof(axiom47,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000035> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+fof(axiom48,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000035'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000064>))
+fof(axiom49,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000064'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000007> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom50,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000007'(X0)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000052> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom51,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000052'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000063>))
+fof(axiom52,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000063'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000064> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom53,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000064'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% EquivalentClasses(<https://github.com/jonathanvajda/cco-d-acts/ont00000006> ObjectIntersectionOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000005> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/OBI_0000293> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/OBI_0000299> <https://www.commoncoreontologies.org/ont00001298>)) )
+fof(axiom54,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000006'(X0)<=>('https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)&?[X1]:('http___purl_obolibrary_org_obo_OBI_0000293'(X0,X1)&'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X1))&?[X2]:('http___purl_obolibrary_org_obo_OBI_0000299'(X0,X2)&'https___www_commoncoreontologies_org_ont00001298'(X2)))))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000057>))
+fof(axiom55,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000057'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000012> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom56,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000012'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000041> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom57,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000041'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% InverseObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000293> <http://purl.obolibrary.org/obo/OBI_0000295>)
+fof(axiom58,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000293'(X0,X1)<=>'http___purl_obolibrary_org_obo_OBI_0000295'(X1,X0)))).
+
+% ObjectPropertyDomain(<http://purl.obolibrary.org/obo/OBI_0000293> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom59,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000293'(X0,X1)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000059>))
+fof(axiom60,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000059'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000015> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom61,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000015'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000066>))
+fof(axiom62,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000066'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000055> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom63,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000055'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000065>))
+fof(axiom64,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000065'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000058>))
+fof(axiom65,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000058'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000038> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom66,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000038'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% EquivalentObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000293> ObjectInverseOf(<http://purl.obolibrary.org/obo/OBI_0000295>) )
+fof(axiom67,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000293'(X0,X1)<=>'http___purl_obolibrary_org_obo_OBI_0000295'(X1,X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000062> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom68,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000062'(X0)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000029> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom69,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000029'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000022> <http://purl.obolibrary.org/obo/BFO_0000015>)
+fof(axiom70,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000022'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000015'(X1)))).
+
+% ObjectPropertyDomain(<http://purl.obolibrary.org/obo/OBI_0000299> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom71,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000299'(X0,X1)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000026> <https://www.commoncoreontologies.org/ont00000914>)
+fof(axiom72,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000026'(X0,X1)=>'https___www_commoncoreontologies_org_ont00000914'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000059> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom73,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000059'(X0)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000054>))
+fof(axiom74,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000054'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000047>))
+fof(axiom75,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000047'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000023> <https://www.commoncoreontologies.org/ont00001017>)
+fof(axiom76,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000023'(X0,X1)=>'https___www_commoncoreontologies_org_ont00001017'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000042> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom77,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000042'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000061>))
+fof(axiom78,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000061'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000045> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom79,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000045'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000034> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+fof(axiom80,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000034'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000053>))
+fof(axiom81,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000053'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom82,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000025'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% InverseObjectProperties(<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <https://github.com/jonathanvajda/cco-d-acts/ont00000026>)
+fof(axiom83,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000025'(X0,X1)<=>'https___github_com_jonathanvajda_cco_d_acts_ont00000026'(X1,X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000060>))
+fof(axiom84,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000060'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000019> <https://github.com/jonathanvajda/cco-d-acts/ont00000018>)
+fof(axiom85,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000018'(X0)))).
+
+% EquivalentClasses(<https://github.com/jonathanvajda/cco-d-acts/ont00000015> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/BFO_0000023> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000054> <https://github.com/jonathanvajda/cco-d-acts/ont00000007>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000197> <https://github.com/jonathanvajda/cco-d-acts/ont00000016>)) )
+fof(axiom86,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000015'(X0)<=>('http___purl_obolibrary_org_obo_BFO_0000023'(X0)&?[X1]:('http___purl_obolibrary_org_obo_BFO_0000054'(X0,X1)&'https___github_com_jonathanvajda_cco_d_acts_ont00000007'(X1))&?[X2]:('http___purl_obolibrary_org_obo_BFO_0000197'(X0,X2)&'https___github_com_jonathanvajda_cco_d_acts_ont00000016'(X2)))))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000049>))
+fof(axiom87,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000049'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000056>))
+fof(axiom88,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000056'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000312>))
+fof(axiom89,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000312'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000312>))
+fof(axiom90,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000312'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000011> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom91,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000011'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000048>))
+fof(axiom92,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000048'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<http://www.ontologyrepository.com/CommonCoreOntologies/SocialRole>))
+fof(axiom93,axiom,(![X]:('http___www_ontologyrepository_com_CommonCoreOntologies_SocialRole'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000014> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom94,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000014'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000062>))
+fof(axiom95,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000062'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000055>))
+fof(axiom96,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000055'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000046> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom97,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000046'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000037>))
+fof(axiom98,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000037'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000051>))
+fof(axiom99,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000051'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000044>))
+fof(axiom100,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000044'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000043>))
+fof(axiom101,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000043'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000036>))
+fof(axiom102,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000036'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000024> <http://purl.obolibrary.org/obo/BFO_0000015>)
+fof(axiom103,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000024'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000015'(X1)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000050>))
+fof(axiom104,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000050'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000003> <https://www.commoncoreontologies.org/ont00001327>)
+fof(axiom105,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000003'(X0)=>'https___www_commoncoreontologies_org_ont00001327'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000018> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom106,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000018'(X0)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000295>))
+fof(axiom107,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000295'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000295>))
+fof(axiom108,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000295'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% EquivalentClasses(<https://github.com/jonathanvajda/cco-d-acts/ont00000005> ObjectIntersectionOf(<https://www.commoncoreontologies.org/ont00001327> ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/OBI_0000299> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>) ObjectSomeValuesFrom(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>))) )
+fof(axiom109,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)<=>('https___www_commoncoreontologies_org_ont00001327'(X0)&(?[X1]:('http___purl_obolibrary_org_obo_OBI_0000299'(X0,X1)&'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X1))|?[X2]:('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X2)&'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X2))))))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000008> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom110,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000008'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000052>))
+fof(axiom111,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000052'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000049> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom112,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000049'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000046>))
+fof(axiom113,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000046'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000039>))
+fof(axiom114,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000039'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000038>))
+fof(axiom115,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000038'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000065> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom116,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000065'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% ObjectPropertyRange(<http://purl.obolibrary.org/obo/OBI_0000312> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom117,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000312'(X0,X1)=>'https___www_commoncoreontologies_org_ont00000228'(X1)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000045>))
+fof(axiom118,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000045'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000004> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom119,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000027>))
+fof(axiom120,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000027'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000061> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom121,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000061'(X0)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000299> <http://purl.obolibrary.org/obo/BFO_0000057>)
+fof(axiom122,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000299'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000057'(X0,X1)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000034>))
+fof(axiom123,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000034'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubObjectPropertyOf(<http://purl.obolibrary.org/obo/OBI_0000293> <http://purl.obolibrary.org/obo/BFO_0000057>)
+fof(axiom124,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000293'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000057'(X0,X1)))).
+
+% AsymmetricObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>)
+fof(axiom125,axiom,(![X0,X1]:~('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X1)&'https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X1,X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000048> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom126,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000048'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000040>))
+fof(axiom127,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000040'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000033>))
+fof(axiom128,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000033'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000021> <https://github.com/jonathanvajda/cco-d-acts/ont00000018>)
+fof(axiom129,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000021'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000018'(X0)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000293>))
+fof(axiom130,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000293'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000293>))
+fof(axiom131,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000293'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000042>))
+fof(axiom132,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000042'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000060> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom133,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000060'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000054> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom134,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000054'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000016> <https://www.commoncoreontologies.org/ont00000798>)
+fof(axiom135,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000016'(X0)=>'https___www_commoncoreontologies_org_ont00000798'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000029>))
+fof(axiom136,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000029'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000041>))
+fof(axiom137,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000041'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000035>))
+fof(axiom138,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000035'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000028>))
+fof(axiom139,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000028'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% FunctionalObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>)
+fof(axiom140,axiom,(![X0,X1,X2]:(('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X1)&'https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X2))=>(X1=X2)))).
+
+% ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000026> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom141,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000026'(X0,X1)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X1)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000030>))
+fof(axiom142,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000030'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000036> <https://github.com/jonathanvajda/cco-d-acts/ont00000005>)
+fof(axiom143,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000036'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)))).
+
+% ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000024> <https://www.commoncoreontologies.org/ont00001017>)
+fof(axiom144,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000024'(X0,X1)=>'https___www_commoncoreontologies_org_ont00001017'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000016>))
+fof(axiom145,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000016'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000009>))
+fof(axiom146,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000009'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000058> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom147,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000058'(X0)=>'https___www_commoncoreontologies_org_ont00000228'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000047> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom148,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000047'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000032>))
+fof(axiom149,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000032'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% IrreflexiveObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000017>)
+fof(axiom150,axiom,(![X0]:~'https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X0))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000010> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom151,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000010'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000019>))
+fof(axiom152,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000051> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom153,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000051'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000031>))
+fof(axiom154,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000031'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000028> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom155,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000028'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% ObjectPropertyRange(<http://purl.obolibrary.org/obo/OBI_0000295> <https://www.commoncoreontologies.org/ont00000228>)
+fof(axiom156,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000295'(X0,X1)=>'https___www_commoncoreontologies_org_ont00000228'(X1)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000057> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom157,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000057'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000005> <https://www.commoncoreontologies.org/ont00001327>)
+fof(axiom158,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000005'(X0)=>'https___www_commoncoreontologies_org_ont00001327'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000018>))
+fof(axiom159,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000018'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000027> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom160,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000027'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000020>))
+fof(axiom161,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000020'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000025>))
+fof(axiom162,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000025'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000025>))
+fof(axiom163,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000025'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000039> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom164,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000039'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000007>))
+fof(axiom165,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000007'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000299>))
+fof(axiom166,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000299'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/OBI_0000299>))
+fof(axiom167,axiom,(![X,Y]:('http___purl_obolibrary_org_obo_OBI_0000299'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000024>))
+fof(axiom168,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000024'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000024>))
+fof(axiom169,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000024'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000053> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom170,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000053'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000033> <https://github.com/jonathanvajda/cco-d-acts/ont00000001>)
+fof(axiom171,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000033'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000001'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000013>))
+fof(axiom172,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000013'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000006>))
+fof(axiom173,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000006'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000032> <https://github.com/jonathanvajda/cco-d-acts/ont00000019>)
+fof(axiom174,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000032'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000019'(X0)))).
+
+% InverseObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000299> <http://purl.obolibrary.org/obo/OBI_0000312>)
+fof(axiom175,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000299'(X0,X1)<=>'http___purl_obolibrary_org_obo_OBI_0000312'(X1,X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000015>))
+fof(axiom176,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000015'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% ObjectPropertyDomain(<https://github.com/jonathanvajda/cco-d-acts/ont00000017> <https://github.com/jonathanvajda/cco-d-acts/ont00000006>)
+fof(axiom177,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000017'(X0,X1)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000006'(X0)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000030> <https://github.com/jonathanvajda/cco-d-acts/ont00000004>)
+fof(axiom178,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000030'(X0)=>'https___github_com_jonathanvajda_cco_d_acts_ont00000004'(X0)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000026>))
+fof(axiom179,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000026'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% Declaration(ObjectProperty(<https://github.com/jonathanvajda/cco-d-acts/ont00000026>))
+fof(axiom180,axiom,(![X,Y]:('https___github_com_jonathanvajda_cco_d_acts_ont00000026'(X,Y)=>'http___www_w3_org_2002_07_owl_Thing'(Y)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000021>))
+fof(axiom181,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000021'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% ObjectPropertyRange(<https://github.com/jonathanvajda/cco-d-acts/ont00000025> <https://www.commoncoreontologies.org/ont00000914>)
+fof(axiom182,axiom,(![X0,X1]:('https___github_com_jonathanvajda_cco_d_acts_ont00000025'(X0,X1)=>'https___www_commoncoreontologies_org_ont00000914'(X1)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000014>))
+fof(axiom183,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000014'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% SubClassOf(<https://github.com/jonathanvajda/cco-d-acts/ont00000013> <http://purl.obolibrary.org/obo/BFO_0000023>)
+fof(axiom184,axiom,(![X0]:('https___github_com_jonathanvajda_cco_d_acts_ont00000013'(X0)=>'http___purl_obolibrary_org_obo_BFO_0000023'(X0)))).
+
+% Declaration(Class(<https://github.com/jonathanvajda/cco-d-acts/ont00000008>))
+fof(axiom185,axiom,(![X]:('https___github_com_jonathanvajda_cco_d_acts_ont00000008'(X)=>'http___www_w3_org_2002_07_owl_Thing'(X)))).
+
+% EquivalentObjectProperties(<http://purl.obolibrary.org/obo/OBI_0000299> ObjectInverseOf(<http://purl.obolibrary.org/obo/OBI_0000312>) )
+fof(axiom186,axiom,(![X0,X1]:('http___purl_obolibrary_org_obo_OBI_0000299'(X0,X1)<=>'http___purl_obolibrary_org_obo_OBI_0000312'(X1,X0)))).
