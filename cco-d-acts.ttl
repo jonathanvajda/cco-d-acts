@@ -52,6 +52,7 @@ dacts:ont00000017 rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000022
 dacts:ont00000022 rdf:type owl:ObjectProperty ;
+                  owl:inverseOf dacts:ont00000072 ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000001 ;
                   obo:IAO_0000114 obo:IAO_0000120 ;
@@ -201,6 +202,37 @@ dacts:ont00000071 rdf:type owl:ObjectProperty ;
                                    "PERSON: Jonathan Vajda"@en ,
                                    "PERSON: Larry Hunter"@en ,
                                    "PERSON: Melanie Coutot"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000072
+dacts:ont00000072 rdf:type owl:ObjectProperty ;
+                  owl:inverseOf dacts:ont00000022 ;
+                  rdfs:label "has normatively responsible agent"@en ;
+                  skos:definition "x has normatively responsible agent y iff y is normatively responsible for x."@en ;
+                  skos:example "This parent is normatively responsible for the care of the child."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000073
+dacts:ont00000073 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dacts:ont00000022 ;
+                  owl:inverseOf dacts:ont00000074 ;
+                  rdfs:label "has legal custody of"@en ;
+                  skos:definition " x has legal custody of y iff x is an Agent, y is a material entity, such that x is legally responsible for the care or well-being of y, and there is some site z for which x is recognized as having control for fulfilling that responsibility toward y and y is located in z."@en ;
+                  skos:example "This parent has legal custody of the child."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000074
+dacts:ont00000074 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dacts:ont00000072 ;
+                  rdfs:label "is legally in the custody of"@en ;
+                  skos:definition " x is legally in the custody of y iff y has legal custody of x."@en ;
+                  skos:example "The child is legally in the custody of the parent."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 #################################################################
