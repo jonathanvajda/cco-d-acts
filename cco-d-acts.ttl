@@ -238,9 +238,12 @@ dacts:ont00000074 rdf:type owl:ObjectProperty ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000075
 dacts:ont00000075 rdf:type owl:ObjectProperty ;
                   rdfs:label "is a signatory to"@en ;
+                  owl:inverseOf dacts:ont00000076 ;
+                  rdfs:domain cco2:ont00001017 ;
+                  rdfs:range cco2:ont00001346 ;
+                  dcterms:bibliographicCitation "https://dictionary.cambridge.org/us/dictionary/english/signatory"^^xsd:anyURI ;
                   skos:definition "x is a signatory to y iff x is an instance of Agent and y is an instance of Legal Instrument, such that x has legally signed y."@en ;
                   skos:example "This head of state is a signatory to the treaty; a car owner is a signatory to a title document for the car."@en ;
-                  cco2:ont00001754 "https://dictionary.cambridge.org/us/dictionary/english/signatory"@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Shane M. Babcock"@en .
 
@@ -248,9 +251,12 @@ dacts:ont00000075 rdf:type owl:ObjectProperty ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000076
 dacts:ont00000076 rdf:type owl:ObjectProperty ;
                   rdfs:label "has signatory"@en ;
+                  owl:inverseOf dacts:ont00000075 ;
+                  rdfs:domain cco2:ont00001346 ;
+                  rdfs:range cco2:ont00001017 ;
+                  dcterms:bibliographicCitation "https://dictionary.cambridge.org/us/dictionary/english/signatory"^^xsd:anyURI ;
                   skos:definition "x has signatory y =Def y is a signatory to x."@en ;
                   skos:example "The treaty has signatory this head of state; the title document for the car has signatory the car's owner."@en ;
-                  cco2:ont00001754 "https://dictionary.cambridge.org/us/dictionary/english/signatory"@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Shane M. Babcock"@en .
 
