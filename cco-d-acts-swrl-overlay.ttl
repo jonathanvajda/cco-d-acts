@@ -1,0 +1,695 @@
+@prefix : <https://github.com/jonathanvajda/cco-d-acts-swrl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cco2: <https://www.commoncoreontologies.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dacts: <https://github.com/jonathanvajda/cco-d-acts/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix swrl: <http://www.w3.org/2002/07/owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <https://github.com/jonathanvajda/cco-d-acts-swrl> .
+
+<https://github.com/jonathanvajda/cco-d-acts-swrl> rdf:type owl:Ontology ;
+    owl:imports <https://github.com/jonathanvajda/cco-d-acts> ;
+    dc:title "SWRL Rules Overlay for CCO-Conformant Document Acts Ontology"@en ;
+    dcterms:contributor "Jonathan M. Vajda" ;
+    dcterms:description "A dedicated inference overlay module mapping advanced SWRL rules directly to the classes and structural patterns defined in cco-d-acts."@en ;
+    owl:versionInfo "2026-06-21"@en .
+
+
+#################################################################
+#    SWRL Variable Declarations
+#################################################################
+
+:act rdf:type swrl:Variable .
+:agent rdf:type swrl:Variable .
+:agentA rdf:type swrl:Variable .
+:agentB rdf:type swrl:Variable .
+:role rdf:type swrl:Variable .
+:power rdf:type swrl:Variable .
+:claim rdf:type swrl:Variable .
+:duty rdf:type swrl:Variable .
+:iba rdf:type swrl:Variable .
+:ice rdf:type swrl:Variable .
+:process rdf:type swrl:Variable .
+:entity rdf:type swrl:Variable .
+:asset rdf:type swrl:Variable .
+:owner rdf:type swrl:Variable .
+:priv rdf:type swrl:Variable .
+:obRole rdf:type swrl:Variable .
+:eeRole rdf:type swrl:Variable .
+:spouse1 rdf:type swrl:Variable .
+:spouse2 rdf:type swrl:Variable .
+:officiant rdf:type swrl:Variable .
+:r1 rdf:type swrl:Variable .
+:r2 rdf:type swrl:Variable .
+:grantee rdf:type swrl:Variable .
+:cRole rdf:type swrl:Variable .
+:nRole rdf:type swrl:Variable .
+:doc rdf:type swrl:Variable .
+:designation rdf:type swrl:Variable .
+:will rdf:type swrl:Variable .
+:proc rdf:type swrl:Variable .
+:attyRole rdf:type swrl:Variable .
+:advRole rdf:type swrl:Variable .
+:recRole rdf:type swrl:Variable .
+:gRole rdf:type swrl:Variable .
+:filing rdf:type swrl:Variable .
+:principal rdf:type swrl:Variable .
+:representative rdf:type swrl:Variable .
+:witness rdf:type swrl:Variable .
+:notary rdf:type swrl:Variable .
+:beneficiary rdf:type swrl:Variable .
+:trustor rdf:type swrl:Variable .
+:trustee rdf:type swrl:Variable .
+:testator rdf:type swrl:Variable .
+:signatory rdf:type swrl:Variable .
+
+
+#################################################################
+#    SWRL Rules (Implications)
+#    Organized by Core Applied Ontology Architectural Patterns
+#################################################################
+
+# =================================================================
+# Rule 1: Document Act Performer Role Execution Inherence
+# Pattern: BFO Process Realization & Contextual Role Mapping
+# 
+# Captures: If an Agent (?agent) actively participates (obo:BFO_0000057) 
+# in a Deontic Document Act (?act), this rule automatically infers 
+# that the agent must hold a Document Act Performer Role (?role) which 
+# inheres in (?obo:BFO_0000052) them and is realized by (?obo:BFO_0000055) 
+# that specific process. 
+#
+# Value: Standard OWL2 restrictions can only state that a process *can* # realize a role. SWRL is required to dynamically instantiate and bind 
+# the active role bearer directly to the runtime event instance.
+# =================================================================
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000006 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000012 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :role ]
+  )
+] .
+
+
+# =================================================================
+# Rule 2: Hohfeldian Claim-Duty Correlative Inference
+# Pattern: Neo-Aristotelian Relational Dependence & Social Duality
+# 
+# Captures: In Hohfeldian legal theory, a right or claim cannot exist in a 
+# vacuum; it is strictly correlative to a duty. If an Agent (?agentA) bears 
+# a Claimant Role (?claim) and a second Agent (?agentB) is declared 
+# normatively responsible for (?dacts:ont00000022) that specific claim, 
+# this rule forces the automatic generation of a matching Duty Holder Role 
+# (?duty) inhering in (?agentB).
+#
+# Value: This rules bridges independent entities across distinct agents, 
+# establishing cross-property dependencies that standard OWL description 
+# logic axioms cannot enforce natively.
+# =================================================================
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000008 ; swrl:argument1 :claim ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :claim ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000022 ; swrl:argument1 :agentB ; swrl:argument2 :claim ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000009 ; swrl:argument1 :duty ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :duty ; swrl:argument2 :agentB ]
+  )
+] .
+
+
+# =================================================================
+# Rule 3: Deontic Power Role Dynamic Realization
+# Pattern: Operationalization of Institutional Capacities
+# 
+# Captures: Maps the transition of an institutional capacity to action. 
+# If an Agent (?agent) bears a Deontic Power Role (?power) and acts 
+# within a Deontic Declaration (?act), the rule infers that the process 
+# constitutes an explicit realization (obo:BFO_0000055) of that power.
+#
+# Value: Provides crisp validation for auditable workflows—preventing 
+# non-authorized actors from executing declarations without the requisite 
+# institutional power pre-assigned.
+# =================================================================
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000010 ; swrl:argument1 :power ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :power ; swrl:argument2 :agent ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000005 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :power ]
+  )
+] .
+
+
+# =================================================================
+# Rule 4: CCO Template Creator Role Auto-Allocation
+# Pattern: CCO Information Pattern Output Mapping
+# 
+# Captures: Automatically links document architecture to human roles. If 
+# an Agent (?agent) is a participant in a design or planning process (?process) 
+# which has a specified output (dacts:ont00000070) of an unexecuted 
+# Document Act Input Document (?iba), that agent is inferred to hold 
+# the Document Act Template Creator Role (?role).
+#
+# Value: Keeps documentation metadata clean by deriving professional authorship 
+# statuses strictly from the concrete physical/digital payload types produced.
+# =================================================================
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000001 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000070 ; swrl:argument1 :process ; swrl:argument2 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :process ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000013 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+  )
+] .
+
+
+# =================================================================
+# Rule 5: Cross-Property Revocation Binding
+# Pattern: Neo-Aristotelian Substantive State Changes
+# 
+# Captures: Traces the legal termination chain. If a Deontic Document Act 
+# (?act) legally revokes (dacts:ont00000017) a Deontic Role (?role), and 
+# that role explicitly inheres in (?obo:BFO_0000052) an Agent (?agent), 
+# this rule infers that the agent becomes normatively accountable or answerable 
+# for the outcome event of that specific document act.
+#
+# Value: Constructs an intricate relational chain linking three separate 
+# variables (?act, ?role, ?agent) simultaneously, ensuring downstream 
+# reasoners catch state updates (the cessation of role existence) accurately.
+# =================================================================
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000006 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000017 ; swrl:argument1 :act ; swrl:argument2 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000024 ; swrl:argument1 :agent ; swrl:argument2 :act ]
+  )
+] .
+
+# Captures: If an Agent (?agent) participates in a Document Act (?act), they bear a Document Act Performer Role (?role) realized by that act.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000021 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000012 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :role ]
+  )
+] .
+
+# Captures: If an Agent (?agent) participates in a Deontic Declaration (?act), they bear a Deontic Declaration Performer Role (?role) realized by that declaration.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000005 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000014 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :role ]
+  )
+] .
+
+# Captures: If Agent A holds a Claimant Role (?claim) and Agent B is normatively responsible for it, Agent B is assigned a correlative Duty Holder Role (?duty).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000008 ; swrl:argument1 :claim ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :claim ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000022 ; swrl:argument1 :agentB ; swrl:argument2 :claim ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000009 ; swrl:argument1 :duty ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :duty ; swrl:argument2 :agentB ]
+  )
+] .
+
+# Captures: If an Agent (?agent) bearing a Deontic Power Role (?power) acts within a Deontic Declaration (?act), the act explicitly realizes that power.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000010 ; swrl:argument1 :power ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :power ; swrl:argument2 :agent ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000005 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :power ]
+  )
+] .
+
+# Captures: If an Agent (?agent) participates in a process that outputs an unexecuted Document Act Input Document (?iba), they hold a Document Act Template Creator Role (?role).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000001 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000070 ; swrl:argument1 :process ; swrl:argument2 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :process ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000013 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: If a Deontic Document Act (?act) revokes a Deontic Role (?role) inhering in an Agent (?agent), that agent is normatively accountable for the outcome event of that act.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000006 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000017 ; swrl:argument1 :act ; swrl:argument2 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000024 ; swrl:argument1 :agent ; swrl:argument2 :act ]
+  )
+] .
+
+# Captures: If an Object (?iba) is used in an Act of Authentication (?act), it is classified as an Identification Artifact and bears a Credential Role (?role).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000007 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :iba ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000016 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000015 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :iba ]
+  )
+] .
+
+# Captures: If an artifact is a Mortgage Contract Document (?iba), its concretized Information Content Entity (?ice) is inferred to be Mortgage Contract Information Content.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000038 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000039 ; swrl:argument1 :ice ]
+  )
+] .
+
+# Captures: If an Advance Directive (?doc) acts as a specified input to a process (?act), that process is inferred to be an Act of Advance Directive Declaring.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000044 ; swrl:argument1 :doc ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000068 ; swrl:argument1 :act ; swrl:argument2 :doc ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000043 ; swrl:argument1 :act ]
+  )
+] .
+
+# Captures: If an Estate Document (?iba) bears a Will and Testament Content (?will) which contains Heir Designation Content (?designation) about an Agent (?agent), that agent bears an Heir Role (?role).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000051 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :will ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000049 ; swrl:argument1 :will ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:has_part ; swrl:argument1 :will ; swrl:argument2 :designation ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000050 ; swrl:argument1 :designation ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_about ; swrl:argument1 :designation ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000046 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: If an Agent (?agent) is causally responsible for a process (?process), they bear a Causal Accountability Role (?cRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate obo:BFO_0000015 ; swrl:argument1 :process ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000023 ; swrl:argument1 :agent ; swrl:argument2 :process ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000028 ; swrl:argument1 :cRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :cRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: If an Agent (?agent) is normatively accountable for an event (?process), they bear a Normative Accountability Role (?nRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate obo:BFO_0000015 ; swrl:argument1 :process ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000024 ; swrl:argument1 :agent ; swrl:argument2 :process ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000027 ; swrl:argument1 :nRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :nRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: An Agent (?agent) holding a Legal Guardian Role (?gRole) automatically inherits and bears a Personal Custodian Role (?cRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000065 ; swrl:argument1 :gRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :gRole ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000064 ; swrl:argument1 :cRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :cRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: A process that is a Lawyer Licensing Process (?proc) and outputs a document (?doc) infers that the document is a Lawyer License Document.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000058 ; swrl:argument1 :proc ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000070 ; swrl:argument1 :proc ; swrl:argument2 :doc ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000056 ; swrl:argument1 :doc ]
+  )
+] .
+
+# Captures: If a Lawyer License Document (?doc) is about an Agent (?agent), that agent holds a Legal Attorney Role (?attyRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000056 ; swrl:argument1 :doc ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_about ; swrl:argument1 :doc ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000052 ; swrl:argument1 :attyRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :attyRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: If an Agent (?agent) participates in a Legal Filing Process (?filing) using a Legal Representation Declaration Document (?doc), they bear an Attorney of Record Role (?recRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000063 ; swrl:argument1 :filing ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :filing ; swrl:argument2 :agent ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000060 ; swrl:argument1 :doc ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000069 ; swrl:argument1 :doc ; swrl:argument2 :filing ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000055 ; swrl:argument1 :recRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :recRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: An Act of Ownership (?act) involving an owner (?owner) and an asset (?asset) simultaneously generates an Owner Entity Role (?r1) and an Owned Entity Role (?r2).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000042 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :owner ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :asset ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000040 ; swrl:argument1 :r1 ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :r1 ; swrl:argument2 :owner ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000041 ; swrl:argument1 :r2 ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :r2 ; swrl:argument2 :asset ]
+  )
+] .
+
+# Captures: An Act of Marriage Pronouncing (?act) executed by an officiant with a Deontic Declaration Performer Role (?officiant) instantiates relational Deontic Roles (?r1, ?r2) for both spouses.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000031 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :spouse1 ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :spouse2 ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :officiant ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000014 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :officiant ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000004 ; swrl:argument1 :r1 ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :r1 ; swrl:argument2 :spouse1 ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000004 ; swrl:argument1 :r2 ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :r2 ; swrl:argument2 :spouse2 ]
+  )
+] .
+
+# Captures: An Act of Authorizing (?act) targeting an Agent (?grantee) infers that the grantee holds a Deontic Power Role (?power).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000032 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :grantee ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000010 ; swrl:argument1 :power ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :power ; swrl:argument2 :grantee ]
+  )
+] .
+
+# Captures: An Act of Permitting (?act) focused on an Agent (?agent) infers that the agent holds a Privilege Holder Role (?priv).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000034 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000011 ; swrl:argument1 :priv ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :priv ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: An Act of Obligating (?act) targeting an Agent (?agent) infers that the agent bears an Obligor Role (?obRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000035 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000029 ; swrl:argument1 :obRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :obRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: An Act of Prohibiting (?act) focused on an Agent (?agent) infers that the agent holds a Duty Holder Role (?duty) specifying a negative duty.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000036 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000009 ; swrl:argument1 :duty ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :duty ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: If Agent A is an Obligor Role (?obRole) bearer and Agent B is normatively responsible for tracking it, Agent B is inferred to be the Obligee Role (?eeRole) bearer.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000029 ; swrl:argument1 :obRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :obRole ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000022 ; swrl:argument1 :agentB ; swrl:argument2 :obRole ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000030 ; swrl:argument1 :eeRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :eeRole ; swrl:argument2 :agentB ]
+  )
+] .
+
+# Captures: An Agent (?agent) bearing a Legal Attorney Role (?attyRole) natively possesses the capacity to fulfill a Legal Advisor Role (?advRole).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000052 ; swrl:argument1 :attyRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :attyRole ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000054 ; swrl:argument1 :advRole ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :advRole ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: A Deontic Role (?role) that regulates personal data privacy for an Agent (?agent) is classified as a Privacy Entitlement Role.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000004 ; swrl:argument1 :role ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :role ; swrl:argument2 :agent ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000022 ; swrl:argument1 :agent ; swrl:argument2 :role ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000067 ; swrl:argument1 :role ]
+  )
+] .
+
+# Captures: If an Agent (?agentA) has legal custody of an entity (?entity), then that entity is legally in the custody of that agent (?agentA).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000073 ; swrl:argument1 :agentA ; swrl:argument2 :entity ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000074 ; swrl:argument1 :entity ; swrl:argument2 :agentA ]
+  )
+] .
+
+# Captures: If a Document Act Input Document (?iba) is specified as an input to a process (?act), that process is classified as a Document Act.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000001 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000068 ; swrl:argument1 :act ; swrl:argument2 :iba ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000021 ; swrl:argument1 :act ]
+  )
+] .
+
+# Captures: If an Identification Artifact (?iba) is the bearer of a particular piece of Information Content Entity (?ice), that content is classified as Identification Content.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000016 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000089 ; swrl:argument1 :ice ]
+  )
+] .
+
+# Captures: If a Power of Attorney Document (?iba) is the bearer of an ICE (?ice), that content is classified as Power of Attorney Content.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000081 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000082 ; swrl:argument1 :ice ]
+  )
+] .
+
+# Captures: Execution of Power of Attorney Content (?ice) assigns a Principal Role (?principal) to the grantor and a Representative Role (?representative) to the grantee.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000082 ; swrl:argument1 :ice ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_about ; swrl:argument1 :ice ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000022 ; swrl:argument1 :agentB ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000071 ; swrl:argument1 :principal ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :principal ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000072 ; swrl:argument1 :representative ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :representative ; swrl:argument2 :agentB ]
+  )
+] .
+
+# Captures: If an Agent (?agent) actively participates in an Act of Witnessing (?act), they bear a Witness Role (?witness) realized by that act.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000095 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000075 ; swrl:argument1 :witness ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :witness ; swrl:argument2 :agent ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :witness ]
+  )
+] .
+
+# Captures: If an Agent (?agent) actively participates in an Act of Notarization (?act), they bear a Notary Role (?notary) realized by that act.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000094 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000076 ; swrl:argument1 :notary ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :notary ; swrl:argument2 :agent ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000055 ; swrl:argument1 :act ; swrl:argument2 :notary ]
+  )
+] .
+
+# Captures: A Trust Agreement Document (?iba) hosting Trust Agreement Content (?ice) models the roles of Trustor (?trustor), Trustee (?trustee), and Beneficiary (?beneficiary).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000083 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000084 ; swrl:argument1 :ice ]
+  )
+] .
+
+# Captures: An Act of Trust Creation (?act) maps distinct agents to Trustor (?trustor), Trustee (?trustee), and Beneficiary (?beneficiary) roles.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000096 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate dacts:ont00000022 ; swrl:argument1 :agentB ; swrl:argument2 :act ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000078 ; swrl:argument1 :trustor ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :trustor ; swrl:argument2 :agentA ]
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000079 ; swrl:argument1 :trustee ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :trustee ; swrl:argument2 :agentB ]
+  )
+] .
+
+# Captures: If an Agent (?agent) executes a Will and Testament Content (?will), they are inferred to hold the Testator Role (?testator).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000049 ; swrl:argument1 :will ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_about ; swrl:argument1 :will ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000080 ; swrl:argument1 :testator ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :testator ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: A Contract Document (?iba) hosting Contract Content (?ice) identifies that any participating agent who signs it acts as a Contract Signatory (?signatory).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000087 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000088 ; swrl:argument1 :ice ]
+  )
+] .
+
+# Captures: If an Agent (?agent) actively participates in an Act of Contract Execution (?act), they bear a Contract Signatory role (?signatory).
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000092 ; swrl:argument1 :act ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000057 ; swrl:argument1 :act ; swrl:argument2 :agent ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000004 ; swrl:argument1 :signatory ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate obo:BFO_0000052 ; swrl:argument1 :signatory ; swrl:argument2 :agent ]
+  )
+] .
+
+# Captures: A Deed of Trust Document (?iba) hosting Deed of Trust Content (?ice) binds transactional property guarantees.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000085 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000086 ; swrl:argument1 :ice ]
+  )
+] .
+
+# Captures: An Affidavit Document (?iba) hosting Affidavit Content (?ice) legally formalizes declared assertions under oath.
+[ rdf:type swrl:Imp ;
+  swrl:body (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000090 ; swrl:argument1 :iba ]
+    [ rdf:type swrl:IndividualPropertyAtom ; swrl:propertyPredicate cco:is_bearer_of ; swrl:argument1 :iba ; swrl:argument2 :ice ]
+  ) ;
+  swrl:head (
+    [ rdf:type swrl:ClassAtom ; swrl:classPredicate dacts:ont00000091 ; swrl:argument1 :ice ]
+  )
+] .
