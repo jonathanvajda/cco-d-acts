@@ -1,0 +1,34 @@
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX obo:     <http://purl.obolibrary.org/obo/>
+
+DELETE {
+  ?class obo:IAO_0000114 ?oldStatus .
+}
+INSERT {
+  ?class obo:IAO_0000114 ?newStatus .
+}
+WHERE {
+  ?class a owl:Class ;
+         obo:IAO_0000114 ?oldStatus ;
+         rdfs:label ?label ;
+         skos:definition ?definition ;
+         rdfs:subClassOf ?parent .
+
+  BIND(EXISTS { ?class skos:example ?example } AS ?hasExample)
+  BIND(EXISTS { ?class skos:scopeNote ?scopeNote } AS ?hasScopeNote)
+  BIND(EXISTS { ?class dcterms:bibliographicCitation ?citation } AS ?hasCitation)
+
+  BIND(
+    IF(
+      ?hasExample && ?hasScopeNote && ?hasCitation,
+      obo:IAO_0000122,
+      obo:IAO_0000125
+    )
+    AS ?newStatus
+  )
+
+  FILTER(?oldStatus != ?newStatus)
+}

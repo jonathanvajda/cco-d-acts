@@ -1,6 +1,5 @@
 @prefix : <https://github.com/jonathanvajda/cco-d-acts#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,10 +10,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dacts: <https://github.com/jonathanvajda/cco-d-acts/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://github.com/jonathanvajda/cco-d-acts> .
+@base <https://github.com/jonathanvajda/cco-d-acts#> .
 
 <https://github.com/jonathanvajda/cco-d-acts> rdf:type owl:Ontology ;
-                                               owl:versionIRI <https://github.com/jonathanvajda/2026-05-13/cco-d-acts> ;
+                                               owl:versionIRI <https://github.com/jonathanvajda/2026-06-23/cco-d-acts> ;
                                                owl:imports <https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged> ;
                                                dc:title "CCO-Conformant Document Acts Ontology"@en ;
                                                dcterms:contributor "Jonathan M. Vajda" ;
@@ -23,7 +22,7 @@
                                                rdfs:comment "CCO-D-Acts is designed to fill a gap in representation of social, legal, normative, and deontic entities for ontologies that rely on the Common Core Ontologies (CCO) suite (https://github.com/CommonCoreOntology/CommonCoreOntologies). Within the Basic Formal Ontology (BFO) ecosystem, the Document Acts (D-Acts) ontology (https://github.com/d-acts/d-acts) is an extension of the OBO Foundry Information Artifact Ontology (IAO). This ontology proposes to transpose that OBO ontology into a CCO equivalent."@en ,
                                                             "The most recent version of this file is always hosted on GitHub https://github.com/jonathanvajda/cco-d-acts"@en ;
                                                rdfs:label "CCO-Conformant Document Acts Ontology"@en ;
-                                               owl:versionInfo "2026-05-13"@en .
+                                               owl:versionInfo "2026-06-23"@en .
 
 #################################################################
 #    Object Properties
@@ -37,7 +36,7 @@ dacts:ont00000017 rdf:type owl:ObjectProperty ;
                            owl:IrreflexiveProperty ;
                   rdfs:domain dacts:ont00000006 ;
                   rdfs:range dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1007/978-3-642-33618-8_57"^^xsd:anyURI ;
                   rdfs:comment "Comment from original curator: It is important to note that this going out of existence of s is complete and unlike the going out of existence for material entities which basically always are transformed into something else. After the declaration nothing is left of the socio-legal generically dependent continuant in question."@en ;
                   rdfs:label "legally revokes"@en ;
@@ -55,7 +54,7 @@ dacts:ont00000022 rdf:type owl:ObjectProperty ;
                   owl:inverseOf dacts:ont00000072 ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
                   rdfs:label "is normatively responsible for"@en ;
                   skos:definition "x is normatively responsible for y, iff x is an Agent and y is an Entity, such that x bears some role with respect to y, that is realized in some act that regulates, oversees, or manages entities with respect to y, and x may be held normatively accountable for the outcomes of that regulation, oversight or management."@en ;
@@ -83,6 +82,7 @@ dacts:ont00000023 rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000024
 dacts:ont00000024 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dacts:ont00000022 ;
                   rdfs:domain cco2:ont00001017 ;
                   rdfs:range obo:BFO_0000015 ;
                   obo:IAO_0000114 obo:IAO_0000120 ;
@@ -206,7 +206,9 @@ dacts:ont00000071 rdf:type owl:ObjectProperty ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000072
 dacts:ont00000072 rdf:type owl:ObjectProperty ;
-                  owl:inverseOf dacts:ont00000022 ;
+                  rdfs:domain obo:BFO_0000001 ;
+                  rdfs:range cco2:ont00001017 ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "has normatively responsible agent"@en ;
                   skos:definition "x has normatively responsible agent y iff y is normatively responsible for x."@en ;
                   skos:example "This parent is normatively responsible for the care of the child."@en ;
@@ -218,6 +220,9 @@ dacts:ont00000072 rdf:type owl:ObjectProperty ;
 dacts:ont00000073 rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf dacts:ont00000022 ;
                   owl:inverseOf dacts:ont00000074 ;
+                  rdfs:domain cco2:ont00001017 ;
+                  rdfs:range obo:BFO_0000040 ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "has legal custody of"@en ;
                   skos:definition " x has legal custody of y iff x is an Agent, y is a material entity, such that x is legally responsible for the care or well-being of y, and there is some site z for which x is recognized as having control for fulfilling that responsibility toward y and y is located in z."@en ;
                   skos:example "This parent has legal custody of the child."@en ;
@@ -228,9 +233,66 @@ dacts:ont00000073 rdf:type owl:ObjectProperty ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000074
 dacts:ont00000074 rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf dacts:ont00000072 ;
+                  rdfs:domain obo:BFO_0000040 ;
+                  rdfs:range cco2:ont00001017 ;
+                  obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "is legally in the custody of"@en ;
                   skos:definition " x is legally in the custody of y iff y has legal custody of x."@en ;
                   skos:example "The child is legally in the custody of the parent."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000075
+dacts:ont00000075 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dacts:ont00000081 ;
+                  owl:inverseOf dacts:ont00000076 ;
+                  rdfs:domain cco2:ont00001017 ;
+                  rdfs:range cco2:ont00001346 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  dcterms:bibliographicCitation "https://dictionary.cambridge.org/us/dictionary/english/signatory"^^xsd:anyURI ;
+                  rdfs:label "is a signatory to"@en ;
+                  skos:definition "x is a signatory to y iff x is an instance of Agent and y is an instance of Legal Instrument, such that x has legally signed y."@en ;
+                  skos:example "This head of state is a signatory to the treaty; a car owner is a signatory to a title document for the car."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Shane M. Babcock"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000076
+dacts:ont00000076 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dacts:ont00000082 ;
+                  rdfs:domain cco2:ont00001346 ;
+                  rdfs:range cco2:ont00001017 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  dcterms:bibliographicCitation "https://dictionary.cambridge.org/us/dictionary/english/signatory"^^xsd:anyURI ;
+                  rdfs:label "has signatory"@en ;
+                  skos:definition "x has signatory y =Def y is a signatory to x."@en ;
+                  skos:example "The treaty has signatory this head of state; the title document for the car has signatory the car's owner."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Shane M. Babcock"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000081
+dacts:ont00000081 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco2:ont00001813 ;
+                  owl:inverseOf dacts:ont00000082 ;
+                  rdfs:domain cco2:ont00001017 ;
+                  rdfs:range obo:BFO_0000002 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  rdfs:label "is signee of"@en ;
+                  skos:definition "x is signee of y iff x is an instance of Agent, y is an instance of Artifact, z is an Act of Artifact Signing, such that x is agent in z, y participates in z, and x uses y in the process z."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000082
+dacts:ont00000082 rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf cco2:ont00001925 ;
+                  rdfs:domain obo:BFO_0000002 ;
+                  rdfs:range cco2:ont00001017 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  rdfs:label "has signee"@en ;
+                  skos:definition "x has signee y iff y is an instance of Agent, x is an instance of Artifact, z is an Act of Artifact Signing, such that y is agent in z, x participates in z, and y uses x in the process z."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Jonathan M. Vajda"@en .
 
@@ -242,7 +304,7 @@ dacts:ont00000074 rdf:type owl:ObjectProperty ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000001
 dacts:ont00000001 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00001298 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:comment "Originally a subclass of document (a subclass of Information Content Entity). Since it takes an input, Information Bearing Artifact is a better genus."@en ;
                   rdfs:label "Document Act Input Document"@en ;
@@ -259,7 +321,7 @@ dacts:ont00000001 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000003
 dacts:ont00000003 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00001327 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Standing Declaration"@en ;
                   skos:altLabel "enactment"@en ;
@@ -275,7 +337,7 @@ dacts:ont00000003 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000004
 dacts:ont00000004 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:comment "This definition attempts to capture \"A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.\" (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents."@en ;
                   rdfs:label "Deontic Role"@en ;
@@ -307,7 +369,7 @@ dacts:ont00000005 rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:subClassOf cco2:ont00001327 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Deontic Declaration"@en ;
                   skos:definition "A Social Act that creates, revokes, or modifies a Deontic Role."@en ;
@@ -335,7 +397,7 @@ dacts:ont00000006 rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:subClassOf dacts:ont00000005 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Deontic Document Act"@en ;
                   skos:definition "A Deontic Declaration that creates, revokes, or modifies a Deontic Role by legitimately manipulating (signing, stamping, publishing) a Document"@en ;
@@ -351,7 +413,7 @@ dacts:ont00000006 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000007
 dacts:ont00000007 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
                   rdfs:label "Act of Authentication"@en ;
                   rdfs:seeAlso obo:IAO_0020023 ;
                   skos:altLabel "Authentication"@en ;
@@ -366,7 +428,7 @@ dacts:ont00000007 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000008
 dacts:ont00000008 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:comment "Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child."@en ;
                   rdfs:label "Claimant Role"@en ;
@@ -381,7 +443,7 @@ dacts:ont00000008 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000009
 dacts:ont00000009 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:comment "Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child."@en ;
                   rdfs:label "Duty Holder Role"@en ;
@@ -396,7 +458,7 @@ dacts:ont00000009 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000010
 dacts:ont00000010 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:label "Deontic Power Role"@en ;
                   skos:definition "A Deontic Role that, if realized, is realized by its bearer's creating, revoking, or modifying some Deontic Role."@en ;
@@ -412,7 +474,7 @@ dacts:ont00000010 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000011
 dacts:ont00000011 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:label "Privilege Holder Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent A, that specifies that no Agent B bears a Claimant Role against A performing Act C."@en ;
@@ -426,7 +488,7 @@ dacts:ont00000011 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000012
 dacts:ont00000012 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Document Act Performer Role"@en ;
                   skos:definition "A Role inhering in an Agent (either a human, an organization, or an aggregate of either) that is realized by the bearer being an agent (initiating participant) in a Document Act."@en ;
@@ -440,7 +502,7 @@ dacts:ont00000012 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000013
 dacts:ont00000013 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Document Act Template Creator Role"@en ;
                   skos:definition "A Role that inheres in an Agent (a human, organization, or aggregate of these) that is realized in preparing a Document that is the specified input to a Document Act and is the Input Document of a Document Act."@en ;
@@ -454,7 +516,7 @@ dacts:ont00000013 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000014
 dacts:ont00000014 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Deontic Declaration Performer Role"@en ;
                   skos:definition "A Role inhering in an Agent or Aggregate of Agents that is realized by the bearer being the active participant (agent in) a Deontic Declaration."@en ;
@@ -480,7 +542,7 @@ dacts:ont00000015 rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
                   rdfs:label "Credential Role"@en ;
                   rdfs:seeAlso obo:IAO_0020024 ;
                   skos:definition "A Role that inheres in an Identification Artifact and is realized by some Act of Authentication process."@en ;
@@ -495,7 +557,7 @@ dacts:ont00000015 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000016
 dacts:ont00000016 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000798 ;
-                  obo:IAO_0000114 obo:IAO_0000123 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
                   rdfs:label "Identification Artifact"@en ;
                   rdfs:seeAlso obo:IAO_0020021 ;
                   skos:altLabel "Identity Document"@en ;
@@ -511,7 +573,7 @@ dacts:ont00000016 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000018
 dacts:ont00000018 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/archives/spr2024/entries/social-ontology/"^^xsd:anyURI ;
                   rdfs:label "Social Act"@en ;
                   skos:definition "A planned act that creates, modifies, or extinguishes a social entity by means of communication between one or more agents."@en ;
@@ -524,7 +586,7 @@ dacts:ont00000018 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000019
 dacts:ont00000019 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:label "Deontic Act"@en ;
                   skos:definition "A social act that creates, modifies, or extinguishes a deontic role."@en ;
@@ -537,7 +599,7 @@ dacts:ont00000019 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000020
 dacts:ont00000020 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/archives/fall2023/entries/speech-acts/"^^xsd:anyURI ;
                   rdfs:label "Speech Act"@en ;
                   skos:definition "A social act that changes some social arrangement by means of speech."@en ;
@@ -550,7 +612,7 @@ dacts:ont00000020 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000021
 dacts:ont00000021 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000018 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1515/9783110322507.120"^^xsd:anyURI ;
                   rdfs:label "Document Act"@en ;
                   skos:definition "A social act that changes some social arrangement by means of document."@en ;
@@ -563,7 +625,7 @@ dacts:ont00000021 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000027
 dacts:ont00000027 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "Taxonomy of disposition parthood https://hal.science/hal-02983145/"@en ,
                                                 "https://ceur-ws.org/Vol-2285/ICBO_2018_paper_13.pdf"@en ,
                                                 "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
@@ -578,7 +640,7 @@ dacts:ont00000027 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000028
 dacts:ont00000028 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://doi.org/10.1177/1463499606061731"^^xsd:anyURI ;
                   rdfs:label "Causal Accountability Role"@en ;
                   skos:definition "A Role that inheres in an Agent and is realized in that agent's being answerable for an outcome by virtue of the agent's causal contribution to a process producing it."@en ;
@@ -591,7 +653,7 @@ dacts:ont00000028 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000029
 dacts:ont00000029 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/obligor"^^xsd:anyURI ;
                   rdfs:label "Obligor Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and is externally grounded in an obligation owed to some obligee, such that the bearer is required to perform, refrain from, or transfer something."@en ;
@@ -604,7 +666,7 @@ dacts:ont00000029 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000030
 dacts:ont00000030 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/obligee"^^xsd:anyURI ;
                   rdfs:label "Obligee Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and is externally grounded in an obligation owed by some obligor, such that the bearer is entitled to the obligor's performance, forbearance, or transfer."@en ;
@@ -617,7 +679,7 @@ dacts:ont00000030 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000031
 dacts:ont00000031 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000019 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/solemnization_of_marriage"^^xsd:anyURI ;
                   rdfs:label "Act of Marriage Pronouncing"@en ;
                   skos:definition "A Deontic Act that creates a marital status by an authorized officiant's declaring that the parties are married."@en ;
@@ -630,7 +692,7 @@ dacts:ont00000031 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000032
 dacts:ont00000032 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000005 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/authorize"^^xsd:anyURI ;
                   rdfs:label "Act of Authorizing"@en ;
                   skos:definition "A Deontic Declaration that grants an agent or organization the authority, permission, or institutional standing to perform some specified act."@en ;
@@ -643,7 +705,7 @@ dacts:ont00000032 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000033
 dacts:ont00000033 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/release"^^xsd:anyURI ;
                   rdfs:label "Release Form Document"@en ;
                   skos:definition "A Document Act Input Document that is prepared to be executed in a document act whose output is the waiver, discharge, or surrender of a claim, duty, or liability."@en ;
@@ -656,7 +718,7 @@ dacts:ont00000033 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000034
 dacts:ont00000034 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000005 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:label "Act of Permitting"@en ;
                   skos:definition "A Deontic Declaration that creates or confirms a Privilege Holder Role with respect to some specified act or omission."@en ;
@@ -669,7 +731,7 @@ dacts:ont00000034 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000035
 dacts:ont00000035 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000005 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/obligation"^^xsd:anyURI ;
                   rdfs:label "Act of Obligating"@en ;
                   skos:definition "A Deontic Declaration that creates or confirms an Obligor Role with respect to some specified performance, forbearance, or transfer."@en ;
@@ -682,7 +744,7 @@ dacts:ont00000035 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000036
 dacts:ont00000036 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000005 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/legal_duty"^^xsd:anyURI ;
                   rdfs:label "Act of Prohibiting"@en ;
                   skos:definition "A Deontic Declaration that creates or confirms a Duty Holder Role to refrain from some specified act."@en ;
@@ -695,7 +757,7 @@ dacts:ont00000036 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000037
 dacts:ont00000037 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000006 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/notarize"^^xsd:anyURI ;
                   rdfs:label "Act of Notarizing"@en ;
                   skos:definition "A Deontic Document Act that authenticates a signature, acknowledgment, oath, or copy on a document by means of a notary's official attestation."@en ;
@@ -708,7 +770,7 @@ dacts:ont00000037 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000038
 dacts:ont00000038 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/mortgage"^^xsd:anyURI ;
                   rdfs:label "Mortgage Contract Document"@en ;
                   skos:definition "A Document Act Input Document that is prepared to be executed in a transaction creating a mortgage interest as security for a debt or other obligation."@en ;
@@ -721,7 +783,7 @@ dacts:ont00000038 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000039
 dacts:ont00000039 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000965 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/mortgage"^^xsd:anyURI ;
                   rdfs:label "Mortgage Contract Information Content"@en ;
                   skos:definition "A Directive Information Content Entity that specifies the terms under which a mortgage interest secures repayment of a debt or other obligation."@en ;
@@ -734,7 +796,7 @@ dacts:ont00000039 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000040
 dacts:ont00000040 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/property/"^^xsd:anyURI ;
                   rdfs:label "Owner Entity Role"@en ;
                   skos:definition "A Role that inheres iin a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en ;
@@ -747,7 +809,7 @@ dacts:ont00000040 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000041
 dacts:ont00000041 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/property/"^^xsd:anyURI ;
                   rdfs:label "Owned Entity Role"@en ;
                   skos:definition "A Role that inheres in an Entity and is externally grounded in a social or legal arrangement such that the entity stands as the object over which some bearer has an Owner Entity Role."@en ;
@@ -760,7 +822,7 @@ dacts:ont00000041 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000042
 dacts:ont00000042 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000019 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/property/"^^xsd:anyURI ;
                   rdfs:label "Act of Ownership"@en ;
                   skos:definition "A Deontic Act that creates, transfers, acknowledges, or extinguishes an Owner Entity Role with respect to some entity."@en ;
@@ -773,7 +835,7 @@ dacts:ont00000042 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000043
 dacts:ont00000043 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000019 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/advance_directive"^^xsd:anyURI ;
                   rdfs:label "Act of Advance Directive Declaring"@en ;
                   skos:definition "A Deontic Act that creates an advance directive by documenting instructions or proxy designations for future healthcare decision-making under specified incapacity conditions."@en ;
@@ -786,7 +848,7 @@ dacts:ont00000043 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000044
 dacts:ont00000044 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/advance_directive"^^xsd:anyURI ;
                   rdfs:label "Advance Directive"@en ;
                   skos:definition "A Document Act Input Document that bears information intended to govern future healthcare decisions if its author later lacks decisional capacity."@en ;
@@ -799,7 +861,7 @@ dacts:ont00000044 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000045
 dacts:ont00000045 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000019 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/will"^^xsd:anyURI ;
                   rdfs:label "Act of Estate Planning"@en ;
                   skos:definition "A Deontic Act that creates, revises, or arranges the future management or distribution of a person's estate."@en ;
@@ -812,7 +874,7 @@ dacts:ont00000045 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000046
 dacts:ont00000046 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/heir"^^xsd:anyURI ;
                   rdfs:label "Heir Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and entitles its bearer to receive some portion of a decedent's estate under an inheritance arrangement."@en ;
@@ -825,7 +887,7 @@ dacts:ont00000046 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000047
 dacts:ont00000047 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000019 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/inherit"^^xsd:anyURI ;
                   rdfs:label "Act of Asset Inheriting"@en ;
                   skos:definition "A Deontic Act through which an heir or similar successor acquires an Owner Entity Role in an asset of a decedent's estate."@en ;
@@ -838,7 +900,7 @@ dacts:ont00000047 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000048
 dacts:ont00000048 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/executor"^^xsd:anyURI ;
                   rdfs:label "Will Executor Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and is realized in administering a decedent's estate in accordance with a will and applicable law."@en ;
@@ -851,7 +913,7 @@ dacts:ont00000048 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000049
 dacts:ont00000049 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/last_will_and_testament"^^xsd:anyURI ;
                   rdfs:label "Will and Testament Content"@en ;
                   skos:definition "A Document Act Input Document that specifies how a testator's assets or estate is to be managed or distributed after the testator's death."@en ;
@@ -864,7 +926,7 @@ dacts:ont00000049 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000050
 dacts:ont00000050 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000686 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/heir"^^xsd:anyURI ;
                   rdfs:label "Heir Designation Content"@en ;
                   skos:definition "A Designative Information Content Entity that designates one or more agents as intended recipients of estate assets, responsibilities, or related succession statuses."@en ;
@@ -877,7 +939,7 @@ dacts:ont00000050 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000051
 dacts:ont00000051 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/will"^^xsd:anyURI ;
                   rdfs:label "Estate Document"@en ;
                   skos:definition "A Document Act Input Document that bears information intended to govern the management, transfer, or administration of a person's estate or related affairs."@en ;
@@ -890,7 +952,7 @@ dacts:ont00000051 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000052
 dacts:ont00000052 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/attorney"^^xsd:anyURI ;
                   rdfs:label "Legal Attorney Role"@en ;
                   skos:altLabel "Attorney-at-Law Role"@en ,
@@ -905,7 +967,7 @@ dacts:ont00000052 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000053
 dacts:ont00000053 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/power_of_attorney"^^xsd:anyURI ;
                   rdfs:label "Legal Party Proxy Role"@en ;
                   skos:altLabel "Legal Client Representative Role"@en ;
@@ -919,7 +981,7 @@ dacts:ont00000053 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000054
 dacts:ont00000054 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/lawyer"^^xsd:anyURI ;
                   rdfs:label "Legal Advisor Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and is realized in communicating advice about legal rights, duties, procedures, or consequences to another agent."@en ;
@@ -932,7 +994,7 @@ dacts:ont00000054 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000055
 dacts:ont00000055 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000052 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/represent"^^xsd:anyURI ;
                   rdfs:label "Attorney of Record Role"@en ;
                   skos:altLabel "Counsel of Record Role"@en ;
@@ -946,7 +1008,7 @@ dacts:ont00000055 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000056
 dacts:ont00000056 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000016 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/admission_to_practice"^^xsd:anyURI ;
                   rdfs:label "Lawyer License Document"@en ;
                   skos:definition "An Identification Artifact that bears information evidencing that some agent has been admitted or authorized to practice law within a jurisdiction."@en ;
@@ -959,7 +1021,7 @@ dacts:ont00000056 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000057
 dacts:ont00000057 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/law_school"^^xsd:anyURI ;
                   rdfs:label "Law-degree Recipient Role"@en ;
                   skos:definition "A Role that inheres in an Agent by virtue of that agent's having been awarded a degree in law by an educational institution."@en ;
@@ -972,7 +1034,7 @@ dacts:ont00000057 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000058
 dacts:ont00000058 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/admission_to_practice"^^xsd:anyURI ;
                   rdfs:label "Lawyer Licensing Process"@en ;
                   skos:definition "A Planned Act that evaluates and records whether an applicant satisfies the conditions for admission or authorization to practice law in a jurisdiction."@en ;
@@ -985,7 +1047,7 @@ dacts:ont00000058 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000059
 dacts:ont00000059 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/represent"^^xsd:anyURI ;
                   rdfs:label "Legal Representation Assignment Process"@en ;
                   skos:definition "A Planned Act that establishes or records that a legal attorney or other proxy is authorized to represent a party in a specified legal matter."@en ;
@@ -998,7 +1060,7 @@ dacts:ont00000059 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000060
 dacts:ont00000060 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000001 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/represent"^^xsd:anyURI ;
                   rdfs:label "Legal Representation Declaration Document"@en ;
                   skos:definition "A Document Act Input Document that is prepared to be executed in a document act establishing or recording an assignment of legal representation."@en ;
@@ -1011,7 +1073,7 @@ dacts:ont00000060 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000061
 dacts:ont00000061 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/fiduciary_duty"^^xsd:anyURI ;
                   rdfs:label "Fiduciary Negotiation Process"@en ;
                   skos:definition "A Planned Act in which one or more agents negotiate terms while at least one participant bears fiduciary duties toward another party."@en ;
@@ -1024,7 +1086,7 @@ dacts:ont00000061 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000062
 dacts:ont00000062 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000228 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/bilateral_contract"^^xsd:anyURI ;
                   rdfs:label "Employment Contract Negotiation Process"@en ;
                   skos:definition "A Planned Act in which prospective or existing parties negotiate the terms of an employment contract."@en ;
@@ -1037,7 +1099,7 @@ dacts:ont00000062 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000063
 dacts:ont00000063 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00001314 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/plead"^^xsd:anyURI ;
                   rdfs:label "Legal Filing Process"@en ;
                   skos:definition "A Legal System Act that places a legal document into the official record of a court or other legal authority."@en ;
@@ -1050,7 +1112,7 @@ dacts:ont00000063 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000064
 dacts:ont00000064 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/index.php/wex/personal_guardian"^^xsd:anyURI ;
                   rdfs:label "Personal Custodian Role"@en ;
                   skos:definition "A Role that inheres in an Agent and is realized in managing some person's personal affairs under a socially or legally recognized custodial arrangement."@en ;
@@ -1063,7 +1125,7 @@ dacts:ont00000064 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000065
 dacts:ont00000065 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/guardian"^^xsd:anyURI ;
                   rdfs:label "Legal Guardian Role"@en ;
                   skos:definition "A Role that has as a proper part some Deontic Role, inheres in an Agent, and is realized in caring for, deciding for, or controlling the affairs of a ward under a legally recognized guardianship."@en ;
@@ -1076,7 +1138,7 @@ dacts:ont00000065 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000066
 dacts:ont00000066 rdf:type owl:Class ;
                   rdfs:subClassOf cco2:ont00000914 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/archives/spr2024/entries/social-ontology/"^^xsd:anyURI ;
                   rdfs:label "Social Group"@en ;
                   skos:definition "A Group of Persons whose members stand in socially recognized relations of membership, participation, or common practice."@en ;
@@ -1089,7 +1151,7 @@ dacts:ont00000066 rdf:type owl:Class ;
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000067
 dacts:ont00000067 rdf:type owl:Class ;
                   rdfs:subClassOf dacts:ont00000004 ;
-                  obo:IAO_0000114 obo:IAO_0000120 ;
+                  obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/right_to_privacy"^^xsd:anyURI ;
                   rdfs:label "Privacy Entitlement Role"@en ;
                   skos:definition "A Deontic Role that inheres in an Agent and entitles its bearer to restrict or control access to information, spaces, bodily states, or activities concerning that bearer."@en ;
@@ -1099,4 +1161,50 @@ dacts:ont00000067 rdf:type owl:Class ;
                   cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
-###  Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000077
+dacts:ont00000077 rdf:type owl:Class ;
+                  rdfs:subClassOf cco2:ont00000566 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Signature"^^xsd:anyURI ;
+                  rdfs:label "Act of Artifact Signing"@en ;
+                  skos:definition "An Act of Artifact Employment wherein some Agent modifies some Artifact to bear qualities designed to carry a Designative Information Content Entity that designates the Agent."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000079
+dacts:ont00000079 rdf:type owl:Class ;
+                  rdfs:subClassOf dacts:ont00000077 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Digital_signature"^^xsd:anyURI ;
+                  rdfs:label "Act of Digital Signature Creation"@en ;
+                  skos:definition "An Act of Artifact Signing wherein the Designative Information Content is generated according to a mathematical algorithm in order to authenticate the source."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000080
+dacts:ont00000080 rdf:type owl:Class ;
+                  rdfs:subClassOf dacts:ont00000079 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Electronic_signature"^^xsd:anyURI ;
+                  rdfs:label "Act of e-Signature Creation"@en ;
+                  skos:definition "An Act of Digital Signature Creation wherein the Digital Signature encodes a Designative Name of the Agent, especially an autograph."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000078
+dacts:ont00000078 rdf:type owl:Class ;
+                        rdfs:subClassOf dacts:ont00000077 ;
+                        obo:IAO_0000114 obo:IAO_0000125 ;
+                        dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Autograph"^^xsd:anyURI ;
+                        rdfs:label "Act of Autograph Writing"@en ;
+                        skos:definition "An Act of Artifact Signing wherein the Designative Information Content Entity is a signature that designates the Agent."@en ;
+                        skos:example "A person signs his name on a letter."@en ;
+                        skos:scopeNote "An autograph need not be one's official or legal name, but any unique, self-referential mark, and need not only apply to works of art or memorabilia."@en ;
+                        cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                        cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
