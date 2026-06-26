@@ -13,7 +13,7 @@
 @base <https://github.com/jonathanvajda/cco-d-acts#> .
 
 <https://github.com/jonathanvajda/cco-d-acts> rdf:type owl:Ontology ;
-                                               owl:versionIRI <https://github.com/jonathanvajda/2026-06-23/cco-d-acts> ;
+                                               owl:versionIRI <https://github.com/jonathanvajda/2026-06-25/cco-d-acts> ;
                                                owl:imports <https://www.commoncoreontologies.org/2024-11-06/CommonCoreOntologiesMerged> ;
                                                dc:title "CCO-Conformant Document Acts Ontology"@en ;
                                                dcterms:contributor "Jonathan M. Vajda" ;
@@ -22,7 +22,19 @@
                                                rdfs:comment "CCO-D-Acts is designed to fill a gap in representation of social, legal, normative, and deontic entities for ontologies that rely on the Common Core Ontologies (CCO) suite (https://github.com/CommonCoreOntology/CommonCoreOntologies). Within the Basic Formal Ontology (BFO) ecosystem, the Document Acts (D-Acts) ontology (https://github.com/d-acts/d-acts) is an extension of the OBO Foundry Information Artifact Ontology (IAO). This ontology proposes to transpose that OBO ontology into a CCO equivalent."@en ,
                                                             "The most recent version of this file is always hosted on GitHub https://github.com/jonathanvajda/cco-d-acts"@en ;
                                                rdfs:label "CCO-Conformant Document Acts Ontology"@en ;
-                                               owl:versionInfo "2026-06-23"@en .
+                                               owl:versionInfo "2026-06-25"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000114
+obo:IAO_0000114 rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -134,7 +146,7 @@ dacts:ont00000068 rdf:type owl:ObjectProperty ;
                   rdfs:range obo:BFO_0000002 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "has specified input"@en ;
-                  rdfs:seeAlso <http://purl.obolibrary.org/obo/obi.owl> ;
+                  rdfs:seeAlso obo:obi.owl ;
                   skos:definition "x has specified input y iff x is a continuant, y is a planned act, a directive that prescribes y also specifies x, and x was present prior to the occurrence of x."@en ;
                   skos:example "A notarization process has specified input the document whose signature is to be acknowledged."@en ;
                   skos:scopeNote "Use this relation only where the continuant is specified in the relevant plan as an input and is not merely an incidental participant."@en ;
@@ -153,7 +165,7 @@ dacts:ont00000069 rdf:type owl:ObjectProperty ;
                   rdfs:range cco2:ont00000228 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "is specified input of"@en ;
-                  rdfs:seeAlso <http://purl.obolibrary.org/obo/obi.owl> ;
+                  rdfs:seeAlso obo:obi.owl ;
                   skos:definition "An object property that relates a continuant to a planned act for which the continuant is specified as an input."@en ;
                   skos:example "A blank marriage license form is specified input of the document act in which it is completed and signed."@en ;
                   skos:scopeNote "Use this inverse relation only when the continuant is explicitly specified as an input to the planned act rather than merely present during it."@en ;
@@ -173,7 +185,7 @@ dacts:ont00000070 rdf:type owl:ObjectProperty ;
                   rdfs:range obo:BFO_0000002 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "has specified output"@en ;
-                  rdfs:seeAlso <http://purl.obolibrary.org/obo/obi.owl> ;
+                  rdfs:seeAlso obo:obi.owl ;
                   skos:definition "An object property that relates a planned act to a continuant that the plan prescribing that act specifies as an output."@en ;
                   skos:example "A lawyer licensing process has specified output the license document issued upon successful admission."@en ;
                   skos:scopeNote "Use this relation only where the continuant is prescribed as an output of the planned act, not merely observed or reused at its conclusion."@en ;
@@ -192,7 +204,7 @@ dacts:ont00000071 rdf:type owl:ObjectProperty ;
                   rdfs:range cco2:ont00000228 ;
                   obo:IAO_0000114 obo:IAO_0000123 ;
                   rdfs:label "is specified output of"@en ;
-                  rdfs:seeAlso <http://purl.obolibrary.org/obo/obi.owl> ;
+                  rdfs:seeAlso obo:obi.owl ;
                   skos:definition "An object property that relates a continuant to a planned act for which the continuant is specified as an output."@en ;
                   skos:example "A completed court order is specified output of the judicial signing process that issues it."@en ;
                   skos:scopeNote "Use this inverse relation only when the continuant is explicitly specified to be present as an output at the conclusion of the planned act."@en ;
@@ -339,13 +351,12 @@ dacts:ont00000004 rdf:type owl:Class ;
                   rdfs:subClassOf obo:BFO_0000023 ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
-                  rdfs:comment "This definition attempts to capture \"A role that inheres in an agent and which is externally grounded in the normative expectations that other agents within a social context have concerning how that agent should behave.\" (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents."@en ;
+                  rdfs:comment "This definition attempts to capture 'A role that inheres in an agent and which is externally grounded exclusively in the normative expectations that other agents within a social context have concerning how that agent should behave or is allowed to behave.' (D-Acts, IAO_0021008) In an effort to be more CCO-conformant, I have followed similar recommendations as Eric Merrell et al. (2021), omitting their condition that the agent must be a member of that group of agents. Note: this definition in original class was updated on 2025-08-27, but these changes have not been reflected in this current version's textual definition."@en ;
                   rdfs:label "Deontic Role"@en ;
                   skos:definition "A Role that inheres in an Agent and which is externally grounded in the normative expectations of some Group of Agents concerning how that Agent should behave."@en ;
-                  skos:example "Legal judge role"@en ,
-                               "Mandatory reporter role"@en ,
-                               "President role"@en ;
-                  skos:scopeNote "Use this class only for roles whose content is grounded in norms, institutions, or other deontic structures; not every socially expected pattern of behavior constitutes a deontic role."@en ;
+                  skos:example "Jane Doe's power role that is realized by her creating the duty holder role for a trauma medical director to report to the Board of Trustees"@en ,
+                               "John Doe's claimant role that is realized by him taking possession of the house he just bought."@en ;
+                  skos:scopeNote "Use this class only for roles whose content is grounded in norms, institutions, or other deontic structures; not every socially expected pattern of behavior constitutes a deontic role. They are not meant to represent all social roles that come with deontic expectations, e.g., police officer or trauma surgeon."@en ;
                   cco2:ont00001754 "Modified; originally from Mathias Brochhausen & Neil Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021008 ('deontic role')"@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Jonathan M. Vajda"@en .
@@ -432,7 +443,7 @@ dacts:ont00000008 rdf:type owl:Class ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/rights/"^^xsd:anyURI ;
                   rdfs:comment "Comment from source: Claimant roles can either be discharged by one act of fulfilling a duty (e.g. when I pay back $5 owed to a friend) or they can remain intact and require ongoing adhering to a duty. https://plato.stanford.edu/entries/rights/#FormRighHohfAnalSyst discuss the claim of a child to freedom from abuse. That claim remains in existence and the duty to not abuse the child needs to be continuously be acted upon, by a multitude of agents (which all have a duty holder role). This claim is mutually dependent on the duty to abstain from abusing the child."@en ;
                   rdfs:label "Claimant Role"@en ;
-                  skos:definition "A Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Duty Holder Role borne by Agent B, and that specifies B performaing or abstaining from some Act C, or providing or surrendering some Continuant D to A."@en ;
+                  skos:definition "A Deontic Role that inheres in an Agent A, that mutually depends on the existence of a Duty Holder Role borne by Agent B, and that specifies B performing or abstaining from some Act C, or providing or surrendering some Continuant D to A."@en ;
                   skos:example "A child bears a claimant role against a guardian for the provision of legally required care."@en ;
                   skos:scopeNote "Use this class for the claim-right side of a correlative claim-duty pair; it is not coextensive with every desire, request, or expectation someone may have."@en ;
                   cco2:ont00001754 "Modified, originally from Brochhausen and Otte (D-Acts), http://purl.obolibrary.org/obo/IAO_0021013 which in turn was derived from Hohfeld, WN: Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale University Press, 1919."@en ;
@@ -799,7 +810,7 @@ dacts:ont00000040 rdf:type owl:Class ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://plato.stanford.edu/entries/property/"^^xsd:anyURI ;
                   rdfs:label "Owner Entity Role"@en ;
-                  skos:definition "A Role that inheres iin a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en ;
+                  skos:definition "A Role that inheres in a person and that, when it is realized, is realized in a social act and whose bearer exercises control over a possession, where this control is permitted by one or more deontic roles, which are parts of the owner role."@en ;
                   skos:example "A homeowner's role of controlling access to a house and transferring title to it."@en ;
                   skos:scopeNote "Use this class for the role inhering in the owner, not for the owned thing itself or for every factual possessor lacking socially recognized title or authority."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
@@ -873,7 +884,11 @@ dacts:ont00000045 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000046
 dacts:ont00000046 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000004 ;
+                  rdfs:subClassOf obo:BFO_0000023 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty obo:BFO_0000178 ;
+                                    owl:someValuesFrom dacts:ont00000004
+                                  ] ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/heir"^^xsd:anyURI ;
                   rdfs:label "Heir Role"@en ;
@@ -899,7 +914,11 @@ dacts:ont00000047 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000048
 dacts:ont00000048 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000004 ;
+                  rdfs:subClassOf obo:BFO_0000023 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty obo:BFO_0000178 ;
+                                    owl:someValuesFrom dacts:ont00000004
+                                  ] ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/executor"^^xsd:anyURI ;
                   rdfs:label "Will Executor Role"@en ;
@@ -951,7 +970,11 @@ dacts:ont00000051 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000052
 dacts:ont00000052 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000004 ;
+                  rdfs:subClassOf obo:BFO_0000023 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty obo:BFO_0000178 ;
+                                    owl:someValuesFrom dacts:ont00000004
+                                  ] ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/attorney"^^xsd:anyURI ;
                   rdfs:label "Legal Attorney Role"@en ;
@@ -966,7 +989,11 @@ dacts:ont00000052 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000053
 dacts:ont00000053 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000004 ;
+                  rdfs:subClassOf obo:BFO_0000023 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty obo:BFO_0000178 ;
+                                    owl:someValuesFrom dacts:ont00000004
+                                  ] ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/power_of_attorney"^^xsd:anyURI ;
                   rdfs:label "Legal Party Proxy Role"@en ;
@@ -980,7 +1007,11 @@ dacts:ont00000053 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000054
 dacts:ont00000054 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000004 ;
+                  rdfs:subClassOf obo:BFO_0000023 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty obo:BFO_0000178 ;
+                                    owl:someValuesFrom dacts:ont00000004
+                                  ] ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/lawyer"^^xsd:anyURI ;
                   rdfs:label "Legal Advisor Role"@en ;
@@ -1150,7 +1181,11 @@ dacts:ont00000066 rdf:type owl:Class ;
 
 ###  https://github.com/jonathanvajda/cco-d-acts/ont00000067
 dacts:ont00000067 rdf:type owl:Class ;
-                  rdfs:subClassOf dacts:ont00000004 ;
+                  rdfs:subClassOf obo:BFO_0000023 ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty obo:BFO_0000178 ;
+                                    owl:someValuesFrom dacts:ont00000004
+                                  ] ;
                   obo:IAO_0000114 obo:IAO_0000122 ;
                   dcterms:bibliographicCitation "https://www.law.cornell.edu/wex/right_to_privacy"^^xsd:anyURI ;
                   rdfs:label "Privacy Entitlement Role"@en ;
@@ -1168,6 +1203,19 @@ dacts:ont00000077 rdf:type owl:Class ;
                   dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Signature"^^xsd:anyURI ;
                   rdfs:label "Act of Artifact Signing"@en ;
                   skos:definition "An Act of Artifact Employment wherein some Agent modifies some Artifact to bear qualities designed to carry a Designative Information Content Entity that designates the Agent."@en ;
+                  cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
+                  cco2:ont00001762 "Jonathan M. Vajda"@en .
+
+
+###  https://github.com/jonathanvajda/cco-d-acts/ont00000078
+dacts:ont00000078 rdf:type owl:Class ;
+                  rdfs:subClassOf dacts:ont00000077 ;
+                  obo:IAO_0000114 obo:IAO_0000125 ;
+                  dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Autograph"^^xsd:anyURI ;
+                  rdfs:label "Act of Autograph Writing"@en ;
+                  skos:definition "An Act of Artifact Signing wherein the Designative Information Content Entity is a signature that designates the Agent."@en ;
+                  skos:example "A person signs his name on a letter."@en ;
+                  skos:scopeNote "An autograph need not be one's official or legal name, but any unique, self-referential mark, and need not only apply to works of art or memorabilia."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Jonathan M. Vajda"@en .
 
@@ -1192,19 +1240,6 @@ dacts:ont00000080 rdf:type owl:Class ;
                   skos:definition "An Act of Digital Signature Creation wherein the Digital Signature encodes a Designative Name of the Agent, especially an autograph."@en ;
                   cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
                   cco2:ont00001762 "Jonathan M. Vajda"@en .
-
-
-###  https://github.com/jonathanvajda/cco-d-acts/ont00000078
-dacts:ont00000078 rdf:type owl:Class ;
-                        rdfs:subClassOf dacts:ont00000077 ;
-                        obo:IAO_0000114 obo:IAO_0000125 ;
-                        dcterms:bibliographicCitation "https://en.wikipedia.org/wiki/Autograph"^^xsd:anyURI ;
-                        rdfs:label "Act of Autograph Writing"@en ;
-                        skos:definition "An Act of Artifact Signing wherein the Designative Information Content Entity is a signature that designates the Agent."@en ;
-                        skos:example "A person signs his name on a letter."@en ;
-                        skos:scopeNote "An autograph need not be one's official or legal name, but any unique, self-referential mark, and need not only apply to works of art or memorabilia."@en ;
-                        cco2:ont00001760 "https://github.com/jonathanvajda/cco-d-acts"^^xsd:anyURI ;
-                        cco2:ont00001762 "Jonathan M. Vajda"@en .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
